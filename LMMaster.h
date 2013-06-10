@@ -80,8 +80,7 @@ typedef LMMultiplierPart*(^LMMultiplierBlock)(CGFloat);
 
 @interface LMMultiplierPart : NSObject
 
-@property (nonatomic, readonly) LMConstantBlock plus;
-@property (nonatomic, readonly) LMConstantBlock minus;
+@property (nonatomic, readonly) LMConstantBlock constant;
 @property (nonatomic, readonly) LMPriorityBlock withPriority;
 
 @end

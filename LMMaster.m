@@ -304,6 +304,40 @@
 
 @implementation LMMultiplierPart
 
+- (LMConstantBlock)constant
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(CGFloat constant) {
+        self.holder.constant = constant;
+        
+        LMConstantPart* constantPart = [LMConstantPart new];
+        constantPart.holder = self.holder;
+        
+        return constantPart;
+    };
+}
 
+- (LMPriorityBlock)withPriority
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(UILayoutPriority priority) {
+        self.holder.priority = priority;
+    };
+}
+
+@end
+
+@implementation LMConstantPart
+
+- (LMPriorityBlock)withPriority
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(UILayoutPriority priority) {
+        self.holder.priority = priority;
+    };
+}
 
 @end
