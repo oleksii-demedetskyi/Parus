@@ -56,7 +56,7 @@
 
 @interface LMMaster ()
 
-@property (nonatomic, strong) NSMutableArray* constraints;
+@property (nonatomic, strong) NSMutableArray* constraintHolders; // [LMConstraintHolder]
 
 @end
 
@@ -64,12 +64,32 @@
 
 - (instancetype)init
 {
+    self = [super init];
+    if (self != nil)
+    {
+        _constraintHolders = [NSMutableArray new];
+    }
     
+    return self;
 }
 
 - (void)processLayout
 {
+    NSMutableArray* constraints = [NSMutableArray new];
     
+    for (LMConstraintHolder* holder in self.constraintHolders)
+    {
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:holder.view1
+                                     attribute:holder.attr1
+                                     relatedBy:holder.relation
+                                        toItem:holder.view2
+                                     attribute:holder.attr2
+                                    multiplier:holder.multiplier
+                                      constant:holder.constant]];
+    }
+    
+    self.constraintHolders = [NSMutableArray new];
+    self.constraints = constraints;
 }
 
 - (LMLeftHandBLock)leftHandWithAttr:(NSLayoutAttribute)attr
@@ -80,6 +100,10 @@
         LMConstraintHolder* holder = [LMConstraintHolder new];
         holder.view1 = view;
         holder.attr1 = attr;
+        holder.multiplier = 1.f;
+        holder.constant = 0.f;
+        
+        [self.constraintHolders addObject:holder];
         
         LMRelationSelectObject* select  = [LMRelationSelectObject new];
         select.holder = holder;

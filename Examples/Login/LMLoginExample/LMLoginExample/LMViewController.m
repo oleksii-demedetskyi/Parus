@@ -24,12 +24,14 @@
     UIButton* loginButton = [UIButton new];
     loginButton.translatesAutoresizingMaskIntoConstraints = NO;
     [loginButton setTitle:@"Sign In" forState:UIControlStateNormal];
+    loginButton.backgroundColor = [UIColor blueColor];
     [mainView addSubview:loginButton];
     
     [mainView setupLayout:^(LMMaster *$) {
         $.centerXOf(loginButton).equalTo.centerXOf(mainView);
         $.centerYOf(loginButton).equalTo.centerYOf(mainView);
     }];
+    
 }
 
 @end

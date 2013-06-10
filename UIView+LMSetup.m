@@ -12,9 +12,11 @@
 
 - (void)setupLayout:(LMSetupBlock)setup
 {
-    LMMaster* master = nil;
+    LMMaster* master = [LMMaster new];
     setup(master);
     [master processLayout];
+    
+    [self addConstraints:master.constraints];
 }
 
 @end

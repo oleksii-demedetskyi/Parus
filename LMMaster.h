@@ -26,6 +26,8 @@ typedef LMRelationSelectObject*(^LMLeftHandBLock)(UIView*);
 @property (nonatomic, readonly) LMLeftHandBLock centerYOf;
 @property (nonatomic, readonly) LMLeftHandBLock baselineOf;
 
+@property (nonatomic, copy) NSArray* constraints;
+
 - (void)processLayout;
 
 @end
