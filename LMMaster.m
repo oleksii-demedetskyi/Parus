@@ -48,6 +48,18 @@
 
 @end
 
+@interface LMConstantPart ()
+
+@property (nonatomic, strong) LMConstraintHolder* holder;
+
+@end
+
+@interface LMMultiplierPart ()
+
+@property (nonatomic, strong) LMConstraintHolder* holder;
+
+@end
+
 @implementation LMMaster
 
 - (void)processLayout
@@ -187,18 +199,111 @@
     return [self rightHandBlockWithAttribute:NSLayoutAttributeRight];
 }
 
+- (LMRightHandViewBlock)topOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeTop];
+}
 
-//@property (nonatomic, readonly) LMRightHandViewBlock rightOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock topOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock bottomOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock leadingOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock trailingOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock widthOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock heightOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock centerXOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock centerYOf;
-//@property (nonatomic, readonly) LMRightHandViewBlock baselineOf;
-//
-//@property (nonatomic, readonly) LMConstantBlock constant;
+- (LMRightHandViewBlock)bottomOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeBottom];
+}
+
+- (LMRightHandViewBlock)leadingOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeLeading];
+}
+
+- (LMRightHandViewBlock)trailingOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeTrailing];
+}
+
+- (LMRightHandViewBlock)widthOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeWidth];
+}
+
+- (LMRightHandViewBlock)heightOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeHeight];
+}
+
+- (LMRightHandViewBlock)centerXOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeCenterX];
+}
+
+- (LMRightHandViewBlock)centerYOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeCenterY];
+}
+
+- (LMRightHandViewBlock)baselineOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeBaseline];
+}
+
+- (LMConstantBlock)constant
+{
+    NSParameterAssert(self.holder != nil);
+    
+    self.holder.view2 = nil;
+    self.holder.attr2 = NSLayoutAttributeNotAnAttribute;
+    
+    return ^(CGFloat constant) {
+        LMConstantPart* constantPart = [LMConstantPart new];
+        constantPart.holder = self.holder;
+        
+        return constantPart;
+    };
+}
+
+@end
+
+@implementation LMRightHandPart
+
+- (LMMultiplierBlock)multipliedTo
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(CGFloat multiplier) {
+        self.holder.multiplier = multiplier;
+        
+        LMMultiplierPart* multiplierPart = [LMMultiplierPart new];
+        multiplierPart.holder = self.holder;
+        
+        return multiplierPart;
+    };
+}
+
+- (LMConstantBlock)constant
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(CGFloat constant) {
+        self.holder.constant = constant;
+        
+        LMConstantPart* constantPart = [LMConstantPart new];
+        constantPart.holder = self.holder;
+        
+        return constantPart;
+    };
+}
+
+- (LMPriorityBlock)withPriority
+{
+    NSParameterAssert(self.holder != nil);
+    
+    return ^(UILayoutPriority priority) {
+        self.holder.priority = priority;
+    };
+}
+
+@end
+
+@implementation LMMultiplierPart
+
+
 
 @end
