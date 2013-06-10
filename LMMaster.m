@@ -17,6 +17,7 @@
 @property (nonatomic, assign) CGFloat constant;
 @property (nonatomic, assign) CGFloat multiplier;
 @property (nonatomic, assign) NSInteger priority;
+@property (nonatomic, assign) NSLayoutRelation relation;
 
 @end
 
@@ -35,6 +36,18 @@
 
 @end
 
+@interface LMRelationPart ()
+
+@property (nonatomic, strong) LMConstraintHolder* holder;
+
+@end
+
+@interface LMRightHandPart ()
+
+@property (nonatomic, strong) LMConstraintHolder* holder;
+
+@end
+
 @implementation LMMaster
 
 - (void)processLayout
@@ -45,6 +58,7 @@
 - (LMLeftHandBLock)leftHandWithAttr:(NSLayoutAttribute)attr
 {
     return ^(UIView* view){
+        NSParameterAssert([view isKindOfClass:[UIView class]]);
         
         LMConstraintHolder* holder = [LMConstraintHolder new];
         holder.view1 = view;
@@ -116,16 +130,75 @@
 
 @implementation LMRelationSelectObject
 
-- (LMRelationPart *)equalTo
+- (LMRelationPart*)relationWithLayoutRelation:(NSLayoutRelation)relation
 {
+    NSParameterAssert(self.holder != nil);
     
+    self.holder.relation = relation;
+    
+    LMRelationPart* relationPart = [LMRelationPart new];
+    relationPart.holder = self.holder;
+    
+    return relationPart;
 }
 
+- (LMRelationPart*)equalTo
+{
+    return [self relationWithLayoutRelation:NSLayoutRelationEqual];
+}
 
+- (LMRelationPart*)moreThan
+{
+    return [self relationWithLayoutRelation:NSLayoutRelationGreaterThanOrEqual];
+}
+
+- (LMRelationPart*)lessThan
+{
+    return [self relationWithLayoutRelation:NSLayoutRelationLessThanOrEqual];
+}
 
 @end
 
-@implementation LMRelationObject
+@implementation LMRelationPart
 
+- (LMRightHandViewBlock)rightHandBlockWithAttribute:(NSLayoutAttribute)attribute
+{
+    return ^(UIView* view) {
+        NSParameterAssert([view isKindOfClass:[UIView class]]);
+        NSParameterAssert(self.holder != nil);
+        
+        self.holder.view2 = view;
+        self.holder.attr2 = attribute;
+        
+        LMRightHandPart* rightHandPart = [LMRightHandPart new];
+        rightHandPart.holder = self.holder;
+        
+        return rightHandPart;
+    };
+}
+
+- (LMRightHandViewBlock)leftOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeLeft];
+}
+
+- (LMRightHandViewBlock)rightOf
+{
+    return [self rightHandBlockWithAttribute:NSLayoutAttributeRight];
+}
+
+
+//@property (nonatomic, readonly) LMRightHandViewBlock rightOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock topOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock bottomOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock leadingOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock trailingOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock widthOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock heightOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock centerXOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock centerYOf;
+//@property (nonatomic, readonly) LMRightHandViewBlock baselineOf;
+//
+//@property (nonatomic, readonly) LMConstantBlock constant;
 
 @end
