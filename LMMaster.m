@@ -24,12 +24,6 @@
 @implementation LMConstraintHolder
 @end
 
-@interface LMMaster ()
-
-@property (nonatomic, strong) NSMutableArray* constraints;
-
-@end
-
 @interface LMRelationSelectObject ()
 
 @property (nonatomic, strong) LMConstraintHolder* holder;
@@ -60,7 +54,18 @@
 
 @end
 
+@interface LMMaster ()
+
+@property (nonatomic, strong) NSMutableArray* constraints;
+
+@end
+
 @implementation LMMaster
+
+- (instancetype)init
+{
+    
+}
 
 - (void)processLayout
 {
