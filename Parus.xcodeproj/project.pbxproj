@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
-		4838D564176DDD19009415E4 /* Parus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4838D563176DDD19009415E4 /* Parus.h */; };
-		4838D566176DDD19009415E4 /* Parus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D565176DDD19009415E4 /* Parus.m */; };
 		4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D56D176DDD19009415E4 /* SenTestingKit.framework */; };
-		4838D570176DDD19009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D56F176DDD19009415E4 /* UIKit.framework */; };
 		4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4838D578176DDD19009415E4 /* InfoPlist.strings */; };
-		4838D57D176DDD19009415E4 /* ParusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D57C176DDD19009415E4 /* ParusTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +21,62 @@
 			remoteGlobalIDString = 4838D55B176DDD19009415E4;
 			remoteInfo = Parus;
 		};
+		4838D58E176DE172009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9D96A2614B6B8AB007D9521;
+			remoteInfo = Specta;
+		};
+		4838D590176DE172009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9B777A414BA294B00D8DC76;
+			remoteInfo = "Specta-iOS";
+		};
+		4838D592176DE172009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9D96A3A14B6B8AB007D9521;
+			remoteInfo = SpectaTests;
+		};
+		4838D594176DE172009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9B777B314BA294C00D8DC76;
+			remoteInfo = "Specta-iOSTests";
+		};
+		4838D59D176DE184009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9ACDF0C13B2DD520010F4D7;
+			remoteInfo = Expecta;
+		};
+		4838D59F176DE184009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E93067CE13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
+		};
+		4838D5A1176DE184009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9ACDF1D13B2DD520010F4D7;
+			remoteInfo = ExpectaTests;
+		};
+		4838D5A3176DE184009415E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E93067DA13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOSTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,25 +86,21 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				4838D564176DDD19009415E4 /* Parus.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4838D55C176DDD19009415E4 /* libParus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libParus.a; path = "/Users/dalog/Parus/Parus/build/Release-iphoneos/libParus.a"; sourceTree = "<absolute>"; };
 		4838D55E176DDD19009415E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4838D562176DDD19009415E4 /* Parus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parus-Prefix.pch"; sourceTree = "<group>"; };
-		4838D563176DDD19009415E4 /* Parus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parus.h; sourceTree = "<group>"; };
-		4838D565176DDD19009415E4 /* Parus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parus.m; sourceTree = "<group>"; };
-		4838D56C176DDD19009415E4 /* ParusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ParusTests.octest; path = "/Users/dalog/Parus/Parus/build/Release-iphoneos/ParusTests.octest"; sourceTree = "<absolute>"; };
 		4838D56D176DDD19009415E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4838D56F176DDD19009415E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4838D577176DDD19009415E4 /* ParusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParusTests-Info.plist"; sourceTree = "<group>"; };
 		4838D579176DDD19009415E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4838D57B176DDD19009415E4 /* ParusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParusTests.h; sourceTree = "<group>"; };
-		4838D57C176DDD19009415E4 /* ParusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParusTests.m; sourceTree = "<group>"; };
+		4838D584176DE09C009415E4 /* libParus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4838D585176DE09C009415E4 /* ParusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4838D587176DE171009415E4 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = External/Specta/Specta.xcodeproj; sourceTree = "<group>"; };
+		4838D596176DE183009415E4 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = External/Expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */,
-				4838D570176DDD19009415E4 /* UIKit.framework in Frameworks */,
 				4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +127,8 @@
 		4838D54A176DDBFD009415E4 = {
 			isa = PBXGroup;
 			children = (
-				4838D555176DDC6A009415E4 /* Configuration */,
+				4838D584176DE09C009415E4 /* libParus.a */,
+				4838D585176DE09C009415E4 /* ParusTests.octest */,
 				4838D560176DDD19009415E4 /* Parus */,
 				4838D575176DDD19009415E4 /* ParusTests */,
 				4838D553176DDC5B009415E4 /* Frameworks */,
@@ -90,25 +138,17 @@
 		4838D553176DDC5B009415E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4838D596176DE183009415E4 /* Expecta.xcodeproj */,
+				4838D587176DE171009415E4 /* Specta.xcodeproj */,
 				4838D55E176DDD19009415E4 /* Foundation.framework */,
 				4838D56D176DDD19009415E4 /* SenTestingKit.framework */,
-				4838D56F176DDD19009415E4 /* UIKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4838D555176DDC6A009415E4 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Configuration;
 			sourceTree = "<group>";
 		};
 		4838D560176DDD19009415E4 /* Parus */ = {
 			isa = PBXGroup;
 			children = (
-				4838D563176DDD19009415E4 /* Parus.h */,
-				4838D565176DDD19009415E4 /* Parus.m */,
 				4838D561176DDD19009415E4 /* Supporting Files */,
 			);
 			path = Parus;
@@ -125,8 +165,6 @@
 		4838D575176DDD19009415E4 /* ParusTests */ = {
 			isa = PBXGroup;
 			children = (
-				4838D57B176DDD19009415E4 /* ParusTests.h */,
-				4838D57C176DDD19009415E4 /* ParusTests.m */,
 				4838D576176DDD19009415E4 /* Supporting Files */,
 			);
 			path = ParusTests;
@@ -139,6 +177,28 @@
 				4838D578176DDD19009415E4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4838D588176DE171009415E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4838D58F176DE172009415E4 /* libSpecta.a */,
+				4838D591176DE172009415E4 /* libSpecta-iOS.a */,
+				4838D593176DE172009415E4 /* SpectaTests.octest */,
+				4838D595176DE172009415E4 /* Specta-iOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4838D597176DE183009415E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4838D59E176DE184009415E4 /* libExpecta.a */,
+				4838D5A0176DE184009415E4 /* libExpecta-iOS.a */,
+				4838D5A2176DE184009415E4 /* ExpectaTests.octest */,
+				4838D5A4176DE184009415E4 /* Expecta-iOSTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +218,7 @@
 			);
 			name = Parus;
 			productName = Parus;
-			productReference = 4838D55C176DDD19009415E4 /* libParus.a */;
+			productReference = 4838D584176DE09C009415E4 /* libParus.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		4838D56B176DDD19009415E4 /* ParusTests */ = {
@@ -177,7 +237,7 @@
 			);
 			name = ParusTests;
 			productName = ParusTests;
-			productReference = 4838D56C176DDD19009415E4 /* ParusTests.octest */;
+			productReference = 4838D585176DE09C009415E4 /* ParusTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -198,6 +258,16 @@
 			mainGroup = 4838D54A176DDBFD009415E4;
 			productRefGroup = 4838D54A176DDBFD009415E4;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4838D597176DE183009415E4 /* Products */;
+					ProjectRef = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+				},
+				{
+					ProductGroup = 4838D588176DE171009415E4 /* Products */;
+					ProjectRef = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4838D55B176DDD19009415E4 /* Parus */,
@@ -205,6 +275,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4838D58F176DE172009415E4 /* libSpecta.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSpecta.a;
+			remoteRef = 4838D58E176DE172009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D591176DE172009415E4 /* libSpecta-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSpecta-iOS.a";
+			remoteRef = 4838D590176DE172009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D593176DE172009415E4 /* SpectaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SpectaTests.octest;
+			remoteRef = 4838D592176DE172009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D595176DE172009415E4 /* Specta-iOSTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Specta-iOSTests.octest";
+			remoteRef = 4838D594176DE172009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D59E176DE184009415E4 /* libExpecta.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libExpecta.a;
+			remoteRef = 4838D59D176DE184009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D5A0176DE184009415E4 /* libExpecta-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libExpecta-iOS.a";
+			remoteRef = 4838D59F176DE184009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D5A2176DE184009415E4 /* ExpectaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ExpectaTests.octest;
+			remoteRef = 4838D5A1176DE184009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4838D5A4176DE184009415E4 /* Expecta-iOSTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Expecta-iOSTests.octest";
+			remoteRef = 4838D5A3176DE184009415E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4838D569176DDD19009415E4 /* Resources */ = {
@@ -238,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4838D566176DDD19009415E4 /* Parus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4838D57D176DDD19009415E4 /* ParusTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +566,7 @@
 				4838D580176DDD19009415E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4838D581176DDD19009415E4 /* Build configuration list for PBXNativeTarget "ParusTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +575,7 @@
 				4838D583176DDD19009415E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
