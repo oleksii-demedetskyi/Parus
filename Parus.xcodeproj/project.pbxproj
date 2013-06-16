@@ -175,7 +175,8 @@
 				4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */,
 				4838D561176DDD19009415E4 /* Supporting Files */,
 			);
-			path = Parus;
+			name = Parus;
+			path = Parus/src;
 			sourceTree = "<group>";
 		};
 		4838D561176DDD19009415E4 /* Supporting Files */ = {
@@ -184,6 +185,7 @@
 				4838D562176DDD19009415E4 /* Parus-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4838D575176DDD19009415E4 /* ParusTests */ = {
@@ -241,7 +243,7 @@
 			children = (
 				4838D5A5176DE234009415E4 /* TestSpec.m */,
 			);
-			name = Specs;
+			path = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
