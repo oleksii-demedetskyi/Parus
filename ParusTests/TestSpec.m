@@ -1,11 +1,7 @@
-SpecBegin(TestSpec)
-
-describe(@"Thing", ^{
+SpecBegin(Test)
     
-    it(@"should do stuff", ^{
-        expect(@"foo").to.equal(@"foo");
-    });
-    
+it(@"should do stuff", ^{
+    expect(YES).to.beTruthy();
 });
 
 SpecEnd
