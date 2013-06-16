@@ -1,0 +1,3 @@
+SpecBegin(TestSpec)
+
+SpecEnd

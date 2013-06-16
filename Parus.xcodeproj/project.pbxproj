@@ -11,6 +11,7 @@
 		4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D56D176DDD19009415E4 /* SenTestingKit.framework */; };
 		4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4838D578176DDD19009415E4 /* InfoPlist.strings */; };
+		4838D5A6176DE234009415E4 /* TestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5A5176DE234009415E4 /* TestSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		4838D585176DE09C009415E4 /* ParusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4838D587176DE171009415E4 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = External/Specta/Specta.xcodeproj; sourceTree = "<group>"; };
 		4838D596176DE183009415E4 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = External/Expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
+		4838D5A5176DE234009415E4 /* TestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4838D576176DDD19009415E4 /* Supporting Files */,
+				4838D5A5176DE234009415E4 /* TestSpec.m */,
 			);
 			path = ParusTests;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5A6176DE234009415E4 /* TestSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
