@@ -17,6 +17,8 @@
 		4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
 		4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5A0176DE184009415E4 /* libExpecta-iOS.a */; };
 		4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
+		4838D5B6176E2CA8009415E4 /* libParus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus.a */; };
+		4838D5B7176E2CCE009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5B7176E2CCE009415E4 /* UIKit.framework in Frameworks */,
+				4838D5B6176E2CA8009415E4 /* libParus.a in Frameworks */,
 				4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */,
 				4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */,
 				4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */,
@@ -143,11 +147,10 @@
 		4838D54A176DDBFD009415E4 = {
 			isa = PBXGroup;
 			children = (
-				4838D584176DE09C009415E4 /* libParus.a */,
-				4838D585176DE09C009415E4 /* ParusTests.octest */,
 				4838D560176DDD19009415E4 /* Parus */,
 				4838D575176DDD19009415E4 /* ParusTests */,
 				4838D553176DDC5B009415E4 /* Frameworks */,
+				4838D5B8176E2E93009415E4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4838D576176DDD19009415E4 /* Supporting Files */,
-				4838D5A5176DE234009415E4 /* TestSpec.m */,
+				4838D5B9176E2EB5009415E4 /* Specs */,
 			);
 			path = ParusTests;
 			sourceTree = "<group>";
@@ -222,6 +225,23 @@
 				4838D5A4176DE184009415E4 /* Expecta-iOSTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4838D5B8176E2E93009415E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4838D584176DE09C009415E4 /* libParus.a */,
+				4838D585176DE09C009415E4 /* ParusTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4838D5B9176E2EB5009415E4 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				4838D5A5176DE234009415E4 /* TestSpec.m */,
+			);
+			name = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
