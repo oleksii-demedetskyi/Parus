@@ -12,6 +12,11 @@
 		4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4838D578176DDD19009415E4 /* InfoPlist.strings */; };
 		4838D5A6176DE234009415E4 /* TestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5A5176DE234009415E4 /* TestSpec.m */; };
+		4838D5B0176DE7A1009415E4 /* LMMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5AD176DE7A1009415E4 /* LMMaster.m */; };
+		4838D5B1176DE7A1009415E4 /* UIView+LMSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */; };
+		4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
+		4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5A0176DE184009415E4 /* libExpecta-iOS.a */; };
+		4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,12 @@
 		4838D587176DE171009415E4 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = External/Specta/Specta.xcodeproj; sourceTree = "<group>"; };
 		4838D596176DE183009415E4 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = External/Expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
 		4838D5A5176DE234009415E4 /* TestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSpec.m; sourceTree = "<group>"; };
+		4838D5AA176DE449009415E4 /* ParusTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParusTests-Prefix.pch"; sourceTree = "<group>"; };
+		4838D5AC176DE7A1009415E4 /* LMMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMaster.h; sourceTree = "<group>"; };
+		4838D5AD176DE7A1009415E4 /* LMMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMaster.m; sourceTree = "<group>"; };
+		4838D5AE176DE7A1009415E4 /* UIView+LMSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LMSetup.h"; sourceTree = "<group>"; };
+		4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LMSetup.m"; sourceTree = "<group>"; };
+		4838D5B2176DE807009415E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */,
 				4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */,
+				4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */,
 				4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */,
 				4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */,
 			);
@@ -140,6 +154,7 @@
 		4838D553176DDC5B009415E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4838D5B2176DE807009415E4 /* UIKit.framework */,
 				4838D596176DE183009415E4 /* Expecta.xcodeproj */,
 				4838D587176DE171009415E4 /* Specta.xcodeproj */,
 				4838D55E176DDD19009415E4 /* Foundation.framework */,
@@ -151,6 +166,10 @@
 		4838D560176DDD19009415E4 /* Parus */ = {
 			isa = PBXGroup;
 			children = (
+				4838D5AC176DE7A1009415E4 /* LMMaster.h */,
+				4838D5AD176DE7A1009415E4 /* LMMaster.m */,
+				4838D5AE176DE7A1009415E4 /* UIView+LMSetup.h */,
+				4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */,
 				4838D561176DDD19009415E4 /* Supporting Files */,
 			);
 			path = Parus;
@@ -178,6 +197,7 @@
 			children = (
 				4838D577176DDD19009415E4 /* ParusTests-Info.plist */,
 				4838D578176DDD19009415E4 /* InfoPlist.strings */,
+				4838D5AA176DE449009415E4 /* ParusTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5B0176DE7A1009415E4 /* LMMaster.m in Sources */,
+				4838D5B1176DE7A1009415E4 /* UIView+LMSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,12 +428,16 @@
 		4838D54F176DDBFD009415E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 			};
 			name = Debug;
 		};
 		4838D550176DDBFD009415E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 			};
 			name = Release;
 		};
@@ -492,7 +518,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -501,7 +527,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
+				GCC_PREFIX_HEADER = "ParusTests/ParusTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -510,9 +536,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"External/Expecta/src/**",
+					"External/Specta/src/**",
+				);
 				INFOPLIST_FILE = "ParusTests/ParusTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
@@ -531,22 +560,25 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
+				GCC_PREFIX_HEADER = "ParusTests/ParusTests-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"External/Expecta/src/**",
+					"External/Specta/src/**",
+				);
 				INFOPLIST_FILE = "ParusTests/ParusTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
