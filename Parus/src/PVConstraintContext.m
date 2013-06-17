@@ -24,6 +24,8 @@
         self.rightConstant = 0.f;
         self.priority = UILayoutPriorityRequired;
     }
+    
+    return self;
 }
 
 - (NSLayoutConstraint *)buildConstraint
