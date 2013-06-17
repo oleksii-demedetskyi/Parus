@@ -10,6 +10,7 @@
 
 @implementation PVConstraintContext
 
+
 - (id)init
 {
     self = [super init];
@@ -30,6 +31,21 @@
 
 - (NSLayoutConstraint *)buildConstraint
 {
+    NSParameterAssert(self.leftView != nil);
+    NSParameterAssert(self.leftAttribute != NSLayoutAttributeNotAnAttribute);
+    
+    if (self.rightView == nil)
+    {
+        NSParameterAssert(self.rightAttribute == NSLayoutAttributeNotAnAttribute);
+        NSParameterAssert(self.rightAtttributeMultiplier == 0.f);
+    }
+    
+    if (self.rightView != nil)
+    {
+        NSParameterAssert(self.rightAttribute != NSLayoutAttributeNotAnAttribute);
+        NSParameterAssert(self.rightAtttributeMultiplier != 0.f);
+    }
+    
     NSLayoutConstraint* constraint =
     [NSLayoutConstraint constraintWithItem:self.leftView
                                  attribute:self.leftAttribute
