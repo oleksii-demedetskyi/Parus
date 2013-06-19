@@ -47,31 +47,31 @@ describe(@"Constraint Context", ^{
         }).to.raise(kLeftViewAttributeNotSet);
     });
     
-describe(@"Left constraint context", ^{
-    
-    beforeEach(^{
-        context.leftView = view1;
-        context.leftAttribute = NSLayoutAttributeLeft;
-    });
-    
-    it(@"should not be built while right view is nil and attribute is set", ^{
-        expect(^{
+    describe(@"Left constraint context", ^{
+        
+        beforeEach(^{
+            context.leftView = view1;
+            context.leftAttribute = NSLayoutAttributeLeft;
+        });
+        
+        it(@"should not be built while right view is nil and attribute is set", ^{
+            expect(^{
+                context.rightAttribute = NSLayoutAttributeBaseline;
+                [context buildConstraint];
+            }).to.raise(kRightViewIsNilButAttributeIsAttribute);
+        });
+        
+        before(^{
             context.rightAttribute = NSLayoutAttributeBaseline;
-            [context buildConstraint];
-        }).to.raise(kRightViewIsNilButAttributeIsAttribute);
+        });
+        
+        it(@"should not be build while right view is nil and multiplier is zero", ^{
+            expect(^{
+                context.rightAtttributeMultiplier = 0.0f;
+                [context buildConstraint];
+            }).to.raise(kRightViewAttributeMultiplierIsZero);
+        });
     });
-    
-    before(^{
-        context.rightAttribute = NSLayoutAttributeBaseline;
-    });
-    
-    it(@"should not be build while right view is nil and multiplier is zero", ^{
-        expect(^{
-            context.rightAtttributeMultiplier = 0.0f;
-            [context buildConstraint];
-        }).to.raise(kRightViewAttributeMultiplierIsZero);
-    });
-});
 
 });
 
