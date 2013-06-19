@@ -8,8 +8,16 @@
 
 #import "PVConstraintContext.h"
 
-@implementation PVConstraintContext
+static NSString* const kLeftViewNotSet = @"LeftViewNotSet";
+static NSString* const kLeftViewAttributeNotSet = @"LeftViewAttributeNotSet";
+static NSString* const kRightViewIsNilButAttributeIsAttribute = @"RightViewIsNilButAttributeIsAttribute";
+static NSString* const kRightViewIsNilButAttributeMultiplierNotZero = @"RightViewIsNilButAttributeMultiplierNotZero";
+static NSString* const kRightViewAttributeIsNotAnAttribute = @"RightViewAttributeIsNotAnAttribute";
+static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttributeMultiplierIsZero";
 
+#define PVException(condition,name) if(!(condition)) [NSException raise:(name) format:nil];
+
+@implementation PVConstraintContext
 
 - (id)init
 {
@@ -31,19 +39,19 @@
 
 - (NSLayoutConstraint *)buildConstraint
 {
-    NSParameterAssert(self.leftView != nil);
-    NSParameterAssert(self.leftAttribute != NSLayoutAttributeNotAnAttribute);
+    PVException(self.leftView != nil, kLeftViewNotSet);
+    PVException(self.leftAttribute != NSLayoutAttributeNotAnAttribute, kLeftViewAttributeNotSet);
     
     if (self.rightView == nil)
     {
-        NSParameterAssert(self.rightAttribute == NSLayoutAttributeNotAnAttribute);
-        NSParameterAssert(self.rightAtttributeMultiplier == 0.f);
+        PVException(self.rightAttribute == NSLayoutAttributeNotAnAttribute, kRightViewIsNilButAttributeIsAttribute);
+        PVException((self.rightAtttributeMultiplier == 0.f), kRightViewIsNilButAttributeMultiplierNotZero);
     }
     
     if (self.rightView != nil)
     {
-        NSParameterAssert(self.rightAttribute != NSLayoutAttributeNotAnAttribute);
-        NSParameterAssert(self.rightAtttributeMultiplier != 0.f);
+        PVException(self.rightAttribute != NSLayoutAttributeNotAnAttribute, kRightViewAttributeIsNotAnAttribute);
+        PVException(self.rightAtttributeMultiplier != 0.f, kRightViewAttributeMultiplierIsZero);
     }
     
     NSLayoutConstraint* constraint =

@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString* const kLeftViewNotSet;
+static NSString* const kLeftViewAttributeNotSet;
+static NSString* const kRightViewIsNilButAttributeIsAttribute;
+static NSString* const kRightViewIsNilButAttributeMultiplierNotZero;
+static NSString* const kRightViewAttributeIsNotAnAttribute;
+static NSString* const kRightViewAttributeMultiplierIsZero;
+
 @interface PVConstraintContext : NSObject
 
 @property (strong) UIView* leftView;
