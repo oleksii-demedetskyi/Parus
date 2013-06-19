@@ -19,6 +19,9 @@
 		4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
 		4838D5B6176E2CA8009415E4 /* libParus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus.a */; };
 		4838D5B7176E2CCE009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
+		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
+		4838D5CA176FB0B6009415E4 /* ConstraintContextSpec.m in Resources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
+		4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,9 @@
 		4838D5AE176DE7A1009415E4 /* UIView+LMSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LMSetup.h"; sourceTree = "<group>"; };
 		4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LMSetup.m"; sourceTree = "<group>"; };
 		4838D5B2176DE807009415E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4838D5C6176FADFD009415E4 /* PVConstraintContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConstraintContext.h; sourceTree = "<group>"; };
+		4838D5C7176FADFE009415E4 /* PVConstraintContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConstraintContext.m; sourceTree = "<group>"; };
+		4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintContextSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,11 +175,13 @@
 		4838D560176DDD19009415E4 /* Parus */ = {
 			isa = PBXGroup;
 			children = (
+				4838D561176DDD19009415E4 /* Supporting Files */,
 				4838D5AC176DE7A1009415E4 /* LMMaster.h */,
 				4838D5AD176DE7A1009415E4 /* LMMaster.m */,
 				4838D5AE176DE7A1009415E4 /* UIView+LMSetup.h */,
 				4838D5AF176DE7A1009415E4 /* UIView+LMSetup.m */,
-				4838D561176DDD19009415E4 /* Supporting Files */,
+				4838D5C6176FADFD009415E4 /* PVConstraintContext.h */,
+				4838D5C7176FADFE009415E4 /* PVConstraintContext.m */,
 			);
 			name = Parus;
 			path = Parus/src;
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				4838D5A5176DE234009415E4 /* TestSpec.m */,
+				4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -386,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */,
+				4838D5CA176FB0B6009415E4 /* ConstraintContextSpec.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +424,7 @@
 			files = (
 				4838D5B0176DE7A1009415E4 /* LMMaster.m in Sources */,
 				4838D5B1176DE7A1009415E4 /* UIView+LMSetup.m in Sources */,
+				4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */,
 				4838D5A6176DE234009415E4 /* TestSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
