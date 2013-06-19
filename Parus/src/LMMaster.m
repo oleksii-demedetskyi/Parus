@@ -7,50 +7,46 @@
 //
 
 #import "LMMaster.h"
+#import "PVConstraintContext.h"
 
-@interface LMConstraintHolder : NSObject
-
-@property (nonatomic, strong) UIView* view1;
-@property (nonatomic, strong) UIView* view2;
-@property (nonatomic, assign) NSLayoutAttribute attr1;
-@property (nonatomic, assign) NSLayoutAttribute attr2;
-@property (nonatomic, assign) CGFloat constant;
-@property (nonatomic, assign) CGFloat multiplier;
-@property (nonatomic, assign) NSInteger priority;
-@property (nonatomic, assign) NSLayoutRelation relation;
-
-@end
-
-@implementation LMConstraintHolder
-@end
+LMMaster* pv_where()
+{
+    return [LMMaster new];
+}
 
 @interface LMRelationSelectObject ()
 
-@property (nonatomic, strong) LMConstraintHolder* holder;
+@property (nonatomic, strong) PVConstraintContext* holder;
 
 @end
 
 @interface LMRelationPart ()
 
-@property (nonatomic, strong) LMConstraintHolder* holder;
+@property (nonatomic, strong) PVConstraintContext* holder;
 
 @end
 
 @interface LMRightHandPart ()
 
-@property (nonatomic, strong) LMConstraintHolder* holder;
+@property (nonatomic, strong) PVConstraintContext* holder;
 
 @end
 
 @interface LMConstantPart ()
 
-@property (nonatomic, strong) LMConstraintHolder* holder;
+@property (nonatomic, strong) PVConstraintContext* holder;
 
 @end
 
 @interface LMMultiplierPart ()
 
-@property (nonatomic, strong) LMConstraintHolder* holder;
+@property (nonatomic, strong) PVConstraintContext* holder;
+
+@end
+
+@interface LMPriority ()
+
+@property (nonatomic, strong) PVConstraintContext* holder;
 
 @end
 
@@ -77,15 +73,15 @@
 {
     NSMutableArray* constraints = [NSMutableArray new];
     
-    for (LMConstraintHolder* holder in self.constraintHolders)
+    for (PVConstraintContext* holder in self.constraintHolders)
     {
-        [constraints addObject:[NSLayoutConstraint constraintWithItem:holder.view1
-                                     attribute:holder.attr1
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:holder.leftView
+                                     attribute:holder.leftAttribute
                                      relatedBy:holder.relation
-                                        toItem:holder.view2
-                                     attribute:holder.attr2
-                                    multiplier:holder.multiplier
-                                      constant:holder.constant]];
+                                        toItem:holder.rightView
+                                     attribute:holder.rightAttribute
+                                    multiplier:holder.rightAtttributeMultiplier
+                                      constant:holder.rightConstant]];
     }
     
     self.constraintHolders = [NSMutableArray new];
@@ -97,11 +93,11 @@
     return ^(UIView* view){
         NSParameterAssert([view isKindOfClass:[UIView class]]);
         
-        LMConstraintHolder* holder = [LMConstraintHolder new];
-        holder.view1 = view;
-        holder.attr1 = attr;
-        holder.multiplier = 1.f;
-        holder.constant = 0.f;
+        PVConstraintContext* holder = [PVConstraintContext new];
+        holder.leftView = view;
+        holder.leftAttribute = attr;
+        holder.rightAtttributeMultiplier = 0.f;
+        holder.rightConstant = 0.f;
         
         [self.constraintHolders addObject:holder];
         
@@ -208,8 +204,9 @@
         NSParameterAssert([view isKindOfClass:[UIView class]]);
         NSParameterAssert(self.holder != nil);
         
-        self.holder.view2 = view;
-        self.holder.attr2 = attribute;
+        self.holder.rightView = view;
+        self.holder.rightAttribute = attribute;
+        self.holder.rightAtttributeMultiplier = 1.0f;
         
         LMRightHandPart* rightHandPart = [LMRightHandPart new];
         rightHandPart.holder = self.holder;
@@ -277,8 +274,8 @@
 {
     NSParameterAssert(self.holder != nil);
     
-    self.holder.view2 = nil;
-    self.holder.attr2 = NSLayoutAttributeNotAnAttribute;
+    self.holder.rightView = nil;
+    self.holder.rightAttribute = NSLayoutAttributeNotAnAttribute;
     
     return ^(CGFloat constant) {
         LMConstantPart* constantPart = [LMConstantPart new];
@@ -297,7 +294,7 @@
     NSParameterAssert(self.holder != nil);
     
     return ^(CGFloat multiplier) {
-        self.holder.multiplier = multiplier;
+        self.holder.rightAtttributeMultiplier = multiplier;
         
         LMMultiplierPart* multiplierPart = [LMMultiplierPart new];
         multiplierPart.holder = self.holder;
@@ -311,7 +308,7 @@
     NSParameterAssert(self.holder != nil);
     
     return ^(CGFloat constant) {
-        self.holder.constant = constant;
+        self.holder.rightConstant = constant;
         
         LMConstantPart* constantPart = [LMConstantPart new];
         constantPart.holder = self.holder;
@@ -326,7 +323,17 @@
     
     return ^(UILayoutPriority priority) {
         self.holder.priority = priority;
+        
+        LMPriority* priorityObject = [LMPriority new];
+        priorityObject.holder = self.holder;
+        
+        return priorityObject;
     };
+}
+
+-(NSLayoutConstraint *)asConstraint
+{
+    return [self.holder buildConstraint];
 }
 
 @end
@@ -338,7 +345,7 @@
     NSParameterAssert(self.holder != nil);
     
     return ^(CGFloat constant) {
-        self.holder.constant = constant;
+        self.holder.rightConstant = constant;
         
         LMConstantPart* constantPart = [LMConstantPart new];
         constantPart.holder = self.holder;
@@ -353,7 +360,17 @@
     
     return ^(UILayoutPriority priority) {
         self.holder.priority = priority;
+        
+        LMPriority* priorityObject = [LMPriority new];
+        priorityObject.holder = self.holder;
+        
+        return priorityObject;
     };
+}
+
+-(NSLayoutConstraint *)asConstraint
+{
+    return [self.holder buildConstraint];
 }
 
 @end
@@ -366,7 +383,26 @@
     
     return ^(UILayoutPriority priority) {
         self.holder.priority = priority;
+        
+        LMPriority* priorityObject = [LMPriority new];
+        priorityObject.holder = self.holder;
+        
+        return priorityObject;
     };
+}
+
+-(NSLayoutConstraint *)asConstraint
+{
+    return [self.holder buildConstraint];
+}
+
+@end
+
+@implementation LMPriority
+
+-(NSLayoutConstraint *)asConstraint
+{
+    return [self.holder buildConstraint];
 }
 
 @end

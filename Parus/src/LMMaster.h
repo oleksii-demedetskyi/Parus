@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class LMMaster;
+LMMaster* pv_where();
+
 @class LMRelationSelectObject;
 
 typedef LMRelationSelectObject*(^LMLeftHandBLock)(UIView*);
@@ -67,12 +70,19 @@ typedef LMConstantPart*(^LMConstantBlock)(CGFloat);
 
 @end
 
-typedef void(^LMPriorityBlock)(UILayoutPriority);
+@protocol LMConstrainable <NSObject>
+
+@property (readonly, copy) NSLayoutConstraint* asConstraint;
+
+@end
+
+@class LMPriority;
+typedef LMPriority*(^LMPriorityBlock)(UILayoutPriority);
 
 @class LMMultiplierPart;
 typedef LMMultiplierPart*(^LMMultiplierBlock)(CGFloat);
 
-@interface LMRightHandPart : NSObject
+@interface LMRightHandPart : NSObject <LMConstrainable>
 
 @property (nonatomic, readonly) LMMultiplierBlock multipliedTo;
 @property (nonatomic, readonly) LMConstantBlock constant;
@@ -80,15 +90,19 @@ typedef LMMultiplierPart*(^LMMultiplierBlock)(CGFloat);
 
 @end
 
-@interface LMMultiplierPart : NSObject
+@interface LMMultiplierPart : NSObject <LMConstrainable>
 
 @property (nonatomic, readonly) LMConstantBlock constant;
 @property (nonatomic, readonly) LMPriorityBlock withPriority;
 
 @end
 
-@interface LMConstantPart : NSObject
+@interface LMConstantPart : NSObject <LMConstrainable>
 
 @property (nonatomic, readonly) LMPriorityBlock withPriority;
+
+@end
+
+@interface LMPriority : NSObject <LMConstrainable>
 
 @end
