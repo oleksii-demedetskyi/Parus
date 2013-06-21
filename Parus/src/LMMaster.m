@@ -52,7 +52,7 @@ LMMaster* pv_where()
 
 @interface LMMaster ()
 
-@property (nonatomic, strong) NSMutableArray* constraintHolders; // [LMConstraintHolder]
+@property (nonatomic, strong) NSMutableArray* constraintHolders; // [PVConstraintContext]
 
 @end
 
