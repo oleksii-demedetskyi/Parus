@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226D711817A065B700CC9AF1 /* PVLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D711717A065B700CC9AF1 /* PVLayout.m */; };
+		226D712317A067D300CC9AF1 /* PVLayoutSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D712217A067D300CC9AF1 /* PVLayoutSpec.m */; };
 		4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D56D176DDD19009415E4 /* SenTestingKit.framework */; };
 		4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
@@ -105,6 +107,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		226D711617A065B700CC9AF1 /* PVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVLayout.h; sourceTree = "<group>"; };
+		226D711717A065B700CC9AF1 /* PVLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayout.m; sourceTree = "<group>"; };
+		226D712217A067D300CC9AF1 /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayoutSpec.m; sourceTree = "<group>"; };
 		4838D55E176DDD19009415E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4838D562176DDD19009415E4 /* Parus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parus-Prefix.pch"; sourceTree = "<group>"; };
 		4838D56D176DDD19009415E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -189,6 +194,8 @@
 				4838D5C7176FADFE009415E4 /* PVConstraintContext.m */,
 				8654BB3F177439A700B0AB6D /* PVVFL.h */,
 				8654BB40177439A700B0AB6D /* PVVFL.m */,
+				226D711617A065B700CC9AF1 /* PVLayout.h */,
+				226D711717A065B700CC9AF1 /* PVLayout.m */,
 			);
 			name = Parus;
 			path = Parus/src;
@@ -259,6 +266,7 @@
 				4838D5A5176DE234009415E4 /* TestSpec.m */,
 				4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */,
 				8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */,
+				226D712217A067D300CC9AF1 /* PVLayoutSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -434,6 +442,7 @@
 				4838D5B1176DE7A1009415E4 /* UIView+LMSetup.m in Sources */,
 				4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */,
 				8654BB41177439A700B0AB6D /* PVVFL.m in Sources */,
+				226D711817A065B700CC9AF1 /* PVLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,7 @@
 				4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */,
 				4838D5A6176DE234009415E4 /* TestSpec.m in Sources */,
 				8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */,
+				226D712317A067D300CC9AF1 /* PVLayoutSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
