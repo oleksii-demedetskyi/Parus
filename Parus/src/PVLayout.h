@@ -8,8 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol PVRelationProtocol;
+
+id<PVRelationProtocol> PVLeftOf(UIView*);
+
+@protocol PVRelationPartProtocol;
+
 @protocol PVRelationProtocol <NSObject>
+
+@property (readonly) id<PVRelationPartProtocol> equalTo;
+@property (readonly) id<PVRelationPartProtocol> moreThan;
+@property (readonly) id<PVRelationPartProtocol> lessThan;
 
 @end
 
-id<PVRelationProtocol> PVLeftOf(UIView*);
+@protocol PVRelationPartProtocol <NSObject>
+
+@end

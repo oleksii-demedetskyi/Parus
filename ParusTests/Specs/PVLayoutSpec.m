@@ -23,6 +23,8 @@ describe(@"PVLeftOf", ^{
             BOOL isConforms = [returnedObj conformsToProtocol:@protocol(PVRelationProtocol)];
             expect(isConforms).to.beTruthy();
         });
+        
+        
     });
     
     
