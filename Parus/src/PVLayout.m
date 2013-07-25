@@ -10,6 +10,18 @@
 
 #import "PVConstraintContext.h"
 
+@interface PVRelationSelect : NSObject<PVRelationSelect>
+
+@property (strong) PVConstraintContext* context;
+
+@end
+
+@interface PVRelationPart : NSObject<PVRelationPart>
+
+@property (strong) PVConstraintContext* context;
+
+@end
+
 @interface PVLayout : NSObject
 
 @property (strong) PVConstraintContext* context;
@@ -33,21 +45,50 @@
 
 
 
-@interface PVRelation : NSObject<PVRelationProtocol>
+@implementation PVRelationSelect
 
-@property (strong) PVConstraintContext* context;
+- (id<PVRelationPart>)equalTo
+{
+    return [self relationPartForRelation:NSLayoutRelationEqual];
+}
+
+- (id<PVRelationPart>)lessThan
+{
+    return [self relationPartForRelation:NSLayoutRelationLessThanOrEqual];
+}
+
+- (id<PVRelationPart>)moreThan
+{
+    return [self relationPartForRelation:NSLayoutRelationGreaterThanOrEqual];
+}
+
+- (PVRelationPart*)relationPartForRelation:(NSLayoutRelation)relation
+{
+    NSAssert(self.context != nil, @"Context not set");
+    
+    self.context.relation = relation;
+    
+    PVRelationPart* relationPart = [PVRelationPart new];
+    relationPart.context = self.context;
+    
+    return relationPart;
+}
 
 @end
 
-@implementation PVRelation
 
 
+@implementation PVRelationPart
+
+// TODO: implement relation part
 
 @end
 
 
 
-id<PVRelationProtocol> PVLeftOf(UIView* view)
+#pragma mark - Public Funtions
+
+id<PVRelationSelect> PVLeftOf(UIView* view)
 {
     NSCAssert(view != nil, @"PVLeftOf() argument should not be nil");
     
@@ -57,7 +98,7 @@ id<PVRelationProtocol> PVLeftOf(UIView* view)
     constraint.context.rightAtttributeMultiplier = 0.f;
     constraint.context.rightConstant = 0.f;
     
-    PVRelation* relation = [PVRelation new];
+    PVRelationSelect* relation = [PVRelationSelect new];
     relation.context = constraint.context;
     
     return relation;

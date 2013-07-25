@@ -8,20 +8,51 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PVRelationProtocol;
+@protocol PVRelationSelect;
 
-id<PVRelationProtocol> PVLeftOf(UIView*);
+id<PVRelationSelect> PVLeftOf(UIView*);
+id<PVRelationSelect> PVRightOf(UIView*);
+id<PVRelationSelect> PVTopOf(UIView*);
+id<PVRelationSelect> PVBottomOf(UIView*);
+id<PVRelationSelect> PVLeadingOf(UIView*);
+id<PVRelationSelect> PVTrailingOf(UIView*);
+id<PVRelationSelect> PVWidthOf(UIView*);
+id<PVRelationSelect> PVHeightOf(UIView*);
+id<PVRelationSelect> PVCenterXOf(UIView*);
+id<PVRelationSelect> PVCenterYOf(UIView*);
+id<PVRelationSelect> PVBaselineOf(UIView*);
 
-@protocol PVRelationPartProtocol;
+@protocol PVRelationPart;
 
-@protocol PVRelationProtocol <NSObject>
+@protocol PVRelationSelect <NSObject>
 
-@property (readonly) id<PVRelationPartProtocol> equalTo;
-@property (readonly) id<PVRelationPartProtocol> moreThan;
-@property (readonly) id<PVRelationPartProtocol> lessThan;
+@property (readonly) id<PVRelationPart> equalTo;
+@property (readonly) id<PVRelationPart> moreThan;
+@property (readonly) id<PVRelationPart> lessThan;
 
 @end
 
-@protocol PVRelationPartProtocol <NSObject>
+@protocol PVRightHandPart, PVConstantPart;
+
+typedef id<PVRightHandPart>(^PVRightHandViewBlock)(UIView*);
+typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
+
+@protocol PVRelationPart <NSObject>
+
+@property (readonly) PVRightHandViewBlock leftOf;
+@property (readonly) PVRightHandViewBlock rightOf;
+@property (readonly) PVRightHandViewBlock topOf;
+@property (readonly) PVRightHandViewBlock bottomOf;
+@property (readonly) PVRightHandViewBlock leadingOf;
+@property (readonly) PVRightHandViewBlock trailingOf;
+@property (readonly) PVRightHandViewBlock widthOf;
+@property (readonly) PVRightHandViewBlock heightOf;
+@property (readonly) PVRightHandViewBlock centerXOf;
+@property (readonly) PVRightHandViewBlock centerYOf;
+@property (readonly) PVRightHandViewBlock baselineOf;
+
+@property (readonly) PVConstantBlock constant;
 
 @end
+
+
