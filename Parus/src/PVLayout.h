@@ -22,6 +22,8 @@ id<PVRelationSelect> PVCenterXOf(UIView*);
 id<PVRelationSelect> PVCenterYOf(UIView*);
 id<PVRelationSelect> PVBaselineOf(UIView*);
 
+
+
 @protocol PVRelationPart;
 
 @protocol PVRelationSelect <NSObject>
@@ -31,6 +33,8 @@ id<PVRelationSelect> PVBaselineOf(UIView*);
 @property (readonly) id<PVRelationPart> lessThan;
 
 @end
+
+
 
 @protocol PVRightHandPart, PVConstantPart;
 
@@ -55,4 +59,41 @@ typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
 
 @end
 
+
+
+@protocol PVConstrainable, PVMultiplierPart;
+
+typedef id<PVConstrainable>(^PVPriorityBlock)(UILayoutPriority);
+typedef id<PVMultiplierPart>(^PVMultiplierBlock)(CGFloat);
+
+@protocol PVRightHandPart <PVMultiplierPart>
+
+@property (readonly) PVMultiplierBlock multipliedTo;
+
+@end
+
+
+
+@protocol PVMultiplierPart <PVConstantPart>
+
+@property (readonly) PVConstantBlock plus;
+@property (readonly) PVConstantBlock minus;
+
+@end
+
+
+
+@protocol PVConstantPart <PVConstrainable>
+
+@property (readonly) PVPriorityBlock withPriority;
+
+@end
+
+
+
+@protocol PVConstrainable <NSObject>
+
+@property (readonly) NSLayoutConstraint* asConstraint;
+
+@end
 
