@@ -10,17 +10,17 @@
 
 @protocol PVLocationRelationSelect, PVRelationSelect;
 
-id<PVLocationRelationSelect> PVLeftOf(UIView*);
-id<PVLocationRelationSelect> PVRightOf(UIView*);
-id<PVLocationRelationSelect> PVTopOf(UIView*);
-id<PVLocationRelationSelect> PVBottomOf(UIView*);
-id<PVLocationRelationSelect> PVLeadingOf(UIView*);
-id<PVLocationRelationSelect> PVTrailingOf(UIView*);
-id<PVRelationSelect> PVWidthOf(UIView*);
-id<PVRelationSelect> PVHeightOf(UIView*);
-id<PVLocationRelationSelect> PVCenterXOf(UIView*);
-id<PVLocationRelationSelect> PVCenterYOf(UIView*);
-id<PVLocationRelationSelect> PVBaselineOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVLeftOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVRightOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVTopOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVBottomOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVLeadingOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVTrailingOf(UIView*);
+NSObject<PVRelationSelect>* PVWidthOf(UIView*);
+NSObject<PVRelationSelect>* PVHeightOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVCenterXOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVCenterYOf(UIView*);
+NSObject<PVLocationRelationSelect>* PVBaselineOf(UIView*);
 
 
 
@@ -28,9 +28,9 @@ id<PVLocationRelationSelect> PVBaselineOf(UIView*);
 
 @protocol PVRelationSelect <NSObject>
 
-@property (readonly) id<PVRelationPart> equalTo;
-@property (readonly) id<PVRelationPart> moreThan;
-@property (readonly) id<PVRelationPart> lessThan;
+@property (readonly) NSObject<PVRelationPart>* equalTo;
+@property (readonly) NSObject<PVRelationPart>* moreThan;
+@property (readonly) NSObject<PVRelationPart>* lessThan;
 
 @end
 
@@ -40,9 +40,9 @@ id<PVLocationRelationSelect> PVBaselineOf(UIView*);
 
 @protocol PVLocationRelationSelect <NSObject>
 
-@property (readonly) id<PVLocationRelationPart> equalTo;
-@property (readonly) id<PVLocationRelationPart> moreThan;
-@property (readonly) id<PVLocationRelationPart> lessThan;
+@property (readonly) NSObject<PVLocationRelationPart>* equalTo;
+@property (readonly) NSObject<PVLocationRelationPart>* moreThan;
+@property (readonly) NSObject<PVLocationRelationPart>* lessThan;
 
 @end
 
@@ -50,8 +50,8 @@ id<PVLocationRelationSelect> PVBaselineOf(UIView*);
 
 @protocol PVRightHandPart, PVConstantPart;
 
-typedef id<PVRightHandPart>(^PVRightHandViewBlock)(UIView*);
-typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
+typedef NSObject<PVRightHandPart>*(^PVRightHandViewBlock)(UIView*);
+typedef NSObject<PVConstantPart>*(^PVConstantBlock)(CGFloat);
 
 @protocol PVLocationRelationPart <NSObject>
 
@@ -81,8 +81,8 @@ typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
 
 @protocol PVConstrainable, PVMultiplierPart;
 
-typedef id<PVConstrainable>(^PVPriorityBlock)(UILayoutPriority);
-typedef id<PVMultiplierPart>(^PVMultiplierBlock)(CGFloat);
+typedef NSObject<PVConstrainable>*(^PVPriorityBlock)(UILayoutPriority);
+typedef NSObject<PVMultiplierPart>*(^PVMultiplierBlock)(CGFloat);
 
 @protocol PVRightHandPart <PVMultiplierPart>
 
