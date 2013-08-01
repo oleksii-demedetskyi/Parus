@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PVRelationSelect;
+@protocol PVLocationRelationSelect, PVRelationSelect;
 
-id<PVRelationSelect> PVLeftOf(UIView*);
-id<PVRelationSelect> PVRightOf(UIView*);
-id<PVRelationSelect> PVTopOf(UIView*);
-id<PVRelationSelect> PVBottomOf(UIView*);
-id<PVRelationSelect> PVLeadingOf(UIView*);
-id<PVRelationSelect> PVTrailingOf(UIView*);
+id<PVLocationRelationSelect> PVLeftOf(UIView*);
+id<PVLocationRelationSelect> PVRightOf(UIView*);
+id<PVLocationRelationSelect> PVTopOf(UIView*);
+id<PVLocationRelationSelect> PVBottomOf(UIView*);
+id<PVLocationRelationSelect> PVLeadingOf(UIView*);
+id<PVLocationRelationSelect> PVTrailingOf(UIView*);
 id<PVRelationSelect> PVWidthOf(UIView*);
 id<PVRelationSelect> PVHeightOf(UIView*);
-id<PVRelationSelect> PVCenterXOf(UIView*);
-id<PVRelationSelect> PVCenterYOf(UIView*);
-id<PVRelationSelect> PVBaselineOf(UIView*);
+id<PVLocationRelationSelect> PVCenterXOf(UIView*);
+id<PVLocationRelationSelect> PVCenterYOf(UIView*);
+id<PVLocationRelationSelect> PVBaselineOf(UIView*);
 
 
 
@@ -36,12 +36,24 @@ id<PVRelationSelect> PVBaselineOf(UIView*);
 
 
 
+@protocol PVLocationRelationPart;
+
+@protocol PVLocationRelationSelect <NSObject>
+
+@property (readonly) id<PVLocationRelationPart> equalTo;
+@property (readonly) id<PVLocationRelationPart> moreThan;
+@property (readonly) id<PVLocationRelationPart> lessThan;
+
+@end
+
+
+
 @protocol PVRightHandPart, PVConstantPart;
 
 typedef id<PVRightHandPart>(^PVRightHandViewBlock)(UIView*);
 typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
 
-@protocol PVRelationPart <NSObject>
+@protocol PVLocationRelationPart <NSObject>
 
 @property (readonly) PVRightHandViewBlock leftOf;
 @property (readonly) PVRightHandViewBlock rightOf;
@@ -49,12 +61,18 @@ typedef id<PVConstantPart>(^PVConstantBlock)(CGFloat);
 @property (readonly) PVRightHandViewBlock bottomOf;
 @property (readonly) PVRightHandViewBlock leadingOf;
 @property (readonly) PVRightHandViewBlock trailingOf;
-@property (readonly) PVRightHandViewBlock widthOf;
-@property (readonly) PVRightHandViewBlock heightOf;
 @property (readonly) PVRightHandViewBlock centerXOf;
 @property (readonly) PVRightHandViewBlock centerYOf;
 @property (readonly) PVRightHandViewBlock baselineOf;
 
+@end
+
+
+
+@protocol PVRelationPart <NSObject>
+
+@property (readonly) PVRightHandViewBlock widthOf;
+@property (readonly) PVRightHandViewBlock heightOf;
 @property (readonly) PVConstantBlock constant;
 
 @end

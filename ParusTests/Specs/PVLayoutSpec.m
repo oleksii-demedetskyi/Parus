@@ -17,9 +17,11 @@ describe(@"PVLayout", ^{
     
     describe(@"constraints without right item", ^{
         __block UIView* view1 = nil;
+        __block UIView* view2 = nil;
         
         beforeEach(^{
             view1 = [UIView new];
+            view2 = [UIView new];
         });
         
         it(@"should return valid constraint", ^{
@@ -62,13 +64,15 @@ describe(@"PVLayout", ^{
             expect(constraint.constant).to.equal(-20.f);
         });
         
-        it(@"should raise when view2 is not a UIView or nil", ^{
+        it(@"should raise when view2 is not a UIView", ^{
             expect(^{
                 PVLeftOf(view1).equalTo.leftOf((id)[NSObject new]);
             }).to.raiseAny();
-            
+        });
+        
+        it(@"should raise when view2 is nil", ^{
             expect(^{
-                PVLeftOf(view1).equalTo.leftOf(nil);
+                PVWidthOf(view1).equalTo.widthOf(nil);
             }).to.raiseAny();
         });
     });
