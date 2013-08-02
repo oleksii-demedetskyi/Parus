@@ -52,17 +52,17 @@
 
 @implementation PVVFLLayout (DirectionOptionSelect)
 
--(NSObject<PVViewsPart> *)leadingToTrailing
+-(NSObject<PVViewsPart> *)fromLeadingToTrailing
 {
     return [self directionOptionPart:NSLayoutFormatDirectionLeadingToTrailing];
 }
 
--(NSObject<PVViewsPart> *)leftToRight
+-(NSObject<PVViewsPart> *)fromLeftToRight
 {
     return [self directionOptionPart:NSLayoutFormatDirectionLeftToRight];
 }
 
--(NSObject<PVViewsPart> *)rightToLeft
+-(NSObject<PVViewsPart> *)fromRightToLeft
 {
     return [self directionOptionPart:NSLayoutFormatDirectionRightToLeft];
 }
@@ -140,7 +140,7 @@
 
 -(PVViewsPartBlock)withViews
 {
-    return ^NSObject<PVMetricsPart>*(NSDictionary* views)
+    return ^(NSDictionary* views)
     {
         NSAssert(self.context != nil, @"Context is not set");
         
@@ -156,7 +156,7 @@
 
 -(PVMetricsBlock)metrics
 {
-    return ^NSObject<PVArrayConstrainable>*(NSDictionary *metrics)
+    return ^(NSDictionary *metrics)
     {
         NSAssert(self.context != nil, @"Context is not set");
         
@@ -173,7 +173,7 @@
 -(NSArray *)asArray
 {
     NSAssert(self.context != nil, @"Context is not set");
-    
+
     return [self.context buildConstraints];
 }
 
@@ -181,6 +181,8 @@
 
 NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format)
 {
+    NSCAssert([format isKindOfClass:[NSString class]], @"Format should be NSString");
+
     PVVFLLayout* layout = [PVVFLLayout new];
     layout.context.format = format;
     

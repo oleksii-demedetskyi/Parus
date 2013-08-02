@@ -27,9 +27,9 @@
 - (NSArray *)buildConstraints
 {
     NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat:self.format
-                                                                   options:0 //self.alignmentOptions | self.directionOptions
-                                                                   metrics:self.views
-                                                                     views:self.metrics];
+                                                                   options:self.alignmentOptions | self.directionOptions
+                                                                   metrics:self.metrics
+                                                                     views:self.views];
     return constraints;
 }
 
