@@ -7,125 +7,182 @@
 //
 
 #import "PVVFL.h"
+#import "PVVFLContext.h"
 
-PVVFL* vfl(NSString* format)
-{
-    PVVFL* vfl = [[PVVFL alloc] initWithFormat:format];
-    return vfl;
-}
+@interface PVVFLLayout : NSObject
+//<PVAlignmentOptionSelect, PVDirectionOptionSelect, PVViewsPart, PVMetricsPart, PVArrayConstrainable>
 
-@interface PVVFLContext : NSObject
-
-@property(nonatomic, strong) NSString* format;
-@property(nonatomic) NSLayoutFormatOptions options;
-@property(nonatomic, strong) NSDictionary* metrics;
-@property(nonatomic, strong) NSDictionary* views;
+@property (strong) PVVFLContext* context;
 
 @end
 
-@implementation PVVFLContext
+@implementation PVVFLLayout
 
-@end
-
-@interface PVVFLOptions ()
-
-@property(nonatomic, strong) PVVFLContext* context;
-
-@end
-
-@interface PVVFLMetrics ()
-
-@property(nonatomic, strong) PVVFLContext* context;
-
-@end
-
-@interface PVVFLBuilder ()
-
-@property(nonatomic, strong) PVVFLContext* context;
-
-@end
-
-@interface PVVFL ()
-
-@property(nonatomic, readonly) PVVFLContext* context;
-
-@end
-
-@implementation PVVFL
-
-- (instancetype)initWithFormat:(NSString *)format
+-(instancetype)init
 {
     self = [super init];
-    if (self)
+    if (self != nil)
     {
         _context = [PVVFLContext new];
-        _context.format = format;
     }
     return self;
 }
 
--(PVVFLOptionsBlock)options
+@end
+
+@interface PVVFLLayout (PVAlignmentOptionSelect) <PVAlignmentOptionSelect>
+
+@end
+
+@interface PVVFLLayout (DirectionOptionSelect) <PVDirectionOptionSelect>
+
+@end
+
+@interface PVVFLLayout (ViewsPart) <PVViewsPart>
+
+@end
+
+@interface PVVFLLayout (MetricsPart) <PVMetricsPart>
+
+@end
+
+@interface PVVFLLayout (ArrayConstrainable) <PVArrayConstrainable>
+
+@end
+
+@implementation PVVFLLayout (DirectionOptionSelect)
+
+-(NSObject<PVViewsPart> *)leadingToTrailing
 {
-    NSAssert(self.context != nil, @"Context have to be set!");
-    return ^(NSLayoutFormatOptions options)
-    {
-        self.context.options = options;
-        
-        PVVFLOptions* vflOptions = [PVVFLOptions new];
-        vflOptions.context = self.context;
-        
-        return vflOptions;
-    };
+    return [self directionOptionPart:NSLayoutFormatDirectionLeadingToTrailing];
+}
+
+-(NSObject<PVViewsPart> *)leftToRight
+{
+    return [self directionOptionPart:NSLayoutFormatDirectionLeftToRight];
+}
+
+-(NSObject<PVViewsPart> *)rightToLeft
+{
+    return [self directionOptionPart:NSLayoutFormatDirectionRightToLeft];
+}
+
+-(NSObject<PVViewsPart> *)directionOptionPart:(NSLayoutFormatOptions)options
+{
+    NSAssert(self.context != nil, @"Context is not set");
+    
+    self.context.directionOptions = options;
+    
+    return self;
 }
 
 @end
 
-@implementation PVVFLOptions
+@implementation PVVFLLayout (PVAlignmentOptionSelect)
 
--(PVVFLMetricsBlock)withMetrics
+-(NSObject<PVDirectionOptionSelect> *)alignAllLeft
 {
-    NSAssert(self.context != nil, @"Context have to be set!");
-    return ^(NSDictionary* metrics)
-    {
-        self.context.metrics = metrics;
-        
-        PVVFLMetrics* vflMetrics = [PVVFLMetrics new];
-        vflMetrics.context = self.context;
-        return vflMetrics;
-    };
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllLeft];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllRight
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllRight];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllTop
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllTop];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllBottom
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllBottom];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllLeading
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllLeading];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllTrailing
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllTrailing];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllCenterX
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllCenterX];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllCenterY
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllCenterY];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignAllBaseline
+{
+    return [self alignmentOptionPart:NSLayoutFormatAlignAllBaseline];
+}
+
+-(NSObject<PVDirectionOptionSelect> *)alignmentOptionPart:(NSLayoutFormatOptions)options
+{
+    NSAssert(self.context != nil, @"Context is not set");
+    
+    self.context.alignmentOptions = options;
+    
+    return self;
 }
 
 @end
 
-@implementation PVVFLMetrics
+@implementation PVVFLLayout (ViewsPart)
 
--(PVVFLViews)andViews
+-(PVViewsPartBlock)withViews
 {
-    NSAssert(self.context != nil, @"Context have to be set!");
-    return ^(NSDictionary* views)
+    return ^NSObject<PVMetricsPart>*(NSDictionary* views)
     {
+        NSAssert(self.context != nil, @"Context is not set");
+        
         self.context.views = views;
         
-        PVVFLBuilder* builder = [PVVFLBuilder new];
-        builder.context = self.context;
-        
-        return builder;
+        return self;
     };
 }
 
 @end
 
-@implementation PVVFLBuilder
+@implementation PVVFLLayout (MetricsPart)
 
--(NSArray *)asConstraints
+-(PVMetricsBlock)metrics
 {
-    NSAssert(self.context != nil, @"Context have to be set!");
-
-    NSArray* constraints = [NSLayoutConstraint   constraintsWithVisualFormat:self.context.format
-                                                                     options:self.context.options
-                                                                     metrics:self.context.metrics
-                                                                       views:self.context.views];
-    return constraints;
+    return ^NSObject<PVArrayConstrainable>*(NSDictionary *metrics)
+    {
+        NSAssert(self.context != nil, @"Context is not set");
+        
+        self.context.metrics = metrics;
+        
+        return self;
+    };
 }
 
 @end
+
+@implementation PVVFLLayout (ArrayConstrainable)
+
+-(NSArray *)asArray
+{
+    NSAssert(self.context != nil, @"Context is not set");
+    
+    return [self.context buildConstraints];
+}
+
+@end
+
+NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format)
+{
+    PVVFLLayout* layout = [PVVFLLayout new];
+    layout.context.format = format;
+    
+    return layout;
+}
