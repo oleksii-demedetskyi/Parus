@@ -10,46 +10,28 @@
 
 #import "PVConstraintContext.h"
 
-@interface PVRelationSelect : NSObject<PVRelationSelect, PVLocationRelationSelect>
-
-@property (strong) PVConstraintContext* context;
-
-@end
-
-@interface PVRelationPart : NSObject<PVRelationPart, PVLocationRelationPart>
-
-@property (strong) PVConstraintContext* context;
-
-@end
-
 @interface PVLayout : NSObject
 
 @property (strong) PVConstraintContext* context;
 
 @end
 
-@interface PVRightHandPart : NSObject<PVRightHandPart>
-
-@property (strong) PVConstraintContext* context;
-
+@interface PVLayout(RelationPart)<PVRelationPart, PVLocationRelationPart>
 @end
 
-@interface PVConstantPart : NSObject<PVConstantPart>
-
-@property (strong) PVConstraintContext* context;
-
+@interface PVLayout(RelationSelect)<PVRelationSelect, PVLocationRelationSelect>
 @end
 
-@interface PVMultiplierPart : NSObject<PVMultiplierPart>
-
-@property (strong) PVConstraintContext* context;
-
+@interface PVLayout(RightHandPart)<PVRightHandPart>
 @end
 
-@interface PVPriority : NSObject<PVConstrainable>
+@interface PVLayout(ConstantPart)<PVConstantPart>
+@end
 
-@property (strong) PVConstraintContext* context;
+@interface PVLayout(MultiplierPart)<PVMultiplierPart>
+@end
 
+@interface PVLayout(Constrainable)<PVConstrainable>
 @end
 
 @implementation PVLayout
@@ -69,40 +51,34 @@
 
 
 
-@implementation PVRelationSelect
+@implementation PVLayout(RelationSelect)
 
-- (PVRelationPart*)equalTo
+- (instancetype)equalTo
 {
-    return [self relationPartForRelation:NSLayoutRelationEqual];
+    self.context.relation = NSLayoutRelationEqual;
+    
+    return self;
 }
 
-- (PVRelationPart*)lessThan
+- (instancetype)lessThan
 {
-    return [self relationPartForRelation:NSLayoutRelationLessThanOrEqual];
+    self.context.relation = NSLayoutRelationLessThanOrEqual;
+    
+    return self;
 }
 
-- (PVRelationPart*)moreThan
+- (instancetype)moreThan
 {
-    return [self relationPartForRelation:NSLayoutRelationGreaterThanOrEqual];
-}
-
-- (PVRelationPart*)relationPartForRelation:(NSLayoutRelation)relation
-{
-    NSAssert(self.context != nil, @"Context is not set");
+    self.context.relation = NSLayoutRelationGreaterThanOrEqual;
     
-    self.context.relation = relation;
-    
-    PVRelationPart* relationPart = [PVRelationPart new];
-    relationPart.context = self.context;
-    
-    return relationPart;
+    return self;
 }
 
 @end
 
 
 
-@implementation PVRelationPart
+@implementation PVLayout(RelationPart)
 
 - (PVRightHandViewBlock)leftOf
 {
@@ -162,31 +138,22 @@
 - (PVRightHandViewBlock)rightHandBlockWithAttribute:(NSLayoutAttribute)attribute
 {
     return ^(UIView* view) {
-        NSAssert(self.context != nil, @"Context is not set");
         NSAssert([view isKindOfClass:[UIView class]], @"Argument is not kind of UIView\nview is kind of %@", [view class]);
         
         self.context.rightView = view;
         self.context.rightAttribute = attribute;
         self.context.rightAtttributeMultiplier = 1.f;
         
-        PVRightHandPart* rightHandPart = [PVRightHandPart new];
-        rightHandPart.context = self.context;
-        
-        return rightHandPart;
+        return self;
     };
 }
 
 - (PVConstantBlock)constant
 {
     return ^(CGFloat constant) {
-        NSAssert(self.context != nil, @"Context is not set");
-        
         self.context.rightConstant = constant;
         
-        PVConstantPart* constantPart = [PVConstantPart new];
-        constantPart.context = self.context;
-        
-        return constantPart;
+        return self;
     };
 }
 
@@ -194,152 +161,64 @@
 
 
 
-@implementation PVRightHandPart
+@implementation PVLayout(RightHandPart)
 
 - (PVMultiplierBlock)multipliedTo
 {
     return ^(CGFloat multiplier) {
-        NSAssert(self.context != nil, @"Context is not set");
-        
         self.context.rightAtttributeMultiplier = multiplier;
         
-        return self.multiplierPart;
+        return self;
     };
-}
-
-- (PVConstantBlock)plus
-{
-    return ^(CGFloat constant) {
-        return self.multiplierPart.plus(constant);
-    };
-}
-
-- (PVConstantBlock)minus
-{
-    return ^(CGFloat constant) {
-        return self.multiplierPart.minus(constant);
-    };
-}
-
-- (PVMultiplierPart*)multiplierPart
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    PVMultiplierPart* multiplierPart = [PVMultiplierPart new];
-    multiplierPart.context = self.context;
-    
-    return multiplierPart;
-}
-
-- (PVPriorityBlock)withPriority
-{
-    return ^(UILayoutPriority priority) {
-        NSAssert(self.context != nil, @"Context is not set");
-        
-        PVConstantPart* constantPart = [PVConstantPart new];
-        constantPart.context = self.context;
-        
-        return constantPart.withPriority(priority);
-    };
-}
-
-- (NSLayoutConstraint *)asConstraint
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    return [self.context buildConstraint];
 }
 
 @end
 
 
 
-@implementation PVConstantPart
+@implementation PVLayout(ConstantPart)
 
 - (PVPriorityBlock)withPriority
 {
     return ^(UILayoutPriority priority) {
-        NSAssert(self.context != nil, @"Context is not set");
-        
         self.context.priority = priority;
         
-        PVPriority* priorityObject = [PVPriority new];
-        priorityObject.context = self.context;
-        
-        return priorityObject;
+        return self;
     };
-}
-
-- (NSLayoutConstraint *)asConstraint
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    return [self.context buildConstraint];
 }
 
 @end
 
 
 
-@implementation PVMultiplierPart
+@implementation PVLayout(MultiplierPart)
 
 - (PVConstantBlock)plus
 {
     return ^(CGFloat constant) {
-        return [self constantPartWithConstant:constant];
+        self.context.rightConstant = constant;
+        
+        return self;
     };
 }
 
 - (PVConstantBlock)minus
 {
     return ^(CGFloat constant) {
-        return [self constantPartWithConstant:-constant];
+        self.context.rightConstant = -constant;
+        
+        return self;
     };
-}
-
-- (PVConstantPart*)constantPartWithConstant:(CGFloat)constant
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    self.context.rightConstant = constant;
-    
-    return self.constantPart;
-}
-
-- (PVConstantPart*)constantPart
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    PVConstantPart* constantPart = [PVConstantPart new];
-    constantPart.context = self.context;
-    
-    return constantPart;
-}
-
-- (PVPriorityBlock)withPriority
-{
-    return ^(UILayoutPriority priority) {
-        return self.constantPart.withPriority(priority);
-    };
-}
-
-- (NSLayoutConstraint *)asConstraint
-{
-    NSAssert(self.context != nil, @"Context is not set");
-    
-    return [self.context buildConstraint];
 }
 
 @end
 
 
 
-@implementation PVPriority
+@implementation PVLayout(Constrainable)
 
 - (NSLayoutConstraint *)asConstraint
 {
-    NSAssert(self.context != nil, @"Context is not set");
-    
     return [self.context buildConstraint];
 }
 
@@ -359,10 +238,7 @@ id<PVRelationSelect, PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UIVi
     constraint.context.rightAtttributeMultiplier = 0.f;
     constraint.context.rightConstant = 0.f;
     
-    PVRelationSelect* relation = [PVRelationSelect new];
-    relation.context = constraint.context;
-    
-    return relation;
+    return constraint;
 }
 
 id<PVLocationRelationSelect> PVLeftOf(UIView* view)
