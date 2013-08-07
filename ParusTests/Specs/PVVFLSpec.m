@@ -14,7 +14,6 @@ describe(@"PVVFL", ^{
         [container addSubview:view2];
     });
   
-    
     it(@"should create constraints", ^{
         expect(PVVFL(@"[view1][view2]").withViews(NSDictionaryOfVariableBindings(view1,view2)).asArray).toNot.beNil();
         

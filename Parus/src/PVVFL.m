@@ -10,7 +10,6 @@
 #import "PVVFLContext.h"
 
 @interface PVVFLLayout : NSObject
-//<PVAlignmentOptionSelect, PVDirectionOptionSelect, PVViewsPart, PVMetricsPart, PVArrayConstrainable>
 
 @property (strong) PVVFLContext* context;
 
@@ -187,4 +186,4 @@ NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format)
     layout.context.format = format;
     
     return layout;
-}
+}   
