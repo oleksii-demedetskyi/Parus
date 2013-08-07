@@ -12,7 +12,7 @@
 
 NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
-@protocol PVAlignmentOptionSelect <PVDirectionOptionSelect, PVViewsPart, PVMetricsPart, PVArrayConstrainable>
+@protocol PVAlignmentOptionSelect <PVDirectionOptionSelect, PVViewsPart, PVArrayConstrainable>
 
 @property (readonly) NSObject<PVDirectionOptionSelect>* alignAllLeft;
 @property (readonly) NSObject<PVDirectionOptionSelect>* alignAllRight;
@@ -28,7 +28,7 @@ NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
 @protocol PVViewsPart;
 
-@protocol PVDirectionOptionSelect <PVViewsPart, PVMetricsPart, PVArrayConstrainable>
+@protocol PVDirectionOptionSelect <PVViewsPart, PVArrayConstrainable>
 
 @property (readonly) NSObject<PVViewsPart>* fromLeadingToTrailing;
 @property (readonly) NSObject<PVViewsPart>* fromLeftToRight;
