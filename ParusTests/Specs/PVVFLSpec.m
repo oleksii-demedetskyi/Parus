@@ -6,7 +6,7 @@ describe(@"PVVFL", ^{
     __block UIView* view1 = nil;
     __block UIView* view2 = nil;
     
-    before(^{
+    beforeEach(^{
         view1 = [UIView new];
         view2 = [UIView new];
         UIView* container = [UIView new];
@@ -15,9 +15,7 @@ describe(@"PVVFL", ^{
     });
   
     it(@"should create constraints", ^{
-        expect(PVVFL(@"[view1][view2]").withViews(NSDictionaryOfVariableBindings(view1,view2)).asArray).toNot.beNil();
-        
-        expect(PVVFL(@"[view1][view2]").alignAllTop.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view1,view2)).metrics(nil).asArray).toNot.beNil();
+        expect(PVVFL(@"|-50-[view1]-50-|").alignAllTop.withViews(NSDictionaryOfVariableBindings(view1)).asArray);
     });
 });
 
