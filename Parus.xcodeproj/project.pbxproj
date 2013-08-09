@@ -23,6 +23,7 @@
 		4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
 		8654BB41177439A700B0AB6D /* PVVFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB40177439A700B0AB6D /* PVVFL.m */; };
 		8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */; };
+		86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		8654BB3F177439A700B0AB6D /* PVVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVFL.h; sourceTree = "<group>"; };
 		8654BB40177439A700B0AB6D /* PVVFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFL.m; sourceTree = "<group>"; };
 		8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLSpec.m; sourceTree = "<group>"; };
+		86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVFLContext.h; sourceTree = "<group>"; };
+		86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				4838D561176DDD19009415E4 /* Supporting Files */,
 				4838D5C6176FADFD009415E4 /* PVConstraintContext.h */,
 				4838D5C7176FADFE009415E4 /* PVConstraintContext.m */,
+				86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */,
+				86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */,
 				8654BB3F177439A700B0AB6D /* PVVFL.h */,
 				8654BB40177439A700B0AB6D /* PVVFL.m */,
 				226D711617A065B700CC9AF1 /* PVLayout.h */,
@@ -428,6 +433,7 @@
 				4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */,
 				8654BB41177439A700B0AB6D /* PVVFL.m in Sources */,
 				226D711817A065B700CC9AF1 /* PVLayout.m in Sources */,
+				86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

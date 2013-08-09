@@ -8,40 +8,53 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol PVDirectionOptionSelect, PVAlignmentOptionSelect, PVArrayConstrainable, PVViewsPart, PVMetricsPart;
 
-@class PVVFL;
-PVVFL* vfl(NSString* format);
+NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
-@class PVVFLOptions;
-typedef PVVFLOptions*(^PVVFLOptionsBlock)(NSLayoutFormatOptions);
-@interface PVVFL : NSObject
+@protocol PVAlignmentOptionSelect <PVDirectionOptionSelect, PVViewsPart, PVArrayConstrainable>
 
-@property(nonatomic, readonly) PVVFLOptionsBlock options;
-
-- (instancetype)initWithFormat:(NSString *)format;
-
-@end
-
-@class PVVFLMetrics;
-
-typedef PVVFLMetrics*(^PVVFLMetricsBlock)(NSDictionary*);
-@interface PVVFLOptions : NSObject
-
-@property(nonatomic, readonly) PVVFLMetricsBlock withMetrics;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllLeft;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllRight;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllTop;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllBottom;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllLeading;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllTrailing;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllCenterX;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllCenterY;
+@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllBaseline;
 
 @end
 
-@class PVVFLBuilder;
+@protocol PVViewsPart;
 
-typedef PVVFLBuilder*(^PVVFLViews)(NSDictionary*);
-@interface PVVFLMetrics : NSObject
+@protocol PVDirectionOptionSelect <PVViewsPart, PVArrayConstrainable>
 
-@property(nonatomic, readonly) PVVFLViews andViews;
+@property (readonly) NSObject<PVViewsPart>* fromLeadingToTrailing;
+@property (readonly) NSObject<PVViewsPart>* fromLeftToRight;
+@property (readonly) NSObject<PVViewsPart>* fromRightToLeft;
 
 @end
 
-@interface PVVFLBuilder : NSObject
+@protocol PVMetricsPart;
+typedef  NSObject<PVMetricsPart>*(^PVViewsPartBlock)(NSDictionary* views);
 
-@property(nonatomic, readonly) NSArray* asConstraints;
+@protocol PVViewsPart <PVMetricsPart, PVArrayConstrainable>
+
+@property (readonly) PVViewsPartBlock withViews;
+
+@end
+
+typedef NSObject<PVArrayConstrainable>*(^PVMetricsBlock)(NSDictionary* metrics);
+
+@protocol PVMetricsPart <PVArrayConstrainable>
+
+@property (readonly) PVMetricsBlock metrics;
+
+@end
+
+@protocol PVArrayConstrainable <NSObject>
+
+@property (readonly) NSArray* asArray;
 
 @end
