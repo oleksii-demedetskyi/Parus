@@ -68,9 +68,3 @@ typedef NSObject
 @end
 
 
-
-@interface PVGroupImp : NSObject
-
-@end
-
-

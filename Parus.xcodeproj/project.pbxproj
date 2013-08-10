@@ -21,9 +21,11 @@
 		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
 		4838D5CA176FB0B6009415E4 /* ConstraintContextSpec.m in Resources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
 		4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
-		48B8B0C217B6281B0078CD95 /* PVGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0C117B6281B0078CD95 /* PVGroup.m */; };
-		48B8B0C317B6281B0078CD95 /* PVGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0C117B6281B0078CD95 /* PVGroup.m */; };
 		48B8B0CE17B628590078CD95 /* PVGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0CC17B628590078CD95 /* PVGroupSpec.m */; };
+		48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
+		48B8B0D217B6669D0078CD95 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
+		48B8B0D517B6678E0078CD95 /* PVEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D417B6678E0078CD95 /* PVEntity.m */; };
+		48B8B0D617B6678E0078CD95 /* PVEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D417B6678E0078CD95 /* PVEntity.m */; };
 		8654BB41177439A700B0AB6D /* PVVFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB40177439A700B0AB6D /* PVVFL.m */; };
 		8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */; };
 		86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */; };
@@ -126,8 +128,11 @@
 		4838D5C7176FADFE009415E4 /* PVConstraintContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConstraintContext.m; sourceTree = "<group>"; };
 		4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintContextSpec.m; sourceTree = "<group>"; };
 		48B8B0C017B6281B0078CD95 /* PVGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGroup.h; sourceTree = "<group>"; };
-		48B8B0C117B6281B0078CD95 /* PVGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroup.m; sourceTree = "<group>"; };
 		48B8B0CC17B628590078CD95 /* PVGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroupSpec.m; sourceTree = "<group>"; };
+		48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGroupImpl.h; sourceTree = "<group>"; };
+		48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroupImpl.m; sourceTree = "<group>"; };
+		48B8B0D317B6678E0078CD95 /* PVEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVEntity.h; sourceTree = "<group>"; };
+		48B8B0D417B6678E0078CD95 /* PVEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVEntity.m; sourceTree = "<group>"; };
 		8654BB3F177439A700B0AB6D /* PVVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVFL.h; sourceTree = "<group>"; };
 		8654BB40177439A700B0AB6D /* PVVFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFL.m; sourceTree = "<group>"; };
 		8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLSpec.m; sourceTree = "<group>"; };
@@ -196,7 +201,10 @@
 				226D711617A065B700CC9AF1 /* PVLayout.h */,
 				226D711717A065B700CC9AF1 /* PVLayout.m */,
 				48B8B0C017B6281B0078CD95 /* PVGroup.h */,
-				48B8B0C117B6281B0078CD95 /* PVGroup.m */,
+				48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */,
+				48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */,
+				48B8B0D317B6678E0078CD95 /* PVEntity.h */,
+				48B8B0D417B6678E0078CD95 /* PVEntity.m */,
 			);
 			name = Parus;
 			path = Parus/src;
@@ -443,7 +451,8 @@
 				8654BB41177439A700B0AB6D /* PVVFL.m in Sources */,
 				226D711817A065B700CC9AF1 /* PVLayout.m in Sources */,
 				86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */,
-				48B8B0C217B6281B0078CD95 /* PVGroup.m in Sources */,
+				48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */,
+				48B8B0D517B6678E0078CD95 /* PVEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +463,9 @@
 				4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */,
 				8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */,
 				226D712317A067D300CC9AF1 /* PVLayoutSpec.m in Sources */,
-				48B8B0C317B6281B0078CD95 /* PVGroup.m in Sources */,
 				48B8B0CE17B628590078CD95 /* PVGroupSpec.m in Sources */,
+				48B8B0D217B6669D0078CD95 /* PVGroupImpl.m in Sources */,
+				48B8B0D617B6678E0078CD95 /* PVEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
