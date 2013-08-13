@@ -5,7 +5,7 @@ SpecBegin(PVGroup)
 describe(@"PVGroup syntax", ^{
     it(@"should accept literal array", ^{
         id r = PVGroup(@[]);
-        expect(r).toNot.beNil;
+        expect(r).toNot.beNil();
     });
     
     it(@"should be convertable to array", ^{
@@ -14,9 +14,9 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow setting group direction", ^{
-        expect(PVGroup(@[]).fromLeftToRight).toNot.beNil;
-        expect(PVGroup(@[]).fromRightToLeft).toNot.beNil;
-        expect(PVGroup(@[]).fromLeadingToTrailing).toNot.beNil;
+        expect(PVGroup(@[]).fromLeftToRight).toNot.beNil();
+        expect(PVGroup(@[]).fromRightToLeft).toNot.beNil();
+        expect(PVGroup(@[]).fromLeadingToTrailing).toNot.beNil();
     });
     
     it(@"shoud be convertable to array after direction", ^{
@@ -26,7 +26,7 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow to set common views", ^{
-        expect(PVGroup(@[]).withViews(@{})).toNot.beNil;
+        expect(PVGroup(@[]).withViews(@{})).toNot.beNil();
     });
     
     it(@"should allow conversion to array after views setting", ^{
@@ -34,9 +34,9 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow to set common views after direction", ^{
-        expect(PVGroup(@[]).fromLeftToRight.withViews(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromRightToLeft.withViews(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromLeadingToTrailing.withViews(@{})).toNot.beNil;
+        expect(PVGroup(@[]).fromLeftToRight.withViews(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromRightToLeft.withViews(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromLeadingToTrailing.withViews(@{})).toNot.beNil();
     });
     
     it(@"should allow to [-> direction -> commonViews -> asArray]", ^{
@@ -46,7 +46,7 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow to set metrics", ^{
-        expect(PVGroup(@[]).withMetrics(@{})).toNot.beNil;
+        expect(PVGroup(@[]).withMetrics(@{})).toNot.beNil();
     });
     
     it(@"should allow conversion to array after metrics", ^{
@@ -54,7 +54,7 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow set metrics after views", ^{
-        expect(PVGroup(@[]).withViews(@{}).withMetrics(@{})).toNot.beNil;
+        expect(PVGroup(@[]).withViews(@{}).withMetrics(@{})).toNot.beNil();
     });
     
     it(@"should allow conversion to array after views and metrics setting", ^{
@@ -62,9 +62,9 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow to set common metrics after direction", ^{
-        expect(PVGroup(@[]).fromLeftToRight.withMetrics(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromRightToLeft.withMetrics(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromLeadingToTrailing.withMetrics(@{})).toNot.beNil;
+        expect(PVGroup(@[]).fromLeftToRight.withMetrics(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromRightToLeft.withMetrics(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromLeadingToTrailing.withMetrics(@{})).toNot.beNil();
     });
     
     it(@"should allow to [-> direction -> metrics -> asArray]", ^{
@@ -74,9 +74,9 @@ describe(@"PVGroup syntax", ^{
     });
     
     it(@"should allow to set common views after direction", ^{
-        expect(PVGroup(@[]).fromLeftToRight.withViews(@{}).withMetrics(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromRightToLeft.withViews(@{}).withMetrics(@{})).toNot.beNil;
-        expect(PVGroup(@[]).fromLeadingToTrailing.withViews(@{}).withMetrics(@{})).toNot.beNil;
+        expect(PVGroup(@[]).fromLeftToRight.withViews(@{}).withMetrics(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromRightToLeft.withViews(@{}).withMetrics(@{})).toNot.beNil();
+        expect(PVGroup(@[]).fromLeadingToTrailing.withViews(@{}).withMetrics(@{})).toNot.beNil();
     });
     
     it(@"should allow to [-> direction -> views -> metrics -> asArray]", ^{

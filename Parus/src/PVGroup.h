@@ -8,61 +8,64 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PVGroupProtocol;
+@protocol _PVGroupProtocol;
 
-NSObject<PVGroupProtocol>* PVGroup(NSArray* array);
+NSObject<_PVGroupProtocol>* PVGroup(NSArray* array);
 
 
-@protocol PVGroupArrayConversionProtocol <NSObject>
+@protocol _PVGroupArrayConversionProtocol <NSObject>
 
 @property (readonly) NSArray* asArray;
 
 @end
 
 
-typedef NSObject<PVGroupArrayConversionProtocol>* PVGroupWithMetricsResult;
-typedef PVGroupWithMetricsResult(^PVGroupWithMetricsBlock)(NSDictionary*);
-@protocol PVGroupWithMetricsProtocol <NSObject>
+typedef NSObject<_PVGroupArrayConversionProtocol>* _PVGroupWithMetricsResult;
+typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
+@protocol _PVGroupWithMetricsProtocol <NSObject>
 
-@property (readonly) PVGroupWithMetricsBlock withMetrics;
-
-@end
-
-typedef NSObject
-        <
-            PVGroupArrayConversionProtocol,
-            PVGroupWithMetricsProtocol
-        >* PVGroupWithViewsResult;
-typedef PVGroupWithViewsResult(^PVGroupWithViewsBlock)(NSDictionary*);
-@protocol PVGroupWithViewsProtocol <NSObject>
-
-@property (readonly) PVGroupWithViewsBlock withViews;
+@property (readonly) _PVGroupWithMetricsBlock withMetrics;
 
 @end
 
 
 typedef NSObject
         <
-            PVGroupArrayConversionProtocol,
-            PVGroupWithViewsProtocol,
-            PVGroupWithMetricsProtocol
+            _PVGroupArrayConversionProtocol,
+            _PVGroupWithMetricsProtocol
+        >* _PVGroupWithViewsResult;
+typedef _PVGroupWithViewsResult(^_PVGroupWithViewsBlock)(NSDictionary*);
+@protocol _PVGroupWithViewsProtocol <NSObject>
+
+@property (readonly) _PVGroupWithViewsBlock withViews;
+
+@end
+
+
+typedef NSObject
+        <
+            _PVGroupArrayConversionProtocol,
+            _PVGroupWithViewsProtocol,
+            _PVGroupWithMetricsProtocol
         > *
-        PVGroupDiretionChooseResult;
-@protocol PVGroupDirectionChooseProtocol <NSObject>
+        _PVGroupDiretionChooseResult;
+@protocol _PVGroupDirectionChooseProtocol <NSObject>
 
-@property (readonly) PVGroupDiretionChooseResult fromLeftToRight;
-@property (readonly) PVGroupDiretionChooseResult fromRightToLeft;
-@property (readonly) PVGroupDiretionChooseResult fromLeadingToTrailing;
+@property (readonly) _PVGroupDiretionChooseResult fromLeftToRight;
+@property (readonly) _PVGroupDiretionChooseResult fromRightToLeft;
+@property (readonly) _PVGroupDiretionChooseResult fromLeadingToTrailing;
 
 @end
 
-@protocol PVGroupProtocol
+
+
+@protocol _PVGroupProtocol
 <
     NSObject,
-    PVGroupDirectionChooseProtocol,
-    PVGroupArrayConversionProtocol,
-    PVGroupWithViewsProtocol,
-    PVGroupWithMetricsProtocol
+    _PVGroupDirectionChooseProtocol,
+    _PVGroupArrayConversionProtocol,
+    _PVGroupWithViewsProtocol,
+    _PVGroupWithMetricsProtocol
 >
 
 @end
