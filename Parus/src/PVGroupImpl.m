@@ -33,8 +33,19 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
 - (NSArray *)asArray
 {
     NSMutableArray* result = [NSMutableArray new];
+    for (id object in self.array)
+    {
+        if ([object isKindOfClass:[NSArray class]])
+        {
+            [result addObjectsFromArray:object];
+        }
+        else
+        if ([object isKindOfClass:[NSLayoutConstraint class]])
+        {
+            [result addObject:object];
+        }
+    }
     
-    // TODO: Implement mapping
     return [result copy];
 }
 

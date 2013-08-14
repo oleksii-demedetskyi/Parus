@@ -92,14 +92,62 @@ describe(@"PVGroup syntax", ^{
 });
 
 describe(@"PVGroup data conversion", ^{
+    
+    UIView* view1 = [UIView new];
+    UIView* view2 = [UIView new];
+    NSLayoutConstraint* (^newConstraint)(void) = ^{
+        NSLayoutConstraint* c =
+        [NSLayoutConstraint constraintWithItem:view1
+                                     attribute:NSLayoutAttributeBaseline
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:view2
+                                     attribute:NSLayoutAttributeBaseline
+                                    multiplier:1
+                                      constant:0];
+        return c;
+    };
+    
     it(@"should return array from single array of constraints", ^{
+        NSArray* constraints = @[newConstraint(),
+                                 newConstraint(),
+                                 newConstraint(),
+                                 newConstraint()];
+        NSArray* result = PVGroup(@[constraints]).asArray;
         
+        expect(result).to.contain(constraints[0]);
+        expect(result).to.contain(constraints[1]);
+        expect(result).to.contain(constraints[2]);
+        expect(result).to.contain(constraints[3]);
     });
+    
     it(@"should return array from several indepenedend constraints", ^{
-       
-    });
-    it(@"should return empty array from empty input", ^{
+        NSLayoutConstraint* c1 = newConstraint();
+        NSLayoutConstraint* c2 = newConstraint();
+        NSLayoutConstraint* c3 = newConstraint();
+        NSLayoutConstraint* c4 = newConstraint();
         
+        NSArray* result = PVGroup(@[c1, c2, c3, c4]).asArray;
+        
+        expect(result).to.contain(c1);
+        expect(result).to.contain(c2);
+        expect(result).to.contain(c3);
+        expect(result).to.contain(c4);
+    });
+    
+    it(@"should return empty array from empty input", ^{
+        expect(PVGroup(@[]).asArray).to.haveCountOf(0);
+    });
+    
+    it(@"should concate arrays and single constraints", ^{
+        NSLayoutConstraint* c1 = newConstraint();
+        NSArray* array = @[newConstraint(), newConstraint()];
+        
+        NSArray* result = PVGroup(@[c1, array]).asArray;
+        
+        expect(result).haveCountOf(3);
+        expect(result).to.contain(c1);
+        expect(result).to.contain(array[0]);
+        expect(result).to.contain(array[1]);
     });
 });
 
