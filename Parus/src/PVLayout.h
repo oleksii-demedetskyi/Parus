@@ -1,117 +1,116 @@
 //
-//  PV.h
+//  PVLayout.h
 //  Parus
 //
-//  Created by NekOI on 7/24/13.
+//  Created by NekOI on 8/15/13.
 //
 //
 
 #import <Foundation/Foundation.h>
 
-@protocol PVLocationRelationSelect, PVRelationSelect;
+@protocol _PVLocationRelationSelect, _PVRelationSelect;
 
-NSObject<PVLocationRelationSelect>* PVLeftOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVRightOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVTopOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVBottomOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVLeadingOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVTrailingOf(UIView*);
-NSObject<PVRelationSelect>* PVWidthOf(UIView*);
-NSObject<PVRelationSelect>* PVHeightOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVCenterXOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVCenterYOf(UIView*);
-NSObject<PVLocationRelationSelect>* PVBaselineOf(UIView*);
-
-
-
-@protocol PVRelationPart;
-
-@protocol PVRelationSelect <NSObject>
-
-@property (readonly) NSObject<PVRelationPart>* equalTo;
-@property (readonly) NSObject<PVRelationPart>* moreThan;
-@property (readonly) NSObject<PVRelationPart>* lessThan;
-
-@end
+NSObject<_PVLocationRelationSelect>* PVLeftOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVRightOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVTopOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVBottomOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVLeadingOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVTrailingOf(UIView*);
+NSObject<_PVRelationSelect>* PVWidthOf(UIView*);
+NSObject<_PVRelationSelect>* PVHeightOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVCenterXOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVCenterYOf(UIView*);
+NSObject<_PVLocationRelationSelect>* PVBaselineOf(UIView*);
 
 
 
-@protocol PVLocationRelationPart;
+@protocol _PVRelationPart;
 
-@protocol PVLocationRelationSelect <NSObject>
+@protocol _PVRelationSelect <NSObject>
 
-@property (readonly) NSObject<PVLocationRelationPart>* equalTo;
-@property (readonly) NSObject<PVLocationRelationPart>* moreThan;
-@property (readonly) NSObject<PVLocationRelationPart>* lessThan;
+@property (readonly) NSObject<_PVRelationPart>* equalTo;
+@property (readonly) NSObject<_PVRelationPart>* moreThan;
+@property (readonly) NSObject<_PVRelationPart>* lessThan;
 
 @end
 
 
 
-@protocol PVRightHandPart, PVConstantPart;
+@protocol _PVLocationRelationPart;
 
-typedef NSObject<PVRightHandPart>*(^PVRightHandViewBlock)(UIView*);
-typedef NSObject<PVConstantPart>*(^PVConstantBlock)(CGFloat);
+@protocol _PVLocationRelationSelect <NSObject>
 
-@protocol PVLocationRelationPart <NSObject>
-
-@property (readonly) PVRightHandViewBlock leftOf;
-@property (readonly) PVRightHandViewBlock rightOf;
-@property (readonly) PVRightHandViewBlock topOf;
-@property (readonly) PVRightHandViewBlock bottomOf;
-@property (readonly) PVRightHandViewBlock leadingOf;
-@property (readonly) PVRightHandViewBlock trailingOf;
-@property (readonly) PVRightHandViewBlock centerXOf;
-@property (readonly) PVRightHandViewBlock centerYOf;
-@property (readonly) PVRightHandViewBlock baselineOf;
+@property (readonly) NSObject<_PVLocationRelationPart>* equalTo;
+@property (readonly) NSObject<_PVLocationRelationPart>* moreThan;
+@property (readonly) NSObject<_PVLocationRelationPart>* lessThan;
 
 @end
 
 
 
-@protocol PVRelationPart <NSObject>
+@protocol _PVRightHandPart, _PVConstantPart;
 
-@property (readonly) PVRightHandViewBlock widthOf;
-@property (readonly) PVRightHandViewBlock heightOf;
-@property (readonly) PVConstantBlock constant;
+typedef NSObject<_PVRightHandPart>*(^_PVRightHandViewBlock)(UIView*);
+typedef NSObject<_PVConstantPart>*(^_PVConstantBlock)(CGFloat);
 
-@end
+@protocol _PVLocationRelationPart <NSObject>
 
-
-
-@protocol PVConstrainable, PVMultiplierPart;
-
-typedef NSObject<PVConstrainable>*(^PVPriorityBlock)(UILayoutPriority);
-typedef NSObject<PVMultiplierPart>*(^PVMultiplierBlock)(CGFloat);
-
-@protocol PVRightHandPart <PVMultiplierPart>
-
-@property (readonly) PVMultiplierBlock multipliedTo;
+@property (readonly) _PVRightHandViewBlock leftOf;
+@property (readonly) _PVRightHandViewBlock rightOf;
+@property (readonly) _PVRightHandViewBlock topOf;
+@property (readonly) _PVRightHandViewBlock bottomOf;
+@property (readonly) _PVRightHandViewBlock leadingOf;
+@property (readonly) _PVRightHandViewBlock trailingOf;
+@property (readonly) _PVRightHandViewBlock centerXOf;
+@property (readonly) _PVRightHandViewBlock centerYOf;
+@property (readonly) _PVRightHandViewBlock baselineOf;
 
 @end
 
 
 
-@protocol PVMultiplierPart <PVConstantPart>
+@protocol _PVRelationPart <NSObject>
 
-@property (readonly) PVConstantBlock plus;
-@property (readonly) PVConstantBlock minus;
-
-@end
-
-
-
-@protocol PVConstantPart <PVConstrainable>
-
-@property (readonly) PVPriorityBlock withPriority;
+@property (readonly) _PVRightHandViewBlock widthOf;
+@property (readonly) _PVRightHandViewBlock heightOf;
+@property (readonly) _PVConstantBlock constant;
 
 @end
 
 
 
-@protocol PVConstrainable <NSObject>
+@protocol _PVConstrainable, _PVMultiplierPart;
+
+typedef NSObject<_PVConstrainable>*(^_PVPriorityBlock)(UILayoutPriority);
+typedef NSObject<_PVMultiplierPart>*(^_PVMultiplierBlock)(CGFloat);
+
+@protocol _PVRightHandPart <_PVMultiplierPart>
+
+@property (readonly) _PVMultiplierBlock multipliedTo;
+
+@end
+
+
+
+@protocol _PVMultiplierPart <_PVConstantPart>
+
+@property (readonly) _PVConstantBlock plus;
+@property (readonly) _PVConstantBlock minus;
+
+@end
+
+
+
+@protocol _PVConstantPart <_PVConstrainable>
+
+@property (readonly) _PVPriorityBlock withPriority;
+
+@end
+
+
+
+@protocol _PVConstrainable <NSObject>
 
 @property (readonly) NSLayoutConstraint* asConstraint;
 
 @end
-
