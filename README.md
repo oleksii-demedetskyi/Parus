@@ -27,14 +27,14 @@ NSLayoutConstraint* constraint = PVLeftOf(view).equalTo.leftOf(superview).plus(1
 
 VFL example:
 ```obj-c
-[NSLayoutConstraint constraintsWithVisualFormat:@"|-padding-[view]-padding-|"
-                                        options:NSLayoutFormatAlignAllTop | NSLayoutFormatDirectionLeadingToTrailing
-                                        metrics:@{@"padding" : @20}
-                                          views:NSDictionaryOfVariableBindings(view)];
+NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-padding-[view]-padding-|"
+                                                               options:NSLayoutFormatAlignAllTop | NSLayoutFormatDirectionLeadingToTrailing
+                                                               metrics:@{@"padding" : @20}
+                                                                 views:NSDictionaryOfVariableBindings(view)];
 ```
 With Parus:
 ```obj-c
-PVVFL(@"|-padding-[view]-padding-|").alignAllTop.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view)).metrics(@{@"padding": @20}).asArray;
+NSArray* constraints = PVVFL(@"|-padding-[view]-padding-|").alignAllTop.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view)).metrics(@{@"padding": @20}).asArray;
 ```
 
 Installation
