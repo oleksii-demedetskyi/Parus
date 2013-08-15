@@ -6,14 +6,9 @@
 //
 //
 
+#import "PVVFLImp.h"
 #import "PVVFL.h"
 #import "PVVFLContext.h"
-
-@interface PVVFLLayout : NSObject
-
-@property (strong) PVVFLContext* context;
-
-@end
 
 @implementation PVVFLLayout
 

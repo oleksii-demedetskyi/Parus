@@ -9,8 +9,6 @@
 #import "PVLayout.h"
 #import "PVLayoutImp.h"
 
-
-
 @interface PVLayout(RelationPart)<_PVRelationPart, _PVLocationRelationPart>
 @end
 
