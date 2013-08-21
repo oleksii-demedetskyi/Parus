@@ -192,11 +192,11 @@
 		4838D560176DDD19009415E4 /* Parus */ = {
 			isa = PBXGroup;
 			children = (
+				48CA82FA17C4D6C800DE4A0E /* Parus.h */,
 				48CA82F917C4D62700DE4A0E /* Layout */,
 				48CA82F817C4D62300DE4A0E /* Group */,
 				48CA82EF17C4D61B00DE4A0E /* VFL */,
 				4838D561176DDD19009415E4 /* Supporting Files */,
-				48CA82FA17C4D6C800DE4A0E /* Parus.h */,
 			);
 			name = Parus;
 			path = Parus/src;
