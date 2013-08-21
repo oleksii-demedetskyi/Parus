@@ -6,14 +6,9 @@
 //
 //
 
+#import "PVVFLImp.h"
 #import "PVVFL.h"
 #import "PVVFLContext.h"
-
-@interface PVVFLLayout : NSObject
-
-@property (strong) PVVFLContext* context;
-
-@end
 
 @implementation PVVFLLayout
 
@@ -29,44 +24,44 @@
 
 @end
 
-@interface PVVFLLayout (PVAlignmentOptionSelect) <PVAlignmentOptionSelect>
+@interface PVVFLLayout (PVAlignmentOptionSelect) <_PVAlignmentOptionSelect>
 
 @end
 
-@interface PVVFLLayout (DirectionOptionSelect) <PVDirectionOptionSelect>
+@interface PVVFLLayout (DirectionOptionSelect) <_PVDirectionOptionSelect>
 
 @end
 
-@interface PVVFLLayout (ViewsPart) <PVViewsPart>
+@interface PVVFLLayout (ViewsPart) <_PVViewsPart>
 
 @end
 
-@interface PVVFLLayout (MetricsPart) <PVMetricsPart>
+@interface PVVFLLayout (MetricsPart) <_PVMetricsPart>
 
 @end
 
-@interface PVVFLLayout (ArrayConstrainable) <PVArrayConstrainable>
+@interface PVVFLLayout (ArrayConstrainable) <_PVArrayConstrainable>
 
 @end
 
 @implementation PVVFLLayout (DirectionOptionSelect)
 
--(NSObject<PVViewsPart> *)fromLeadingToTrailing
+-(NSObject<_PVViewsPart> *)fromLeadingToTrailing
 {
     return [self directionOptionPart:NSLayoutFormatDirectionLeadingToTrailing];
 }
 
--(NSObject<PVViewsPart> *)fromLeftToRight
+-(NSObject<_PVViewsPart> *)fromLeftToRight
 {
     return [self directionOptionPart:NSLayoutFormatDirectionLeftToRight];
 }
 
--(NSObject<PVViewsPart> *)fromRightToLeft
+-(NSObject<_PVViewsPart> *)fromRightToLeft
 {
     return [self directionOptionPart:NSLayoutFormatDirectionRightToLeft];
 }
 
--(NSObject<PVViewsPart> *)directionOptionPart:(NSLayoutFormatOptions)options
+-(NSObject<_PVViewsPart> *)directionOptionPart:(NSLayoutFormatOptions)options
 {
     NSAssert(self.context != nil, @"Context is not set");
     
@@ -79,52 +74,52 @@
 
 @implementation PVVFLLayout (PVAlignmentOptionSelect)
 
--(NSObject<PVDirectionOptionSelect> *)alignAllLeft
+-(NSObject<_PVDirectionOptionSelect> *)alignAllLeft
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllLeft];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllRight
+-(NSObject<_PVDirectionOptionSelect> *)alignAllRight
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllRight];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllTop
+-(NSObject<_PVDirectionOptionSelect> *)alignAllTop
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllTop];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllBottom
+-(NSObject<_PVDirectionOptionSelect> *)alignAllBottom
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllBottom];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllLeading
+-(NSObject<_PVDirectionOptionSelect> *)alignAllLeading
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllLeading];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllTrailing
+-(NSObject<_PVDirectionOptionSelect> *)alignAllTrailing
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllTrailing];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllCenterX
+-(NSObject<_PVDirectionOptionSelect> *)alignAllCenterX
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllCenterX];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllCenterY
+-(NSObject<_PVDirectionOptionSelect> *)alignAllCenterY
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllCenterY];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignAllBaseline
+-(NSObject<_PVDirectionOptionSelect> *)alignAllBaseline
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllBaseline];
 }
 
--(NSObject<PVDirectionOptionSelect> *)alignmentOptionPart:(NSLayoutFormatOptions)options
+-(NSObject<_PVDirectionOptionSelect> *)alignmentOptionPart:(NSLayoutFormatOptions)options
 {
     NSAssert(self.context != nil, @"Context is not set");
     
@@ -137,7 +132,7 @@
 
 @implementation PVVFLLayout (ViewsPart)
 
--(PVViewsPartBlock)withViews
+-(_PVViewsPartBlock)withViews
 {
     return ^(NSDictionary* views)
     {
@@ -153,7 +148,7 @@
 
 @implementation PVVFLLayout (MetricsPart)
 
--(PVMetricsBlock)metrics
+-(_PVMetricsBlock)metrics
 {
     return ^(NSDictionary *metrics)
     {
@@ -178,7 +173,7 @@
 
 @end
 
-NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format)
+NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format)
 {
     NSCAssert([format isKindOfClass:[NSString class]], @"Format should be NSString");
 
