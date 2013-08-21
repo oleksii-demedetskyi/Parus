@@ -1,4 +1,5 @@
 #import "PVGroup.h"
+#import "PVLayout.h"
 
 SpecBegin(PVGroup)
 
@@ -93,19 +94,25 @@ describe(@"PVGroup syntax", ^{
 
 describe(@"PVGroup data conversion", ^{
     
-    UIView* view1 = [UIView new];
-    UIView* view2 = [UIView new];
-    NSLayoutConstraint* (^newConstraint)(void) = ^{
-        NSLayoutConstraint* c =
-        [NSLayoutConstraint constraintWithItem:view1
-                                     attribute:NSLayoutAttributeBaseline
-                                     relatedBy:NSLayoutRelationEqual
-                                        toItem:view2
-                                     attribute:NSLayoutAttributeBaseline
-                                    multiplier:1
-                                      constant:0];
-        return c;
-    };
+    __block UIView *view1;
+    __block UIView *view2;
+    __block NSLayoutConstraint* (^newConstraint)(void);
+    
+    beforeEach(^{
+        view1 = [UIView new];
+        view2 = [UIView new];
+        newConstraint = ^{
+            NSLayoutConstraint* c =
+            [NSLayoutConstraint constraintWithItem:view1
+                                         attribute:NSLayoutAttributeBaseline
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:view2
+                                         attribute:NSLayoutAttributeBaseline
+                                        multiplier:1
+                                          constant:0];
+            return c;
+        };
+    });
     
     it(@"should return array from single array of constraints", ^{
         NSArray* constraints = @[newConstraint(),
@@ -148,6 +155,35 @@ describe(@"PVGroup data conversion", ^{
         expect(result).to.contain(c1);
         expect(result).to.contain(array[0]);
         expect(result).to.contain(array[1]);
+    });
+    
+    context(@"pv single constraint", ^{
+        id(^singleConstraint)() = ^{
+            return PVLeftOf(view1).equalTo.rightOf(view2);
+        };
+        
+        it(@"should correct convert cons", ^{
+            NSArray* result = PVGroup(@[singleConstraint()]).asArray;
+            expect(result).haveCountOf(1);
+            
+            NSLayoutConstraint* actualC = [result lastObject];
+            expect(actualC.firstItem).to.equal(view1);
+            expect(actualC.firstAttribute).to.equal(NSLayoutAttributeLeft);
+            expect(actualC.relation).to.equal(NSLayoutRelationEqual);
+            expect(actualC.secondItem).to.equal(view2);
+            expect(actualC.secondAttribute).to.equal(NSLayoutAttributeRight);
+        });
+        
+        it(@"should support mixing PVSingle and classic constraints", ^{
+            NSArray* result = PVGroup(@[singleConstraint(), newConstraint()]).asArray;
+            expect(result).haveCountOf(2);
+        });
+        
+        it(@"should support mixing single and array of constraints", ^{
+            NSArray* array = @[newConstraint(), newConstraint()];
+            NSArray* result = PVGroup(@[singleConstraint(), array]).asArray;
+            expect(result).haveCountOf(3);
+        });
     });
 });
 
