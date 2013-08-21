@@ -16,18 +16,33 @@
     if (self)
     {
         self.format = nil;
-        self.alignmentOptions = 0;
-        self.directionOptions = 0;
+        self.alignmentOptions = NSLayoutFormatAlignmentMask;
+        self.directionOptions = NSLayoutFormatDirectionMask;
         self.views = nil;
         self.metrics = nil;
     }
     return self;
 }
 
+- (NSLayoutFormatOptions)currentOptions
+{
+    NSLayoutFormatOptions opts = 0;
+    if (self.alignmentOptions != NSLayoutFormatAlignmentMask)
+    {
+        opts |= self.alignmentOptions;
+    }
+    if (self.directionOptions != NSLayoutFormatDirectionMask)
+    {
+        opts |= self.directionOptions;
+    }
+    
+    return opts;
+}
+
 - (NSArray *)buildConstraints
 {
     NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat:self.format
-                                                                   options:self.alignmentOptions | self.directionOptions
+                                                                   options:[self currentOptions]
                                                                    metrics:self.metrics
                                                                      views:self.views];
     return constraints;

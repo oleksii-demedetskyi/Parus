@@ -4,6 +4,18 @@
 
 SpecBegin(PVGroup)
 
+void(^compareConstraints)(NSLayoutConstraint*,NSLayoutConstraint*) =
+^(NSLayoutConstraint* actual, NSLayoutConstraint* expected) {
+    expect(actual.firstItem).to.equal(expected.firstItem);
+    expect(actual.firstAttribute).to.equal(expected.firstAttribute);
+    expect(actual.relation).to.equal(expected.relation);
+    expect(actual.secondItem).to.equal(expected.secondItem);
+    expect(actual.secondAttribute).to.equal(expected.secondAttribute);
+    expect(actual.multiplier).to.equal(expected.multiplier);
+    expect(actual.constant).to.equal(expected.constant);
+    expect(actual.priority).to.equal(expected.priority);
+};
+
 describe(@"PVGroup syntax", ^{
     it(@"should accept literal array", ^{
         id r = PVGroup(@[]);
@@ -188,8 +200,13 @@ describe(@"PVGroup data conversion", ^{
     });
     
     context(@"pv vfl", ^{
+        __block NSDictionary* views;
+        
+        beforeEach(^{
+            views = NSDictionaryOfVariableBindings(view1, view2);
+        });
+        
         it (@"should create vfl constraints", ^{
-            NSDictionary* views = NSDictionaryOfVariableBindings(view1, view2);
             NSArray* result = PVGroup(@[
                                       PVVFL(@"[view1]-20-[view2]").withViews(views)
                                       ]).asArray;
@@ -197,15 +214,87 @@ describe(@"PVGroup data conversion", ^{
         });
         
         it(@"should transfer views to VFL context", ^{
-            
+            NSArray * result = PVGroup(@[
+                PVVFL(@"[view1]-20-[view2]")
+            ]).withViews(views).asArray;
+            expect(result).to.haveCountOf(1);
         });
         
         it(@"should transfer direction to VFL context", ^{
+            NSArray* r =
+            PVGroup(@[PVVFL(@"[view1]-20-[view2]")]).fromRightToLeft.withViews(views).asArray;
             
+            expect(r).to.haveCountOf(1);
+            
+            NSLayoutConstraint* e =
+            [[NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-20-[view2]"
+                                                    options:NSLayoutFormatDirectionRightToLeft
+                                                    metrics:nil
+                                                      views:views] lastObject];
+            
+            NSLayoutConstraint* c = [r lastObject];
+            
+            compareConstraints(c,e);
         });
         
         it(@"should transfer metrics to VFL context", ^{
             
+            NSDictionary* metrics = @{@"size":@20};
+            
+            NSArray* r =
+            PVGroup(@[PVVFL(@"[view1]-size-[view2]")]).withViews(views).withMetrics(metrics).asArray;
+            
+            expect(r).to.haveCountOf(1);
+            
+            NSLayoutConstraint* e =
+            [[NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-size-[view2]"
+                                                     options:0
+                                                     metrics:metrics
+                                                       views:views] lastObject];
+            
+            NSLayoutConstraint* c = [r lastObject];
+            
+            compareConstraints(c, e);
+        });
+        
+        it(@"should not replace existing direction", ^{
+            NSArray* r =
+            PVGroup(@[PVVFL(@"[view1]-20-[view2]").fromLeftToRight]).fromRightToLeft.withViews(views).asArray;
+            
+            expect(r).to.haveCountOf(1);
+            
+            NSLayoutConstraint* e =
+            [[NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-20-[view2]"
+                                                     options:NSLayoutFormatDirectionLeftToRight
+                                                     metrics:nil
+                                                       views:views] lastObject];
+            
+            NSLayoutConstraint* c = [r lastObject];
+            
+            compareConstraints(c, e);
+        });
+        
+        it(@"should not replace existing metrics", ^{
+            NSDictionary* metrics1 = @{@"size":@20};
+            NSDictionary* metrics2 = @{@"size":@40};
+            
+            NSArray* r =
+            PVGroup(@[PVVFL(@"[view1]-size-[view2]").metrics(metrics1)]).withViews(views).withMetrics(metrics2).asArray;
+            
+            expect(r).to.haveCountOf(1);
+            
+            NSLayoutConstraint* e =
+            [[NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-size-[view2]"
+                                                     options:0
+                                                     metrics:metrics1
+                                                       views:views] lastObject];
+            
+            NSLayoutConstraint* c = [r lastObject];
+            compareConstraints(c,e);
+        });
+        
+        it(@"should not replace existing views", ^{
+            // For live-testing))) 
         });
     });
 });

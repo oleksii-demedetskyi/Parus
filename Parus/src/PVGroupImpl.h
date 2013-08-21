@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class PVGroupContext;
+
 @interface PVGroupImpl : NSObject
+
+@property (strong) PVGroupContext* context;
 
 @end
