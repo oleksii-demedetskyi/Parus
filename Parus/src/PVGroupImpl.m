@@ -9,6 +9,10 @@
 #import "PVGroupImpl.h"
 #import "PVGroup.h"
 
+#import "PVLayoutImp.h"
+#import "PVVFLImp.h"
+#import "PVVFLContext.h"
+
 @interface PVGroupImpl ()<_PVGroupProtocol>
 
 @property (copy) NSArray* array;
@@ -39,10 +43,19 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
         {
             [result addObjectsFromArray:object];
         }
-        else
-        if ([object isKindOfClass:[NSLayoutConstraint class]])
+        else if ([object isKindOfClass:[NSLayoutConstraint class]])
         {
             [result addObject:object];
+        }
+        else if ([object isKindOfClass:[PVLayout class]])
+        {
+            PVLayout* l = (PVLayout*)object;
+            [result addObject:[l.context buildConstraint]];
+        }
+        else if ([object isKindOfClass:[PVVFLLayout class]])
+        {
+            PVVFLLayout* l = (PVVFLLayout*)object;
+            [result addObjectsFromArray:[l.context buildConstraints]];
         }
     }
     

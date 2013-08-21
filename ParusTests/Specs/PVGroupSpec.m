@@ -1,5 +1,6 @@
 #import "PVGroup.h"
 #import "PVLayout.h"
+#import "PVVFL.h"
 
 SpecBegin(PVGroup)
 
@@ -183,6 +184,28 @@ describe(@"PVGroup data conversion", ^{
             NSArray* array = @[newConstraint(), newConstraint()];
             NSArray* result = PVGroup(@[singleConstraint(), array]).asArray;
             expect(result).haveCountOf(3);
+        });
+    });
+    
+    context(@"pv vfl", ^{
+        it (@"should create vfl constraints", ^{
+            NSDictionary* views = NSDictionaryOfVariableBindings(view1, view2);
+            NSArray* result = PVGroup(@[
+                                      PVVFL(@"[view1]-20-[view2]").withViews(views)
+                                      ]).asArray;
+            expect(result).to.haveCountOf(1);
+        });
+        
+        it(@"should transfer views to VFL context", ^{
+            
+        });
+        
+        it(@"should transfer direction to VFL context", ^{
+            
+        });
+        
+        it(@"should transfer metrics to VFL context", ^{
+            
         });
     });
 });
