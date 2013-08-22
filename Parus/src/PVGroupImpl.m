@@ -32,7 +32,7 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
 
 @implementation PVGroupImpl
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self != nil) {
@@ -87,12 +87,12 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
         }
         else if ([object isKindOfClass:[PVLayout class]])
         {
-            PVLayout* l = (PVLayout*)object;
+            PVLayout* l = object;
             [result addObject:[l.context buildConstraint]];
         }
         else if ([object isKindOfClass:[PVVFLLayout class]])
         {
-            PVVFLLayout* l = (PVVFLLayout*)object;
+            PVVFLLayout* l = object;
             [self.class applyGroupContext:self.context
                               toVFLContxt:l.context];
             [result addObjectsFromArray:[l.context buildConstraints]];
