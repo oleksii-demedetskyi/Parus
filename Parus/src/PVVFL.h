@@ -8,52 +8,61 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PVDirectionOptionSelect, PVAlignmentOptionSelect, PVArrayConstrainable, PVViewsPart, PVMetricsPart;
+@protocol
+    _PVDirectionOptionSelect,
+    _PVAlignmentOptionSelect,
+    _PVArrayConstrainable,
+    _PVViewsPart,
+    _PVMetricsPart;
 
-NSObject<PVAlignmentOptionSelect>* PVVFL(NSString* format);
+NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
-@protocol PVAlignmentOptionSelect <PVDirectionOptionSelect, PVViewsPart, PVArrayConstrainable>
+@protocol _PVAlignmentOptionSelect <_PVDirectionOptionSelect, _PVViewsPart, _PVArrayConstrainable>
 
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllLeft;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllRight;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllTop;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllBottom;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllLeading;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllTrailing;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllCenterX;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllCenterY;
-@property (readonly) NSObject<PVDirectionOptionSelect>* alignAllBaseline;
-
-@end
-
-@protocol PVViewsPart;
-
-@protocol PVDirectionOptionSelect <PVViewsPart, PVArrayConstrainable>
-
-@property (readonly) NSObject<PVViewsPart>* fromLeadingToTrailing;
-@property (readonly) NSObject<PVViewsPart>* fromLeftToRight;
-@property (readonly) NSObject<PVViewsPart>* fromRightToLeft;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeft;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllRight;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllTop;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllBottom;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeading;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllTrailing;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllCenterX;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllCenterY;
+@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllBaseline;
 
 @end
 
-@protocol PVMetricsPart;
-typedef  NSObject<PVMetricsPart>*(^PVViewsPartBlock)(NSDictionary* views);
 
-@protocol PVViewsPart <PVMetricsPart, PVArrayConstrainable>
+@protocol _PVViewsPart;
 
-@property (readonly) PVViewsPartBlock withViews;
+@protocol _PVDirectionOptionSelect <_PVViewsPart, _PVArrayConstrainable>
 
-@end
-
-typedef NSObject<PVArrayConstrainable>*(^PVMetricsBlock)(NSDictionary* metrics);
-
-@protocol PVMetricsPart <PVArrayConstrainable>
-
-@property (readonly) PVMetricsBlock metrics;
+@property (readonly) NSObject<_PVViewsPart>* fromLeadingToTrailing;
+@property (readonly) NSObject<_PVViewsPart>* fromLeftToRight;
+@property (readonly) NSObject<_PVViewsPart>* fromRightToLeft;
 
 @end
 
-@protocol PVArrayConstrainable <NSObject>
+
+@protocol _PVMetricsPart;
+typedef  NSObject<_PVMetricsPart>*(^_PVViewsPartBlock)(NSDictionary* views);
+
+
+@protocol _PVViewsPart <_PVMetricsPart, _PVArrayConstrainable>
+
+@property (readonly) _PVViewsPartBlock withViews;
+
+@end
+
+
+typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics);
+@protocol _PVMetricsPart <_PVArrayConstrainable>
+
+@property (readonly) _PVMetricsBlock metrics;
+
+@end
+
+
+@protocol _PVArrayConstrainable <NSObject>
 
 @property (readonly) NSArray* asArray;
 
