@@ -7,31 +7,24 @@
 //
 
 #import "PVLayout.h"
+#import "PVLayoutImp.h"
 
-#import "PVConstraintContext.h"
-
-@interface PVLayout : NSObject
-
-@property (strong) PVConstraintContext* context;
-
+@interface PVLayout(RelationPart)<_PVRelationPart, _PVLocationRelationPart>
 @end
 
-@interface PVLayout(RelationPart)<PVRelationPart, PVLocationRelationPart>
+@interface PVLayout(RelationSelect)<_PVRelationSelect, _PVLocationRelationSelect>
 @end
 
-@interface PVLayout(RelationSelect)<PVRelationSelect, PVLocationRelationSelect>
+@interface PVLayout(RightHandPart)<_PVRightHandPart>
 @end
 
-@interface PVLayout(RightHandPart)<PVRightHandPart>
+@interface PVLayout(ConstantPart)<_PVConstantPart>
 @end
 
-@interface PVLayout(ConstantPart)<PVConstantPart>
+@interface PVLayout(MultiplierPart)<_PVMultiplierPart>
 @end
 
-@interface PVLayout(MultiplierPart)<PVMultiplierPart>
-@end
-
-@interface PVLayout(Constrainable)<PVConstrainable>
+@interface PVLayout(Constrainable)<_PVConstrainable>
 @end
 
 @implementation PVLayout
@@ -80,62 +73,62 @@
 
 @implementation PVLayout(RelationPart)
 
-- (PVRightHandViewBlock)leftOf
+- (_PVRightHandViewBlock)leftOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeLeft];
 }
 
-- (PVRightHandViewBlock)rightOf
+- (_PVRightHandViewBlock)rightOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeRight];
 }
 
-- (PVRightHandViewBlock)topOf
+- (_PVRightHandViewBlock)topOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeTop];
 }
 
-- (PVRightHandViewBlock)bottomOf
+- (_PVRightHandViewBlock)bottomOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeBottom];
 }
 
-- (PVRightHandViewBlock)leadingOf
+- (_PVRightHandViewBlock)leadingOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeLeading];
 }
 
-- (PVRightHandViewBlock)trailingOf
+- (_PVRightHandViewBlock)trailingOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeTrailing];
 }
 
-- (PVRightHandViewBlock)widthOf
+- (_PVRightHandViewBlock)widthOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeWidth];
 }
 
-- (PVRightHandViewBlock)heightOf
+- (_PVRightHandViewBlock)heightOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeHeight];
 }
 
-- (PVRightHandViewBlock)centerXOf
+- (_PVRightHandViewBlock)centerXOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeCenterX];
 }
 
-- (PVRightHandViewBlock)centerYOf
+- (_PVRightHandViewBlock)centerYOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeCenterY];
 }
 
-- (PVRightHandViewBlock)baselineOf
+- (_PVRightHandViewBlock)baselineOf
 {
     return [self rightHandBlockWithAttribute:NSLayoutAttributeBaseline];
 }
 
-- (PVRightHandViewBlock)rightHandBlockWithAttribute:(NSLayoutAttribute)attribute
+- (_PVRightHandViewBlock)rightHandBlockWithAttribute:(NSLayoutAttribute)attribute
 {
     return ^(UIView* view) {
         NSAssert([view isKindOfClass:[UIView class]], @"Argument is not kind of UIView\nview is kind of %@", [view class]);
@@ -148,7 +141,7 @@
     };
 }
 
-- (PVConstantBlock)constant
+- (_PVConstantBlock)constant
 {
     return ^(CGFloat constant) {
         self.context.rightConstant = constant;
@@ -163,7 +156,7 @@
 
 @implementation PVLayout(RightHandPart)
 
-- (PVMultiplierBlock)multipliedTo
+- (_PVMultiplierBlock)multipliedTo
 {
     return ^(CGFloat multiplier) {
         self.context.rightAtttributeMultiplier = multiplier;
@@ -178,7 +171,7 @@
 
 @implementation PVLayout(ConstantPart)
 
-- (PVPriorityBlock)withPriority
+- (_PVPriorityBlock)withPriority
 {
     return ^(UILayoutPriority priority) {
         self.context.priority = priority;
@@ -193,7 +186,7 @@
 
 @implementation PVLayout(MultiplierPart)
 
-- (PVConstantBlock)plus
+- (_PVConstantBlock)plus
 {
     return ^(CGFloat constant) {
         self.context.rightConstant = constant;
@@ -202,7 +195,7 @@
     };
 }
 
-- (PVConstantBlock)minus
+- (_PVConstantBlock)minus
 {
     return ^(CGFloat constant) {
         self.context.rightConstant = -constant;
@@ -228,7 +221,7 @@
 
 #pragma mark - Public Funtions
 
-id<PVRelationSelect, PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UIView* view, NSLayoutAttribute attribute)
+id<_PVRelationSelect, _PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UIView* view, NSLayoutAttribute attribute)
 {
     NSCAssert([view isKindOfClass:[UIView class]], @"Argument is not kind of UIView\nview is %@", view);
     
@@ -241,57 +234,57 @@ id<PVRelationSelect, PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UIVi
     return constraint;
 }
 
-id<PVLocationRelationSelect> PVLeftOf(UIView* view)
+id<_PVLocationRelationSelect> PVLeftOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeLeft);
 }
 
-id<PVLocationRelationSelect> PVRightOf(UIView* view)
+id<_PVLocationRelationSelect> PVRightOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeRight);
 }
 
-id<PVLocationRelationSelect> PVTopOf(UIView* view)
+id<_PVLocationRelationSelect> PVTopOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeTop);
 }
 
-id<PVLocationRelationSelect> PVBottomOf(UIView* view)
+id<_PVLocationRelationSelect> PVBottomOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeBottom);
 }
 
-id<PVLocationRelationSelect> PVLeadingOf(UIView* view)
+id<_PVLocationRelationSelect> PVLeadingOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeLeading);
 }
 
-id<PVLocationRelationSelect> PVTrailingOf(UIView* view)
+id<_PVLocationRelationSelect> PVTrailingOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeTrailing);
 }
 
-id<PVRelationSelect> PVWidthOf(UIView* view)
+id<_PVRelationSelect> PVWidthOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeWidth);
 }
 
-id<PVRelationSelect> PVHeightOf(UIView* view)
+id<_PVRelationSelect> PVHeightOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeHeight);
 }
 
-id<PVLocationRelationSelect> PVCenterXOf(UIView* view)
+id<_PVLocationRelationSelect> PVCenterXOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeCenterX);
 }
 
-id<PVLocationRelationSelect> PVCenterYOf(UIView* view)
+id<_PVLocationRelationSelect> PVCenterYOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeCenterY);
 }
 
-id<PVLocationRelationSelect> PVBaselineOf(UIView* view)
+id<_PVLocationRelationSelect> PVBaselineOf(UIView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeBaseline);
 }
