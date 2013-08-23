@@ -25,6 +25,26 @@ describe(@"PVVFL", ^{
         
         expect(PVVFL(@"[view1(>=width)]").withViews(NSDictionaryOfVariableBindings(view1)).metrics(@{@"width" : @200}).asArray).toNot.beNil();
     });
+    
+    it(@"should produce simple constraint", ^{
+        NSDictionary* views = NSDictionaryOfVariableBindings(view1, view2);
+        
+        NSLayoutConstraint* expected =
+        [[NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-20-[view2]"
+                                                 options:NSLayoutFormatDirectionRightToLeft
+                                                 metrics:nil
+                                                   views:views] lastObject];
+        NSLayoutConstraint* actual =
+        [PVVFL(@"[view1]-20-[view2]").fromRightToLeft.withViews(views).asArray lastObject];
+        
+        expect(actual.firstItem).to.equal(expected.firstItem);
+        expect(actual.firstAttribute).to.equal(expected.firstAttribute);
+        expect(actual.relation).to.equal(expected.relation);
+        expect(actual.secondItem).to.equal(expected.secondItem);
+        expect(actual.secondAttribute).to.equal(expected.secondAttribute);
+
+        
+    });
 });
 
 SpecEnd

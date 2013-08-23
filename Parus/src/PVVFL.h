@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol _PVDirectionOptionSelect, _PVAlignmentOptionSelect, _PVArrayConstrainable, _PVViewsPart, _PVMetricsPart;
+@protocol
+    _PVDirectionOptionSelect,
+    _PVAlignmentOptionSelect,
+    _PVArrayConstrainable,
+    _PVViewsPart,
+    _PVMetricsPart;
 
 NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
@@ -26,6 +31,7 @@ NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
 @end
 
+
 @protocol _PVViewsPart;
 
 @protocol _PVDirectionOptionSelect <_PVViewsPart, _PVArrayConstrainable>
@@ -36,8 +42,10 @@ NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format);
 
 @end
 
+
 @protocol _PVMetricsPart;
 typedef  NSObject<_PVMetricsPart>*(^_PVViewsPartBlock)(NSDictionary* views);
+
 
 @protocol _PVViewsPart <_PVMetricsPart, _PVArrayConstrainable>
 
@@ -45,13 +53,14 @@ typedef  NSObject<_PVMetricsPart>*(^_PVViewsPartBlock)(NSDictionary* views);
 
 @end
 
-typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics);
 
+typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics);
 @protocol _PVMetricsPart <_PVArrayConstrainable>
 
 @property (readonly) _PVMetricsBlock metrics;
 
 @end
+
 
 @protocol _PVArrayConstrainable <NSObject>
 
