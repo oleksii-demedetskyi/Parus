@@ -108,7 +108,7 @@ typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics
 // Protocol that allows to finish constraint building and receive an array of NSLayoutConstraint objects.
 @protocol _PVArrayConstrainable <NSObject>
 
-// Returns array of constraints.
+// Creates array of constraints on each property call.
 @property (readonly) NSArray* asArray;
 
 @end
