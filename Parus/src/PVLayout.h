@@ -11,51 +11,49 @@
 @protocol _PVLocationRelationSelect, _PVRelationSelect;
 
 // Single constraint definition could be found on wiki: https://github.com/DAlOG/Parus/wiki/Single-constraint-syntax-definition
-//
-// Constraint format: "view1.attr1 = view2.attr2 * multiplier + constant".
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeLeft.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeLeft
 NSObject<_PVLocationRelationSelect>* PVLeftOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeRight.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeRight
 NSObject<_PVLocationRelationSelect>* PVRightOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeTop.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeTop
 NSObject<_PVLocationRelationSelect>* PVTopOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeBottom.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeBottom
 NSObject<_PVLocationRelationSelect>* PVBottomOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeLeading.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeLeading
 NSObject<_PVLocationRelationSelect>* PVLeadingOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeTrailing.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeTrailing
 NSObject<_PVLocationRelationSelect>* PVTrailingOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeWidth.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeWidth
 NSObject<_PVRelationSelect>* PVWidthOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeHeight.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeHeight
 NSObject<_PVRelationSelect>* PVHeightOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeCenterX.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeCenterX
 NSObject<_PVLocationRelationSelect>* PVCenterXOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeCenterY.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeCenterY
 NSObject<_PVLocationRelationSelect>* PVCenterYOf(UIView*);
 
-// view1 is set to passed UIView object.
-// attr1 is set to NSLayoutAttributeBaseline.
+// constraint.firstItem = view
+// constraint.firstAttribute = NSLayoutAttributeBaseline
 NSObject<_PVLocationRelationSelect>* PVBaselineOf(UIView*);
 
 
@@ -65,13 +63,13 @@ NSObject<_PVLocationRelationSelect>* PVBaselineOf(UIView*);
 // Format example: view1.(width|height) RELATIONSHIP(==,<=,>=) view2.(width|height) OR constant.
 @protocol _PVRelationSelect <NSObject>
 
-// Relationship is set to NSLayoutRelationEqual.
+// constraint.relation = NSLayoutRelationEqual
 @property (readonly) NSObject<_PVRelationPart>* equalTo;
 
-// Relationship is set to NSLayoutRelationGreaterThanOrEqual.
+// constraint.relation = NSLayoutRelationGreaterThanOrEqual
 @property (readonly) NSObject<_PVRelationPart>* moreThan;
 
-// Relationship is set to NSLayoutRelationLessThanOrEqual.
+// constraint.relation = NSLayoutRelationLessThanOrEqual
 @property (readonly) NSObject<_PVRelationPart>* lessThan;
 
 @end
@@ -82,13 +80,13 @@ NSObject<_PVLocationRelationSelect>* PVBaselineOf(UIView*);
 
 @protocol _PVLocationRelationSelect <NSObject>
 
-// Relationship is set to NSLayoutRelationEqual
+// constraint.relation = NSLayoutRelationEqual
 @property (readonly) NSObject<_PVLocationRelationPart>* equalTo;
 
-// Relationship is set to NSLayoutRelationGreaterThanOrEqual
+// constraint.relation = NSLayoutRelationGreaterThanOrEqual
 @property (readonly) NSObject<_PVLocationRelationPart>* moreThan;
 
-// Relationship is set to NSLayoutRelationLessThanOrEqual
+// constraint.relation = NSLayoutRelationLessThanOrEqual
 @property (readonly) NSObject<_PVLocationRelationPart>* lessThan;
 
 @end
@@ -102,58 +100,58 @@ typedef NSObject<_PVConstantPart>*(^_PVConstantBlock)(CGFloat);
 
 @protocol _PVLocationRelationPart <NSObject>
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeLeft.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeLeft
 @property (readonly) _PVRightHandViewBlock leftOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeRight.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeRight
 @property (readonly) _PVRightHandViewBlock rightOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeTop.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeTop
 @property (readonly) _PVRightHandViewBlock topOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeBottom.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeBottom
 @property (readonly) _PVRightHandViewBlock bottomOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeLeading.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeLeading
 @property (readonly) _PVRightHandViewBlock leadingOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeTrailing.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeTrailing
 @property (readonly) _PVRightHandViewBlock trailingOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeCenterX.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeCenterX
 @property (readonly) _PVRightHandViewBlock centerXOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeCenterY.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeCenterY
 @property (readonly) _PVRightHandViewBlock centerYOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeBaseline.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeBaseline
 @property (readonly) _PVRightHandViewBlock baselineOf;
 
 @end
 
-// Protocol for handling view2 and attr2 of size contraints
+// Protocol for handling secondItem and secondAttribute of size contraints
 @protocol _PVRelationPart <NSObject>
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeWidth.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeWidth
 @property (readonly) _PVRightHandViewBlock widthOf;
 
-// view2 is set to passed UIView object.
-// attr2 is set to NSLayoutAttributeWidth.
+// constraint.secondItem = view
+// constraint.secondAttribute = NSLayoutAttributeHeight
 @property (readonly) _PVRightHandViewBlock heightOf;
 
-// view2 is set to nil.
-// attr2 is set to NSLayoutAttributeNotAnAttribute.
-// constant is set to passed CGFloat.
+// constraint.secondItem = nil
+// constraint.secondAttribute = NSLayoutAttributeNotAnAttribute
+// constraint.constant = value
 @property (readonly) _PVConstantBlock constant;
 
 @end
@@ -167,7 +165,7 @@ typedef NSObject<_PVMultiplierPart>*(^_PVMultiplierBlock)(CGFloat);
 
 @protocol _PVRightHandPart <_PVMultiplierPart>
 
-// multiplier is set to passed CGFloat.
+// constraint.multiplier = value
 @property (readonly) _PVMultiplierBlock multipliedTo;
 
 @end
@@ -176,10 +174,10 @@ typedef NSObject<_PVMultiplierPart>*(^_PVMultiplierBlock)(CGFloat);
 
 @protocol _PVMultiplierPart <_PVConstantPart>
 
-// constant is set to passed CGFloat value with sign +.
+// constraint.constant = + (value).
 @property (readonly) _PVConstantBlock plus;
 
-// constant is set to passed CGFloat value with sign -.
+// constraint.constant = - (value).
 @property (readonly) _PVConstantBlock minus;
 
 @end
@@ -188,7 +186,7 @@ typedef NSObject<_PVMultiplierPart>*(^_PVMultiplierBlock)(CGFloat);
 
 @protocol _PVConstantPart <_PVConstrainable>
 
-// priority for constraint is set to passed UILayoutPriority value.
+// constraint.priority = UILayoutPriority (value).
 @property (readonly) _PVPriorityBlock withPriority;
 
 @end
@@ -197,7 +195,17 @@ typedef NSObject<_PVMultiplierPart>*(^_PVMultiplierBlock)(CGFloat);
 // Protocol for building constraint.
 @protocol _PVConstrainable <NSObject>
 
-// Returns NSLayoutConstraint object.
+// New constraint will be created on each property access.
+// Constraint is created by calling following method with collected values:
+//
+//  [NSLayoutConstraint constraintWithItem:firstItem
+//                               attribute:firstAttribute
+//                               relatedBy:relation
+//                                  toItem:secondItem
+//                               attribute:secondAttribute
+//                              multiplier:multiplier
+//                                constant:constant];
+//
 @property (readonly) NSLayoutConstraint* asConstraint;
 
 @end
