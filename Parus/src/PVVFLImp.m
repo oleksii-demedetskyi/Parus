@@ -84,6 +84,11 @@
     return [self alignmentOptionPart:NSLayoutFormatAlignAllRight];
 }
 
+-(NSObject<_PVDirectionOptionSelect> *)alignAllLeftAndRight
+{
+    return [self alignmentOptionPart:(NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight)];
+}
+
 -(NSObject<_PVDirectionOptionSelect> *)alignAllTop
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllTop];
@@ -94,6 +99,11 @@
     return [self alignmentOptionPart:NSLayoutFormatAlignAllBottom];
 }
 
+-(NSObject<_PVDirectionOptionSelect> *)alignAllTopAndBottom
+{
+    return [self alignmentOptionPart:(NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom)];
+}
+
 -(NSObject<_PVDirectionOptionSelect> *)alignAllLeading
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllLeading];
@@ -102,6 +112,11 @@
 -(NSObject<_PVDirectionOptionSelect> *)alignAllTrailing
 {
     return [self alignmentOptionPart:NSLayoutFormatAlignAllTrailing];
+}
+
+-(NSObject<_PVDirectionOptionSelect> *)alignAllLeadingAndTrailing
+{
+    return [self alignmentOptionPart:(NSLayoutFormatAlignAllLeading | NSLayoutFormatAlignAllTrailing)];
 }
 
 -(NSObject<_PVDirectionOptionSelect> *)alignAllCenterX
