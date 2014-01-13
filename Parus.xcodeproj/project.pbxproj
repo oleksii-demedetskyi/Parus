@@ -8,41 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		226D711817A065B700CC9AF1 /* PVLayoutImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D711717A065B700CC9AF1 /* PVLayoutImp.m */; };
-		226D712317A067D300CC9AF1 /* PVLayoutSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D712217A067D300CC9AF1 /* PVLayoutSpec.m */; };
+		2285CFFD187E080C007C2EEF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2285CFFC187E080C007C2EEF /* XCTest.framework */; };
+		2285CFFE187E080C007C2EEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
+		2285CFFF187E080C007C2EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
+		2285D005187E080C007C2EEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2285D003187E080C007C2EEF /* InfoPlist.strings */; };
+		22D62ABE187E0D7500189B9E /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5A0176DE184009415E4 /* libExpecta-iOS.a */; };
+		22D62ABF187E0D7500189B9E /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
+		22D62AC0187E0D7F00189B9E /* libParus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus.a */; };
+		22E9C00A187E16E300EC368A /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C006187E16E300EC368A /* ConstraintContextSpec.m */; };
+		22E9C00B187E16E300EC368A /* PVGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C007187E16E300EC368A /* PVGroupSpec.m */; };
+		22E9C00C187E16E300EC368A /* PVLayoutSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C008187E16E300EC368A /* PVLayoutSpec.m */; };
+		22E9C00D187E16E300EC368A /* PVVFLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C009187E16E300EC368A /* PVVFLSpec.m */; };
 		4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
-		4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D56D176DDD19009415E4 /* SenTestingKit.framework */; };
-		4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
-		4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4838D578176DDD19009415E4 /* InfoPlist.strings */; };
 		4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
-		4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5A0176DE184009415E4 /* libExpecta-iOS.a */; };
-		4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
-		4838D5B6176E2CA8009415E4 /* libParus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus.a */; };
-		4838D5B7176E2CCE009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
 		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
-		4838D5CA176FB0B6009415E4 /* ConstraintContextSpec.m in Resources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
-		4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */; };
 		48B46FED17C4FC8000A48463 /* PVGroupContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B46FEC17C4FC8000A48463 /* PVGroupContext.m */; };
-		48B8B0CE17B628590078CD95 /* PVGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0CC17B628590078CD95 /* PVGroupSpec.m */; };
 		48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
 		8654BB41177439A700B0AB6D /* PVVFLImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB40177439A700B0AB6D /* PVVFLImp.m */; };
-		8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */; };
 		86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4838D572176DDD19009415E4 /* PBXContainerItemProxy */ = {
+		2285D009187E080C007C2EEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4838D55B176DDD19009415E4;
 			remoteInfo = Parus;
 		};
-		4838D58E176DE172009415E4 /* PBXContainerItemProxy */ = {
+		22D62AB4187E0CF200189B9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = E9D96A2614B6B8AB007D9521;
-			remoteInfo = Specta;
+			remoteGlobalIDString = E9901C2A18205AB100844A05;
+			remoteInfo = "Specta-OSX";
+		};
+		22D62AB6187E0CF200189B9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901C0D18205A3500844A05;
+			remoteInfo = "SpectaTests-iOS";
+		};
+		22D62AB8187E0CF200189B9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901C3B18205AB100844A05;
+			remoteInfo = "Specta-OSXTests";
+		};
+		22E9C003187E117300EC368A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C4416F917FF3F4A00978F09;
+			remoteInfo = "ExpectaTests-XCTest";
 		};
 		4838D590176DE172009415E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -50,20 +70,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = E9B777A414BA294B00D8DC76;
 			remoteInfo = "Specta-iOS";
-		};
-		4838D592176DE172009415E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9D96A3A14B6B8AB007D9521;
-			remoteInfo = SpectaTests;
-		};
-		4838D594176DE172009415E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9B777B314BA294C00D8DC76;
-			remoteInfo = "Specta-iOSTests";
 		};
 		4838D59D176DE184009415E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,40 +114,54 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22081F7417BCA0EB00D984A6 /* PVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVLayout.h; sourceTree = "<group>"; };
-		226D711617A065B700CC9AF1 /* PVLayoutImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVLayoutImp.h; sourceTree = "<group>"; };
-		226D711717A065B700CC9AF1 /* PVLayoutImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayoutImp.m; sourceTree = "<group>"; };
-		226D712217A067D300CC9AF1 /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayoutSpec.m; sourceTree = "<group>"; };
+		22081F7417BCA0EB00D984A6 /* PVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayout.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		226D711617A065B700CC9AF1 /* PVLayoutImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayoutImp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		226D711717A065B700CC9AF1 /* PVLayoutImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVLayoutImp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2285CFFC187E080C007C2EEF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2285D002187E080C007C2EEF /* ParusXCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParusXCTests-Info.plist"; sourceTree = "<group>"; };
+		2285D004187E080C007C2EEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2285D008187E080C007C2EEF /* ParusXCTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ParusXCTests-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22E9C006187E16E300EC368A /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintContextSpec.m; sourceTree = "<group>"; };
+		22E9C007187E16E300EC368A /* PVGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVGroupSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22E9C008187E16E300EC368A /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayoutSpec.m; sourceTree = "<group>"; };
+		22E9C009187E16E300EC368A /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLSpec.m; sourceTree = "<group>"; };
 		4838D55E176DDD19009415E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4838D562176DDD19009415E4 /* Parus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parus-Prefix.pch"; sourceTree = "<group>"; };
+		4838D562176DDD19009415E4 /* Parus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "Parus-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4838D56D176DDD19009415E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4838D577176DDD19009415E4 /* ParusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParusTests-Info.plist"; sourceTree = "<group>"; };
-		4838D579176DDD19009415E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4838D584176DE09C009415E4 /* libParus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParus.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4838D585176DE09C009415E4 /* ParusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4838D587176DE171009415E4 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = External/Specta/Specta.xcodeproj; sourceTree = "<group>"; };
 		4838D596176DE183009415E4 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = External/Expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
-		4838D5AA176DE449009415E4 /* ParusTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParusTests-Prefix.pch"; sourceTree = "<group>"; };
 		4838D5B2176DE807009415E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		4838D5C6176FADFD009415E4 /* PVConstraintContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConstraintContext.h; sourceTree = "<group>"; };
-		4838D5C7176FADFE009415E4 /* PVConstraintContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConstraintContext.m; sourceTree = "<group>"; };
-		4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintContextSpec.m; sourceTree = "<group>"; };
-		48B46FEB17C4FC8000A48463 /* PVGroupContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGroupContext.h; sourceTree = "<group>"; };
-		48B46FEC17C4FC8000A48463 /* PVGroupContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroupContext.m; sourceTree = "<group>"; };
-		48B8B0C017B6281B0078CD95 /* PVGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGroup.h; sourceTree = "<group>"; };
-		48B8B0CC17B628590078CD95 /* PVGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroupSpec.m; sourceTree = "<group>"; };
-		48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGroupImpl.h; sourceTree = "<group>"; };
-		48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGroupImpl.m; sourceTree = "<group>"; };
-		48CA82FA17C4D6C800DE4A0E /* Parus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parus.h; sourceTree = "<group>"; };
-		863E61F517BCB92500E62E8F /* PVVFLImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVVFLImp.h; sourceTree = "<group>"; };
-		8654BB3F177439A700B0AB6D /* PVVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVFL.h; sourceTree = "<group>"; };
-		8654BB40177439A700B0AB6D /* PVVFLImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLImp.m; sourceTree = "<group>"; };
-		8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLSpec.m; sourceTree = "<group>"; };
-		86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVFLContext.h; sourceTree = "<group>"; };
-		86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLContext.m; sourceTree = "<group>"; };
+		4838D5C6176FADFD009415E4 /* PVConstraintContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVConstraintContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4838D5C7176FADFE009415E4 /* PVConstraintContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVConstraintContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		48B46FEB17C4FC8000A48463 /* PVGroupContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVGroupContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		48B46FEC17C4FC8000A48463 /* PVGroupContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVGroupContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		48B8B0C017B6281B0078CD95 /* PVGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVGroup.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVGroupImpl.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVGroupImpl.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		48CA82FA17C4D6C800DE4A0E /* Parus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Parus.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		863E61F517BCB92500E62E8F /* PVVFLImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVVFLImp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		8654BB3F177439A700B0AB6D /* PVVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVVFL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		8654BB40177439A700B0AB6D /* PVVFLImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVVFLImp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVVFLContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVVFLContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2285CFF8187E080C007C2EEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D62AC0187E0D7F00189B9E /* libParus.a in Frameworks */,
+				22D62ABE187E0D7500189B9E /* libExpecta-iOS.a in Frameworks */,
+				22D62ABF187E0D7500189B9E /* libSpecta-iOS.a in Frameworks */,
+				2285CFFD187E080C007C2EEF /* XCTest.framework in Frameworks */,
+				2285CFFF187E080C007C2EEF /* UIKit.framework in Frameworks */,
+				2285CFFE187E080C007C2EEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4838D559176DDD19009415E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,29 +171,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4838D568176DDD19009415E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4838D5B7176E2CCE009415E4 /* UIKit.framework in Frameworks */,
-				4838D5B6176E2CA8009415E4 /* libParus.a in Frameworks */,
-				4838D5B5176DEBA7009415E4 /* libSpecta-iOS.a in Frameworks */,
-				4838D5B4176DEBA3009415E4 /* libExpecta-iOS.a in Frameworks */,
-				4838D56E176DDD19009415E4 /* SenTestingKit.framework in Frameworks */,
-				4838D571176DDD19009415E4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2285D000187E080C007C2EEF /* ParusXCTests */ = {
+			isa = PBXGroup;
+			children = (
+				22E9C005187E169700EC368A /* Specs */,
+				2285D001187E080C007C2EEF /* Supporting Files */,
+			);
+			path = ParusXCTests;
+			sourceTree = "<group>";
+		};
+		2285D001187E080C007C2EEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2285D002187E080C007C2EEF /* ParusXCTests-Info.plist */,
+				2285D003187E080C007C2EEF /* InfoPlist.strings */,
+				2285D008187E080C007C2EEF /* ParusXCTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22E9C005187E169700EC368A /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				22E9C006187E16E300EC368A /* ConstraintContextSpec.m */,
+				22E9C007187E16E300EC368A /* PVGroupSpec.m */,
+				22E9C008187E16E300EC368A /* PVLayoutSpec.m */,
+				22E9C009187E16E300EC368A /* PVVFLSpec.m */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
 		4838D54A176DDBFD009415E4 = {
 			isa = PBXGroup;
 			children = (
 				4838D560176DDD19009415E4 /* Parus */,
-				4838D575176DDD19009415E4 /* ParusTests */,
+				2285D000187E080C007C2EEF /* ParusXCTests */,
 				4838D553176DDC5B009415E4 /* Frameworks */,
 				4838D5B8176E2E93009415E4 /* Products */,
+				2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +223,7 @@
 				4838D587176DE171009415E4 /* Specta.xcodeproj */,
 				4838D55E176DDD19009415E4 /* Foundation.framework */,
 				4838D56D176DDD19009415E4 /* SenTestingKit.framework */,
+				2285CFFC187E080C007C2EEF /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,32 +250,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		4838D575176DDD19009415E4 /* ParusTests */ = {
-			isa = PBXGroup;
-			children = (
-				4838D576176DDD19009415E4 /* Supporting Files */,
-				4838D5B9176E2EB5009415E4 /* Specs */,
-			);
-			path = ParusTests;
-			sourceTree = "<group>";
-		};
-		4838D576176DDD19009415E4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4838D577176DDD19009415E4 /* ParusTests-Info.plist */,
-				4838D578176DDD19009415E4 /* InfoPlist.strings */,
-				4838D5AA176DE449009415E4 /* ParusTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		4838D588176DE171009415E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4838D58F176DE172009415E4 /* libSpecta.a */,
 				4838D591176DE172009415E4 /* libSpecta-iOS.a */,
-				4838D593176DE172009415E4 /* SpectaTests.octest */,
-				4838D595176DE172009415E4 /* Specta-iOSTests.octest */,
+				22D62AB5187E0CF200189B9E /* libSpecta-OSX.a */,
+				22D62AB7187E0CF200189B9E /* SpectaTests-iOS.xctest */,
+				22D62AB9187E0CF200189B9E /* Specta-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +268,7 @@
 				4838D5A0176DE184009415E4 /* libExpecta-iOS.a */,
 				4838D5A2176DE184009415E4 /* ExpectaTests.octest */,
 				4838D5A4176DE184009415E4 /* Expecta-iOSTests.octest */,
+				22E9C004187E117300EC368A /* ExpectaTests-XCTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,20 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				4838D584176DE09C009415E4 /* libParus.a */,
-				4838D585176DE09C009415E4 /* ParusTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4838D5B9176E2EB5009415E4 /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-				4838D5C9176FB0B6009415E4 /* ConstraintContextSpec.m */,
-				8654BB4A177444EF00B0AB6D /* PVVFLSpec.m */,
-				226D712217A067D300CC9AF1 /* PVLayoutSpec.m */,
-				48B8B0CC17B628590078CD95 /* PVGroupSpec.m */,
-			);
-			path = Specs;
 			sourceTree = "<group>";
 		};
 		48CA82EF17C4D61B00DE4A0E /* VFL */ = {
@@ -311,6 +320,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2285CFFA187E080C007C2EEF /* ParusXCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2285D015187E080C007C2EEF /* Build configuration list for PBXNativeTarget "ParusXCTests" */;
+			buildPhases = (
+				2285CFF7187E080C007C2EEF /* Sources */,
+				2285CFF8187E080C007C2EEF /* Frameworks */,
+				2285CFF9187E080C007C2EEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2285D00A187E080C007C2EEF /* PBXTargetDependency */,
+			);
+			name = ParusXCTests;
+			productName = ParusXCTests;
+			productReference = 2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4838D55B176DDD19009415E4 /* Parus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4838D57E176DDD19009415E4 /* Build configuration list for PBXNativeTarget "Parus" */;
@@ -328,25 +355,6 @@
 			productReference = 4838D584176DE09C009415E4 /* libParus.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		4838D56B176DDD19009415E4 /* ParusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4838D581176DDD19009415E4 /* Build configuration list for PBXNativeTarget "ParusTests" */;
-			buildPhases = (
-				4838D567176DDD19009415E4 /* Sources */,
-				4838D568176DDD19009415E4 /* Frameworks */,
-				4838D569176DDD19009415E4 /* Resources */,
-				4838D56A176DDD19009415E4 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4838D573176DDD19009415E4 /* PBXTargetDependency */,
-			);
-			name = ParusTests;
-			productName = ParusTests;
-			productReference = 4838D585176DE09C009415E4 /* ParusTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,6 +362,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					2285CFFA187E080C007C2EEF = {
+						TestTargetID = 4838D55B176DDD19009415E4;
+					};
+				};
 			};
 			buildConfigurationList = 4838D54E176DDBFD009415E4 /* Build configuration list for PBXProject "Parus" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -378,17 +391,38 @@
 			projectRoot = "";
 			targets = (
 				4838D55B176DDD19009415E4 /* Parus */,
-				4838D56B176DDD19009415E4 /* ParusTests */,
+				2285CFFA187E080C007C2EEF /* ParusXCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4838D58F176DE172009415E4 /* libSpecta.a */ = {
+		22D62AB5187E0CF200189B9E /* libSpecta-OSX.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libSpecta.a;
-			remoteRef = 4838D58E176DE172009415E4 /* PBXContainerItemProxy */;
+			path = "libSpecta-OSX.a";
+			remoteRef = 22D62AB4187E0CF200189B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22D62AB7187E0CF200189B9E /* SpectaTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SpectaTests-iOS.xctest";
+			remoteRef = 22D62AB6187E0CF200189B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22D62AB9187E0CF200189B9E /* Specta-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Specta-OSXTests.xctest";
+			remoteRef = 22D62AB8187E0CF200189B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22E9C004187E117300EC368A /* ExpectaTests-XCTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ExpectaTests-XCTest.xctest";
+			remoteRef = 22E9C003187E117300EC368A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		4838D591176DE172009415E4 /* libSpecta-iOS.a */ = {
@@ -396,20 +430,6 @@
 			fileType = archive.ar;
 			path = "libSpecta-iOS.a";
 			remoteRef = 4838D590176DE172009415E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4838D593176DE172009415E4 /* SpectaTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SpectaTests.octest;
-			remoteRef = 4838D592176DE172009415E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4838D595176DE172009415E4 /* Specta-iOSTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Specta-iOSTests.octest";
-			remoteRef = 4838D594176DE172009415E4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		4838D59E176DE184009415E4 /* libExpecta.a */ = {
@@ -443,34 +463,28 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4838D569176DDD19009415E4 /* Resources */ = {
+		2285CFF9187E080C007C2EEF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4838D57A176DDD19009415E4 /* InfoPlist.strings in Resources */,
-				4838D5CA176FB0B6009415E4 /* ConstraintContextSpec.m in Resources */,
+				2285D005187E080C007C2EEF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4838D56A176DDD19009415E4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		2285CFF7187E080C007C2EEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				22E9C00D187E16E300EC368A /* PVVFLSpec.m in Sources */,
+				22E9C00C187E16E300EC368A /* PVLayoutSpec.m in Sources */,
+				22E9C00B187E16E300EC368A /* PVGroupSpec.m in Sources */,
+				22E9C00A187E16E300EC368A /* ConstraintContextSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		4838D558176DDD19009415E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,32 +498,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4838D567176DDD19009415E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4838D5CD176FB16C009415E4 /* ConstraintContextSpec.m in Sources */,
-				8654BB4B177444EF00B0AB6D /* PVVFLSpec.m in Sources */,
-				226D712317A067D300CC9AF1 /* PVLayoutSpec.m in Sources */,
-				48B8B0CE17B628590078CD95 /* PVGroupSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4838D573176DDD19009415E4 /* PBXTargetDependency */ = {
+		2285D00A187E080C007C2EEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4838D55B176DDD19009415E4 /* Parus */;
-			targetProxy = 4838D572176DDD19009415E4 /* PBXContainerItemProxy */;
+			targetProxy = 2285D009187E080C007C2EEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4838D578176DDD19009415E4 /* InfoPlist.strings */ = {
+		2285D003187E080C007C2EEF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4838D579176DDD19009415E4 /* en */,
+				2285D004187E080C007C2EEF /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -517,12 +520,117 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2285D00B187E080C007C2EEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParusXCTests/ParusXCTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/External/Expecta/src/matchers",
+					"$(SRCROOT)/External/Expecta/src",
+					"$(SRCROOT)/External/Specta/src",
+				);
+				INFOPLIST_FILE = "ParusXCTests/ParusXCTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2285D00C187E080C007C2EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParusXCTests/ParusXCTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/External/Expecta/src/matchers",
+					"$(SRCROOT)/External/Expecta/src",
+					"$(SRCROOT)/External/Specta/src",
+				);
+				INFOPLIST_FILE = "ParusXCTests/ParusXCTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		4838D54F176DDBFD009415E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -532,6 +640,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -600,88 +709,18 @@
 			};
 			name = Release;
 		};
-		4838D582176DDD19009415E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParusTests/ParusTests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"External/Expecta/src/**",
-					"External/Specta/src/**",
-				);
-				INFOPLIST_FILE = "ParusTests/ParusTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_AFTER_BUILD = NO;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		4838D583176DDD19009415E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParusTests/ParusTests-Prefix.pch";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"External/Expecta/src/**",
-					"External/Specta/src/**",
-				);
-				INFOPLIST_FILE = "ParusTests/ParusTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_AFTER_BUILD = NO;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2285D015187E080C007C2EEF /* Build configuration list for PBXNativeTarget "ParusXCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2285D00B187E080C007C2EEF /* Debug */,
+				2285D00C187E080C007C2EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4838D54E176DDBFD009415E4 /* Build configuration list for PBXProject "Parus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -696,15 +735,6 @@
 			buildConfigurations = (
 				4838D57F176DDD19009415E4 /* Debug */,
 				4838D580176DDD19009415E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4838D581176DDD19009415E4 /* Build configuration list for PBXNativeTarget "ParusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4838D582176DDD19009415E4 /* Debug */,
-				4838D583176DDD19009415E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
