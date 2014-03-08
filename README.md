@@ -37,10 +37,21 @@ With Parus:
 NSArray* constraints = PVVFL(@"|-padding-[view]-padding-|").alignAllTop.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view)).metrics(@{@"padding": @20}).asArray;
 ```
 
+Features
+=====
+* It is easy to create constraints - just like writing a sentence
+* More compact and semantical than usual NSAutoLayout
+* Flexibility in creating constraints - you specify only parameters that you need
+
 Installation
 =====
 
 Use [cocoapods](http://cocoapods.org/)!
+
+TODO
+====
+* Extend debug description
+* Category for NSString as a start point for creating VFL
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DAlOG/parus/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
