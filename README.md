@@ -1,8 +1,8 @@
-## Parus
+# Parus
 
 Parus is a small objective-c DSL for AutoLayout in code.
 
-### Features
+## Features
 * It is easy to create constraints - just like writing a sentence;
 * More compact and semantical than usual NSAutoLayout;
 * Flexibility in creating constraints - you specify only parameters that you need;
@@ -37,15 +37,13 @@ Using default values make it even shorter:
                             multiplier:1.0
                               constant:10];
 ```
-
-Parus:
 ```obj-c
 PVLeftOf(view).equalTo.constant(10).asConstraint;
 ```
 
 ### Visual Formatting Language (VFL)
 
-NSLayoutConstraints:
+Simple VFL constraints:
 ```obj-c
 [NSLayoutConstraint constraintsWithVisualFormat:@"|-padding-[view]-padding-|"
                                         options:(NSLayoutFormatAlignAllTop | 
@@ -53,14 +51,11 @@ NSLayoutConstraints:
                                         metrics:@{@"padding" : @20}
                                           views:NSDictionaryOfVariableBindings(view)];
 ```
-
-Parus:
 ```obj-c
 PVVFL(@"|-padding-[view]-padding-|").alignAllTop.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view)).metrics(@{@"padding": @20}).asArray;
 ```
 
-With special masks and defaults
-NSLayoutConstraints:
+With special masks and defaults:
 ```obj-c
 [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view1][view2][view3]|"
                                         options:(NSLayoutFormatAlignAllLeft | 
@@ -68,18 +63,14 @@ NSLayoutConstraints:
                                         metrics:nil
                                           views:NSDictionaryOfVariableBindings(view1, view2, view3)];
 ```
-
-Parus:
 ```obj-c
 PVVFL(@"V:|[view1][view2][view3]|").alignAllLeftAndRight.withViews(NSDictionaryOfVariableBindings(view1, view2, view3)).asArray;
 ```
 
-### Group
+### Groups
 
 There is available feature that helps you group constraints and produce even less code.
 Enjoy!
-
-NSLayoutConstraints:
 ```obj-c
 [someView addConstraint:[NSLayoutConstraint constraintWithItem:view
                            						     attribute:NSLayoutAttributeLeft
@@ -98,8 +89,6 @@ NSLayoutConstraints:
                                         						 metrics:nil
                                           						   views:NSDictionaryOfVariableBindings(view1)]];
 ```
-
-Parus:
 ```obj-c
 [someView addConstraints:PVGroup(@[PVLeftOf(view).equalTo.constant(10),
 								   PVVFL(@"V:|[view1][view2][view3]|").alignAllLeftAndRight,
@@ -115,7 +104,6 @@ Parus:
 ## Installation
 
 Use [cocoapods](http://cocoapods.org/)!
-
 ```ruby
 pod 'Parus'
 ```
@@ -131,6 +119,6 @@ pod 'Parus'
 
 ## More information
 
-[Wiki](https://github.com/DAlOG/Parus/wiki)
+Visit our [wiki](https://github.com/DAlOG/Parus/wiki)
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DAlOG/parus/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
