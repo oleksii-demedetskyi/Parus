@@ -6,7 +6,7 @@ Parus is a small objective-c DSL for AutoLayout in code.
 * It is easy to create constraints - just like writing a sentence;
 * More compact and semantical than usual NSAutoLayout;
 * Flexibility in creating constraints - you specify only parameters that you need;
-* Autocomplete works!
+* Autocomplete rocks!
 
 ## Usage
 ### Single constraint
