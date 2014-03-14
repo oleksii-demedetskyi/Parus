@@ -96,6 +96,15 @@ Enjoy!
 								   ]).withViews(NSDictionaryOfVariableBindings(view1, view2, view3)).asArray];
 ```
 
+You can also use usual ```NSLayoutConstraint``` or ```NSArray``` of ```NSLayoutConstraint``` as an item for ```PVGroup()```. Following code is totally acceptable:
+
+```obj-c
+NSLayoutConstraint* usualConstraint = [NSLayoutConstraint constraintWithItem:... blablabla very long constraint definition ...];
+NSArray* usualConstraints = [NSLayoutConstraint constraintsWithVisualFormat:... blabla ...];
+
+[someView addConstraints:PVGroup(@[usualConstraint, usualConstraints]).asArray];
+```
+
 ## Alternatives
 
 * [Masonry](https://github.com/cloudkite/Masonry)
