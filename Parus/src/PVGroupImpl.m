@@ -20,13 +20,13 @@
 
 @end
 
-NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
+_PVGroup* PVGroup(NSArray* array)
 {
     return ({
         PVGroupImpl* group = [PVGroupImpl new];
         group.array = array;
         
-        group;
+        (_PVGroup*)group;
     });
 }
 
@@ -108,7 +108,7 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
 {
     return ^(NSDictionary* metrics){
         self.context.metrics = metrics;
-        return self;
+        return (_PVGroupWithMetricsResult)self;
     };
 }
 
@@ -118,29 +118,29 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array)
 {
     return ^(NSDictionary* views){
         self.context.views = views;
-        return self;
+        return (_PVGroupWithViewsResult*)self;
     };
 }
 
 #pragma mark - Direction
 
-- (_PVGroupDiretionChooseResult)applyDirection:(NSLayoutFormatOptions)opt
+- (_PVGroupDiretionChooseResult*)applyDirection:(NSLayoutFormatOptions)opt
 {
     self.context.direction = opt;
-    return self;
+    return (_PVGroupDiretionChooseResult*)self;
 }
 
-- (_PVGroupDiretionChooseResult)fromLeadingToTrailing
+- (_PVGroupDiretionChooseResult*)fromLeadingToTrailing
 {
     return [self applyDirection:NSLayoutFormatDirectionLeadingToTrailing];
 }
 
-- (_PVGroupDiretionChooseResult)fromLeftToRight
+- (_PVGroupDiretionChooseResult*)fromLeftToRight
 {
     return [self applyDirection:NSLayoutFormatDirectionLeftToRight];
 }
 
-- (_PVGroupDiretionChooseResult)fromRightToLeft
+- (_PVGroupDiretionChooseResult*)fromRightToLeft
 {
     return [self applyDirection:NSLayoutFormatDirectionRightToLeft];
 }

@@ -10,6 +10,9 @@
 
 @protocol _PVGroupProtocol;
 
+@class id_PVRoot;
+typedef id_PVRoot<_PVGroupProtocol> _PVGroup;
+
 /// This call allow to perform next syntax:
 /// PVGroup()
 ///     (.fromLeftToRight OR .fromRightToLeft OR .fromLeadingToTrailing)
@@ -23,10 +26,10 @@
 /// Please, do not store any intermediate results.
 /// Constraint inequality are guaranteed.
 
-NSObject<_PVGroupProtocol>* PVGroup(NSArray* array);
+_PVGroup* PVGroup(NSArray* array);
 
 
-@protocol _PVGroupArrayConversionProtocol <NSObject>
+@protocol _PVGroupArrayConversionProtocol
 
 /// -asArray is finaliser for group syntax chain.
 /// Each access to this property will cause items processing from very beginning.
@@ -37,10 +40,11 @@ NSObject<_PVGroupProtocol>* PVGroup(NSArray* array);
 
 @end
 
-
-typedef NSObject<_PVGroupArrayConversionProtocol>* _PVGroupWithMetricsResult;
+typedef id_PVRoot<_PVGroupArrayConversionProtocol> _PVGroupArrayConversion;
+typedef _PVGroupArrayConversion* _PVGroupWithMetricsResult;
 typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
-@protocol _PVGroupWithMetricsProtocol <NSObject>
+
+@protocol _PVGroupWithMetricsProtocol
 
 /// Set reecieved metrics into all VFL-based items.
 ///
@@ -52,14 +56,15 @@ typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
 
 @end
 
-
-typedef NSObject
+typedef id_PVRoot
         <
             _PVGroupArrayConversionProtocol,
             _PVGroupWithMetricsProtocol
-        >* _PVGroupWithViewsResult;
-typedef _PVGroupWithViewsResult(^_PVGroupWithViewsBlock)(NSDictionary*);
-@protocol _PVGroupWithViewsProtocol <NSObject>
+        >
+        _PVGroupWithViewsResult;
+typedef _PVGroupWithViewsResult*(^_PVGroupWithViewsBlock)(NSDictionary*);
+
+@protocol _PVGroupWithViewsProtocol
 
 /// Set recieved views into all VFL based items
 ///
@@ -72,14 +77,14 @@ typedef _PVGroupWithViewsResult(^_PVGroupWithViewsBlock)(NSDictionary*);
 @end
 
 
-typedef NSObject
+typedef id_PVRoot
         <
             _PVGroupArrayConversionProtocol,
             _PVGroupWithViewsProtocol,
             _PVGroupWithMetricsProtocol
-        > *
+        >
         _PVGroupDiretionChooseResult;
-@protocol _PVGroupDirectionChooseProtocol <NSObject>
+@protocol _PVGroupDirectionChooseProtocol
 
 /// Next properties will set up direction into appropriate VFL contexts.
 /// Merge policy:
@@ -90,9 +95,9 @@ typedef NSObject
 ///
 /// New value will be transported to VFL context only at finalising steps.
 
-@property (readonly) _PVGroupDiretionChooseResult fromLeftToRight;
-@property (readonly) _PVGroupDiretionChooseResult fromRightToLeft;
-@property (readonly) _PVGroupDiretionChooseResult fromLeadingToTrailing;
+@property (readonly) _PVGroupDiretionChooseResult* fromLeftToRight;
+@property (readonly) _PVGroupDiretionChooseResult* fromRightToLeft;
+@property (readonly) _PVGroupDiretionChooseResult* fromLeadingToTrailing;
 
 @end
 
@@ -100,7 +105,6 @@ typedef NSObject
 /// Resulting protocol for PVGroup() call.
 @protocol _PVGroupProtocol
 <
-    NSObject,
     _PVGroupDirectionChooseProtocol,
     _PVGroupArrayConversionProtocol,
     _PVGroupWithViewsProtocol,
