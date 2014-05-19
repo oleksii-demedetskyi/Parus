@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PVRoot.h"
 
 @protocol _PVLocationRelationSelect, _PVRelationSelect;
-
-@interface id_PVRoot @end
 
 typedef id_PVRoot<_PVRelationSelect> _PVRelationSelect;
 typedef id_PVRoot<_PVLocationRelationSelect> _PVLocationRelationSelect;

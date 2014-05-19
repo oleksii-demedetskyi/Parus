@@ -115,6 +115,7 @@
 
 /* Begin PBXFileReference section */
 		22081F7417BCA0EB00D984A6 /* PVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayout.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		22266E36192A231C0054B1E9 /* PVRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRoot.h; sourceTree = "<group>"; };
 		226D711617A065B700CC9AF1 /* PVLayoutImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayoutImp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		226D711717A065B700CC9AF1 /* PVLayoutImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVLayoutImp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				48CA82FA17C4D6C800DE4A0E /* Parus.h */,
+				22266E36192A231C0054B1E9 /* PVRoot.h */,
 				48CA82F917C4D62700DE4A0E /* Layout */,
 				48CA82F817C4D62300DE4A0E /* Group */,
 				48CA82EF17C4D61B00DE4A0E /* VFL */,

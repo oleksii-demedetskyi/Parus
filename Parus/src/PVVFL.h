@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PVRoot.h"
 
 /// PVVFL() allows to build constraints using Visual Format Language.
 ///
@@ -30,73 +31,77 @@
     _PVViewsPart,
     _PVMetricsPart;
 
+typedef id_PVRoot<_PVAlignmentOptionSelect> _PVAlignmentOptionSelect;
+typedef id_PVRoot<_PVDirectionOptionSelect> _PVDirectionOptionSelect;
+typedef id_PVRoot<_PVViewsPart> _PVViewsPart;
+typedef id_PVRoot<_PVArrayConstrainable> _PVArrayConstrainable;
+typedef id_PVRoot<_PVMetricsPart> _PVMetricsPart;
+
+
 /// Start function that receives NSString object with VFL and set its to the format.
-NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format);
+_PVAlignmentOptionSelect* PVVFL(NSString* format);
 
 /// Protocol that describes alignment part of NSLayoutFormatOptions.
-@protocol _PVAlignmentOptionSelect <_PVDirectionOptionSelect, _PVViewsPart, _PVArrayConstrainable>
+@protocol _PVAlignmentOptionSelect <_PVDirectionOptionSelect>
 
 /// Adds NSLayoutFormatAlignAllLeft to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeft;
+@property (readonly) _PVDirectionOptionSelect* alignAllLeft;
 
 /// Adds NSLayoutFormatAlignAllRight to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllRight;
+@property (readonly) _PVDirectionOptionSelect* alignAllRight;
 
 /// Adds (NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight) to options
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeftAndRight;
+@property (readonly) _PVDirectionOptionSelect* alignAllLeftAndRight;
 
 /// Adds NSLayoutFormatAlignAllTop to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllTop;
+@property (readonly) _PVDirectionOptionSelect* alignAllTop;
 
 /// Adds NSLayoutFormatAlignAllBottom to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllBottom;
+@property (readonly) _PVDirectionOptionSelect* alignAllBottom;
 
 /// Adds (NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom) to options
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllTopAndBottom;
+@property (readonly) _PVDirectionOptionSelect* alignAllTopAndBottom;
 
 /// Adds NSLayoutFormatAlignAllLeading to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeading;
+@property (readonly) _PVDirectionOptionSelect* alignAllLeading;
 
 /// Adds NSLayoutFormatAlignAllTrailing to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllTrailing;
+@property (readonly) _PVDirectionOptionSelect* alignAllTrailing;
 
 /// Adds (NSLayoutFormatAlignAllLeading | NSLayoutFormatAlignAllTrailing) to options
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllLeadingAndTrailing;
+@property (readonly) _PVDirectionOptionSelect* alignAllLeadingAndTrailing;
 
 /// Adds NSLayoutFormatAlignAllCenterX to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllCenterX;
+@property (readonly) _PVDirectionOptionSelect* alignAllCenterX;
 
 /// Adds NSLayoutFormatAlignAllCenterY to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllCenterY;
+@property (readonly) _PVDirectionOptionSelect* alignAllCenterY;
 
 /// Adds NSLayoutFormatAlignAllBaseline to options.
-@property (readonly) NSObject<_PVDirectionOptionSelect>* alignAllBaseline;
+@property (readonly) _PVDirectionOptionSelect* alignAllBaseline;
 
 @end
 
-
-@protocol _PVViewsPart;
 
 /// Protocol that describes direction option of NSLayoutFormatOptions.
-@protocol _PVDirectionOptionSelect <_PVViewsPart, _PVArrayConstrainable>
+@protocol _PVDirectionOptionSelect <_PVViewsPart>
 
 /// Adds NSLayoutFormatDirectionLeadingToTrailing to options.
-@property (readonly) NSObject<_PVViewsPart>* fromLeadingToTrailing;
+@property (readonly) _PVViewsPart* fromLeadingToTrailing;
 
 /// Adds NSLayoutFormatDirectionLeftToRight to options.
-@property (readonly) NSObject<_PVViewsPart>* fromLeftToRight;
+@property (readonly) _PVViewsPart* fromLeftToRight;
 
 /// Adds NSLayoutFormatDirectionRightToLeft to options.
-@property (readonly) NSObject<_PVViewsPart>* fromRightToLeft;
+@property (readonly) _PVViewsPart* fromRightToLeft;
 
 @end
 
 
-@protocol _PVMetricsPart;
-typedef  NSObject<_PVMetricsPart>*(^_PVViewsPartBlock)(NSDictionary* views);
+typedef  _PVMetricsPart*(^_PVViewsPartBlock)(NSDictionary* views);
 
 /// Protocol that describes views part that are specified in VFL string.
-@protocol _PVViewsPart <_PVMetricsPart, _PVArrayConstrainable>
+@protocol _PVViewsPart <_PVMetricsPart>
 
 /// Sets passed views dictionary to the views part of constraints.
 @property (readonly) _PVViewsPartBlock withViews;
@@ -104,7 +109,7 @@ typedef  NSObject<_PVMetricsPart>*(^_PVViewsPartBlock)(NSDictionary* views);
 @end
 
 
-typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics);
+typedef _PVArrayConstrainable*(^_PVMetricsBlock)(NSDictionary* metrics);
 
 /// Protocol that describes metrics part that are specified in VFL string.
 @protocol _PVMetricsPart <_PVArrayConstrainable>
@@ -115,7 +120,7 @@ typedef NSObject<_PVArrayConstrainable>*(^_PVMetricsBlock)(NSDictionary* metrics
 @end
 
 /// Protocol that allows to finish constraint building and receive an array of NSLayoutConstraint objects.
-@protocol _PVArrayConstrainable <NSObject>
+@protocol _PVArrayConstrainable
 
 /// Creates array of constraints on each property call.
 @property (readonly) NSArray* asArray;

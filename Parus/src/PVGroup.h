@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PVRoot.h"
 
 @protocol _PVGroupProtocol;
 
-@class id_PVRoot;
 typedef id_PVRoot<_PVGroupProtocol> _PVGroup;
 
 /// This call allow to perform next syntax:
@@ -112,5 +112,3 @@ typedef id_PVRoot
 >
 
 @end
-
-
