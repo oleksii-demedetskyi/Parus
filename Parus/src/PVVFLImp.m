@@ -155,7 +155,7 @@
         
         self.context.views = views;
         
-        return self;
+        return (_PVMetricsPart*)self;
     };
 }
 
@@ -171,7 +171,7 @@
         
         self.context.metrics = metrics;
         
-        return self;
+        return (_PVArrayConstrainable*)self;
     };
 }
 
@@ -188,12 +188,12 @@
 
 @end
 
-NSObject<_PVAlignmentOptionSelect>* PVVFL(NSString* format)
+_PVAlignmentOptionSelect* PVVFL(NSString* format)
 {
     NSCAssert([format isKindOfClass:[NSString class]], @"Format should be NSString");
 
     PVVFLLayout* layout = [PVVFLLayout new];
     layout.context.format = format;
     
-    return layout;
-}   
+    return (_PVAlignmentOptionSelect*)layout;
+}

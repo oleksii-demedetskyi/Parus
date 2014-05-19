@@ -137,7 +137,7 @@
         self.context.rightAttribute = attribute;
         self.context.rightAtttributeMultiplier = 1.f;
         
-        return self;
+        return (_PVRightHandPart*)self;
     };
 }
 
@@ -146,7 +146,7 @@
     return ^(CGFloat constant) {
         self.context.rightConstant = constant;
         
-        return self;
+        return (_PVConstantPart*)self;
     };
 }
 
@@ -161,7 +161,7 @@
     return ^(CGFloat multiplier) {
         self.context.rightAtttributeMultiplier = multiplier;
         
-        return self;
+        return (_PVMultiplierPart*)self;
     };
 }
 
@@ -176,7 +176,7 @@
     return ^(UILayoutPriority priority) {
         self.context.priority = priority;
         
-        return self;
+        return (_PVConstrainable*)self;
     };
 }
 
@@ -191,7 +191,7 @@
     return ^(CGFloat constant) {
         self.context.rightConstant = constant;
         
-        return self;
+        return (_PVConstantPart*)self;
     };
 }
 
@@ -200,7 +200,7 @@
     return ^(CGFloat constant) {
         self.context.rightConstant = -constant;
         
-        return self;
+        return (_PVConstantPart*)self;
     };
 }
 
