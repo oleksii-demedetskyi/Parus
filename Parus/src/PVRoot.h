@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface id_PVRoot @end
+@interface _PVRoot @end

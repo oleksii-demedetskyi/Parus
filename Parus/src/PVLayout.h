@@ -11,8 +11,8 @@
 
 @protocol _PVLocationRelationSelect, _PVRelationSelect;
 
-typedef id_PVRoot<_PVRelationSelect> _PVRelationSelect;
-typedef id_PVRoot<_PVLocationRelationSelect> _PVLocationRelationSelect;
+typedef _PVRoot<_PVRelationSelect> _PVRelationSelect;
+typedef _PVRoot<_PVLocationRelationSelect> _PVLocationRelationSelect;
 
 /// Single constraint definition could be found on wiki: https://github.com/DAlOG/Parus/wiki/Single-constraint-syntax-definition
 
@@ -63,7 +63,7 @@ _PVLocationRelationSelect* PVBaselineOf(UIView*);
 
 @protocol _PVRelationPart;
 
-typedef id_PVRoot<_PVRelationPart> _PVRelationPart;
+typedef _PVRoot<_PVRelationPart> _PVRelationPart;
 
 /// Protocol for handling relationships in size contraints.
 /// Format example: view1.(width|height) RELATIONSHIP(==,<=,>=) view2.(width|height) OR constant.
@@ -85,7 +85,7 @@ typedef id_PVRoot<_PVRelationPart> _PVRelationPart;
 
 @protocol _PVLocationRelationPart;
 
-typedef id_PVRoot<_PVLocationRelationPart> _PVLocationRelationPart;
+typedef _PVRoot<_PVLocationRelationPart> _PVLocationRelationPart;
 
 @protocol _PVLocationRelationSelect
 
@@ -104,8 +104,8 @@ typedef id_PVRoot<_PVLocationRelationPart> _PVLocationRelationPart;
 
 @protocol _PVRightHandPart, _PVConstantPart;
 
-typedef id_PVRoot<_PVRightHandPart> _PVRightHandPart;
-typedef id_PVRoot<_PVConstantPart> _PVConstantPart;
+typedef _PVRoot<_PVRightHandPart> _PVRightHandPart;
+typedef _PVRoot<_PVConstantPart> _PVConstantPart;
 
 typedef _PVRightHandPart*(^_PVRightHandViewBlock)(UIView*);
 typedef _PVConstantPart*(^_PVConstantBlock)(CGFloat);
@@ -172,8 +172,8 @@ typedef _PVConstantPart*(^_PVConstantBlock)(CGFloat);
 
 @protocol _PVConstrainable, _PVMultiplierPart;
 
-typedef id_PVRoot<_PVConstrainable> _PVConstrainable;
-typedef id_PVRoot<_PVMultiplierPart> _PVMultiplierPart;
+typedef _PVRoot<_PVConstrainable> _PVConstrainable;
+typedef _PVRoot<_PVMultiplierPart> _PVMultiplierPart;
 
 typedef _PVConstrainable*(^_PVPriorityBlock)(UILayoutPriority);
 typedef _PVMultiplierPart*(^_PVMultiplierBlock)(CGFloat);

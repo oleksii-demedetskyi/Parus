@@ -31,11 +31,11 @@
     _PVViewsPart,
     _PVMetricsPart;
 
-typedef id_PVRoot<_PVAlignmentOptionSelect> _PVAlignmentOptionSelect;
-typedef id_PVRoot<_PVDirectionOptionSelect> _PVDirectionOptionSelect;
-typedef id_PVRoot<_PVViewsPart> _PVViewsPart;
-typedef id_PVRoot<_PVArrayConstrainable> _PVArrayConstrainable;
-typedef id_PVRoot<_PVMetricsPart> _PVMetricsPart;
+typedef _PVRoot<_PVAlignmentOptionSelect> _PVAlignmentOptionSelect;
+typedef _PVRoot<_PVDirectionOptionSelect> _PVDirectionOptionSelect;
+typedef _PVRoot<_PVViewsPart> _PVViewsPart;
+typedef _PVRoot<_PVArrayConstrainable> _PVArrayConstrainable;
+typedef _PVRoot<_PVMetricsPart> _PVMetricsPart;
 
 
 /// Start function that receives NSString object with VFL and set its to the format.

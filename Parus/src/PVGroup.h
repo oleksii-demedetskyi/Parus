@@ -11,7 +11,7 @@
 
 @protocol _PVGroupProtocol;
 
-typedef id_PVRoot<_PVGroupProtocol> _PVGroup;
+typedef _PVRoot<_PVGroupProtocol> _PVGroup;
 
 /// This call allow to perform next syntax:
 /// PVGroup()
@@ -40,7 +40,7 @@ _PVGroup* PVGroup(NSArray* array);
 
 @end
 
-typedef id_PVRoot<_PVGroupArrayConversionProtocol> _PVGroupArrayConversion;
+typedef _PVRoot<_PVGroupArrayConversionProtocol> _PVGroupArrayConversion;
 typedef _PVGroupArrayConversion* _PVGroupWithMetricsResult;
 typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
 
@@ -56,7 +56,7 @@ typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
 
 @end
 
-typedef id_PVRoot
+typedef _PVRoot
         <
             _PVGroupArrayConversionProtocol,
             _PVGroupWithMetricsProtocol
@@ -77,7 +77,7 @@ typedef _PVGroupWithViewsResult*(^_PVGroupWithViewsBlock)(NSDictionary*);
 @end
 
 
-typedef id_PVRoot
+typedef _PVRoot
         <
             _PVGroupArrayConversionProtocol,
             _PVGroupWithViewsProtocol,
