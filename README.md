@@ -109,6 +109,8 @@ NSArray* usualConstraints = [NSLayoutConstraint constraintsWithVisualFormat:... 
 
 * [Masonry](https://github.com/cloudkite/Masonry)
 * [NSLayoutEquations](https://github.com/gormster/NSLayoutEquations)
+* [KeepLayout](https://github.com/iMartinKiss/KeepLayout)
+* [FLKAutoLayout](https://github.com/floriankugler/FLKAutoLayout)
 
 ## Installation
 
