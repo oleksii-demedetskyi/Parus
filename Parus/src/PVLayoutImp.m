@@ -130,8 +130,8 @@
 
 - (_PVRightHandViewBlock)rightHandBlockWithAttribute:(NSLayoutAttribute)attribute
 {
-    return ^(UIView* view) {
-        NSAssert([view isKindOfClass:[UIView class]], @"Argument is not kind of UIView\nview is kind of %@", [view class]);
+    return ^(PVView* view) {
+        NSAssert([view isKindOfClass:[PVView class]], @"Argument is not kind of PVView\nview is kind of %@", [view class]);
         
         self.context.rightView = view;
         self.context.rightAttribute = attribute;
@@ -173,7 +173,7 @@
 
 - (_PVPriorityBlock)withPriority
 {
-    return ^(UILayoutPriority priority) {
+    return ^(PVLayoutPriority priority) {
         self.context.priority = priority;
         
         return (_PVConstrainable*)self;
@@ -221,9 +221,9 @@
 
 #pragma mark - Public Funtions
 
-id<_PVRelationSelect, _PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UIView* view, NSLayoutAttribute attribute)
+id<_PVRelationSelect, _PVLocationRelationSelect> PVLayoutWithViewAndAttribute(PVView* view, NSLayoutAttribute attribute)
 {
-    NSCAssert([view isKindOfClass:[UIView class]], @"Argument is not kind of UIView\nview is %@", view);
+    NSCAssert([view isKindOfClass:[PVView class]], @"Argument is not kind of PVView\nview is %@", view);
     
     PVLayout* constraint = [PVLayout new];
     constraint.context.leftView = view;
@@ -234,57 +234,57 @@ id<_PVRelationSelect, _PVLocationRelationSelect> PVLayoutWithViewAndAttribute(UI
     return constraint;
 }
 
-id<_PVLocationRelationSelect> PVLeftOf(UIView* view)
+id<_PVLocationRelationSelect> PVLeftOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeLeft);
 }
 
-id<_PVLocationRelationSelect> PVRightOf(UIView* view)
+id<_PVLocationRelationSelect> PVRightOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeRight);
 }
 
-id<_PVLocationRelationSelect> PVTopOf(UIView* view)
+id<_PVLocationRelationSelect> PVTopOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeTop);
 }
 
-id<_PVLocationRelationSelect> PVBottomOf(UIView* view)
+id<_PVLocationRelationSelect> PVBottomOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeBottom);
 }
 
-id<_PVLocationRelationSelect> PVLeadingOf(UIView* view)
+id<_PVLocationRelationSelect> PVLeadingOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeLeading);
 }
 
-id<_PVLocationRelationSelect> PVTrailingOf(UIView* view)
+id<_PVLocationRelationSelect> PVTrailingOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeTrailing);
 }
 
-id<_PVRelationSelect> PVWidthOf(UIView* view)
+id<_PVRelationSelect> PVWidthOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeWidth);
 }
 
-id<_PVRelationSelect> PVHeightOf(UIView* view)
+id<_PVRelationSelect> PVHeightOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeHeight);
 }
 
-id<_PVLocationRelationSelect> PVCenterXOf(UIView* view)
+id<_PVLocationRelationSelect> PVCenterXOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeCenterX);
 }
 
-id<_PVLocationRelationSelect> PVCenterYOf(UIView* view)
+id<_PVLocationRelationSelect> PVCenterYOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeCenterY);
 }
 
-id<_PVLocationRelationSelect> PVBaselineOf(UIView* view)
+id<_PVLocationRelationSelect> PVBaselineOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeBaseline);
 }

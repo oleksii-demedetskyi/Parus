@@ -107,13 +107,13 @@ describe(@"PVGroup syntax", ^{
 
 describe(@"PVGroup data conversion", ^{
     
-    __block UIView *view1;
-    __block UIView *view2;
+    __block PVView *view1;
+    __block PVView *view2;
     __block NSLayoutConstraint* (^newConstraint)(void);
     
     beforeEach(^{
-        view1 = [UIView new];
-        view2 = [UIView new];
+        view1 = [PVView new];
+        view2 = [PVView new];
         newConstraint = ^{
             NSLayoutConstraint* c =
             [NSLayoutConstraint constraintWithItem:view1

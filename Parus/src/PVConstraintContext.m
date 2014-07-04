@@ -31,7 +31,7 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
         self.rightAttribute = NSLayoutAttributeNotAnAttribute;
         self.rightAtttributeMultiplier = 0.f;
         self.rightConstant = 0.f;
-        self.priority = UILayoutPriorityRequired;
+        self.priority = PVLayoutPriorityRequired;
     }
     
     return self;

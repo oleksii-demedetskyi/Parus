@@ -6,7 +6,6 @@
 //
 //
 
-#import <Foundation/Foundation.h>
 #import "PVRoot.h"
 
 @protocol _PVLocationRelationSelect, _PVRelationSelect;
@@ -18,47 +17,47 @@ typedef _PVRoot<_PVLocationRelationSelect> _PVLocationRelationSelect;
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeLeft
-_PVLocationRelationSelect* PVLeftOf(UIView*);
+_PVLocationRelationSelect* PVLeftOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeRight
-_PVLocationRelationSelect* PVRightOf(UIView*);
+_PVLocationRelationSelect* PVRightOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeTop
-_PVLocationRelationSelect* PVTopOf(UIView*);
+_PVLocationRelationSelect* PVTopOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeBottom
-_PVLocationRelationSelect* PVBottomOf(UIView*);
+_PVLocationRelationSelect* PVBottomOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeLeading
-_PVLocationRelationSelect* PVLeadingOf(UIView*);
+_PVLocationRelationSelect* PVLeadingOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeTrailing
-_PVLocationRelationSelect* PVTrailingOf(UIView*);
+_PVLocationRelationSelect* PVTrailingOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeWidth
-_PVRelationSelect* PVWidthOf(UIView*);
+_PVRelationSelect* PVWidthOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeHeight
-_PVRelationSelect* PVHeightOf(UIView*);
+_PVRelationSelect* PVHeightOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeCenterX
-_PVLocationRelationSelect* PVCenterXOf(UIView*);
+_PVLocationRelationSelect* PVCenterXOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeCenterY
-_PVLocationRelationSelect* PVCenterYOf(UIView*);
+_PVLocationRelationSelect* PVCenterYOf(PVView*);
 
 /// constraint.firstItem = view
 /// constraint.firstAttribute = NSLayoutAttributeBaseline
-_PVLocationRelationSelect* PVBaselineOf(UIView*);
+_PVLocationRelationSelect* PVBaselineOf(PVView*);
 
 
 @protocol _PVRelationPart;
@@ -107,7 +106,7 @@ typedef _PVRoot<_PVLocationRelationPart> _PVLocationRelationPart;
 typedef _PVRoot<_PVRightHandPart> _PVRightHandPart;
 typedef _PVRoot<_PVConstantPart> _PVConstantPart;
 
-typedef _PVRightHandPart*(^_PVRightHandViewBlock)(UIView*);
+typedef _PVRightHandPart*(^_PVRightHandViewBlock)(PVView*);
 typedef _PVConstantPart*(^_PVConstantBlock)(CGFloat);
 
 @protocol _PVLocationRelationPart
@@ -175,7 +174,7 @@ typedef _PVConstantPart*(^_PVConstantBlock)(CGFloat);
 typedef _PVRoot<_PVConstrainable> _PVConstrainable;
 typedef _PVRoot<_PVMultiplierPart> _PVMultiplierPart;
 
-typedef _PVConstrainable*(^_PVPriorityBlock)(UILayoutPriority);
+typedef _PVConstrainable*(^_PVPriorityBlock)(PVLayoutPriority);
 typedef _PVMultiplierPart*(^_PVMultiplierBlock)(CGFloat);
 
 @protocol _PVRightHandPart <_PVMultiplierPart>
@@ -201,7 +200,7 @@ typedef _PVMultiplierPart*(^_PVMultiplierBlock)(CGFloat);
 
 @protocol _PVConstantPart <_PVConstrainable>
 
-/// constraint.priority = UILayoutPriority (value).
+/// constraint.priority = PVLayoutPriority (value).
 @property (readonly) _PVPriorityBlock withPriority;
 
 @end

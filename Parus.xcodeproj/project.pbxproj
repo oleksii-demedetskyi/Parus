@@ -7,20 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2253EB09196615190059262F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2253EB08196615190059262F /* XCTest.framework */; };
+		2261065D196613030004EDA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2261065C196613030004EDA5 /* UIKit.framework */; };
+		226BAC891966075200C329F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
+		226BAC8B1966075A00C329F5 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226BAC8A1966075A00C329F5 /* AppKit.framework */; };
+		226BAC911966078A00C329F5 /* PVLayoutImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D711717A065B700CC9AF1 /* PVLayoutImp.m */; };
+		226BAC931966078A00C329F5 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
+		226BAC961966078A00C329F5 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
+		226BAC981966078A00C329F5 /* PVGroupContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B46FEC17C4FC8000A48463 /* PVGroupContext.m */; };
+		226BAC9B1966078A00C329F5 /* PVVFLImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8654BB40177439A700B0AB6D /* PVVFLImp.m */; };
+		226BAC9D1966078A00C329F5 /* PVVFLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */; };
 		226D711817A065B700CC9AF1 /* PVLayoutImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D711717A065B700CC9AF1 /* PVLayoutImp.m */; };
-		2285CFFD187E080C007C2EEF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2285CFFC187E080C007C2EEF /* XCTest.framework */; };
 		2285CFFE187E080C007C2EEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
-		2285CFFF187E080C007C2EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
 		2285D005187E080C007C2EEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2285D003187E080C007C2EEF /* InfoPlist.strings */; };
 		22D62ABE187E0D7500189B9E /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5A0176DE184009415E4 /* libExpecta-iOS.a */; };
 		22D62ABF187E0D7500189B9E /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D591176DE172009415E4 /* libSpecta-iOS.a */; };
-		22D62AC0187E0D7F00189B9E /* libParus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus.a */; };
+		22D62AC0187E0D7F00189B9E /* libParus-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D584176DE09C009415E4 /* libParus-iOS.a */; };
 		22E9C00A187E16E300EC368A /* ConstraintContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C006187E16E300EC368A /* ConstraintContextSpec.m */; };
 		22E9C00B187E16E300EC368A /* PVGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C007187E16E300EC368A /* PVGroupSpec.m */; };
 		22E9C00C187E16E300EC368A /* PVLayoutSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C008187E16E300EC368A /* PVLayoutSpec.m */; };
 		22E9C00D187E16E300EC368A /* PVVFLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9C009187E16E300EC368A /* PVVFLSpec.m */; };
 		4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
-		4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D5B2176DE807009415E4 /* UIKit.framework */; };
 		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
 		48B46FED17C4FC8000A48463 /* PVGroupContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B46FEC17C4FC8000A48463 /* PVGroupContext.m */; };
 		48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
@@ -29,12 +36,68 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2253EB111966FCE80059262F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E93067CD13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
+		};
+		2253EB131966FCED0059262F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E9901BFC18205A3500844A05;
+			remoteInfo = "Specta-iOS";
+		};
+		226BAC7E1966011A00C329F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4838D55B176DDD19009415E4;
+			remoteInfo = "Parus-iOS";
+		};
+		226BAC801966011A00C329F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4838D55B176DDD19009415E4;
+			remoteInfo = "Parus-iOS";
+		};
+		226BAC871966012600C329F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4838D55B176DDD19009415E4;
+			remoteInfo = "Parus-iOS";
+		};
+		226BAC9F196611EC00C329F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4838D55B176DDD19009415E4;
+			remoteInfo = "Parus-iOS";
+		};
 		2285D009187E080C007C2EEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4838D54B176DDBFD009415E4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4838D55B176DDD19009415E4;
 			remoteInfo = Parus;
+		};
+		22D105991966140B004260F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D587176DE171009415E4 /* Specta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E9901BFC18205A3500844A05;
+			remoteInfo = "Specta-iOS";
+		};
+		22D105A419661415004260F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4838D596176DE183009415E4 /* Expecta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E93067CD13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
 		};
 		22D62AB4187E0CF200189B9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -102,6 +165,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		226BAC9E196607DA00C329F5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4838D55A176DDD19009415E4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,24 +188,27 @@
 /* Begin PBXFileReference section */
 		22081F7417BCA0EB00D984A6 /* PVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayout.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		22266E36192A231C0054B1E9 /* PVRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRoot.h; sourceTree = "<group>"; };
+		2253EB08196615190059262F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2261065C196613030004EDA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		226BAC3B1965FC5B00C329F5 /* PVUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVUtilities.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		226BAC67196600B000C329F5 /* libParus-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libParus-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226BAC8A1966075A00C329F5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		226D711617A065B700CC9AF1 /* PVLayoutImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVLayoutImp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		226D711717A065B700CC9AF1 /* PVLayoutImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVLayoutImp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParusXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2285CFFC187E080C007C2EEF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2285D002187E080C007C2EEF /* ParusXCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParusXCTests-Info.plist"; sourceTree = "<group>"; };
 		2285D004187E080C007C2EEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2285D008187E080C007C2EEF /* ParusXCTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ParusXCTests-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		22E9C006187E16E300EC368A /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintContextSpec.m; sourceTree = "<group>"; };
+		22E9C006187E16E300EC368A /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConstraintContextSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22E9C007187E16E300EC368A /* PVGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVGroupSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		22E9C008187E16E300EC368A /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLayoutSpec.m; sourceTree = "<group>"; };
-		22E9C009187E16E300EC368A /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVFLSpec.m; sourceTree = "<group>"; };
+		22E9C008187E16E300EC368A /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVLayoutSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22E9C009187E16E300EC368A /* PVVFLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVVFLSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4838D55E176DDD19009415E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4838D562176DDD19009415E4 /* Parus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "Parus-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4838D56D176DDD19009415E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4838D584176DE09C009415E4 /* libParus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4838D584176DE09C009415E4 /* libParus-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libParus-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4838D587176DE171009415E4 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = External/Specta/Specta.xcodeproj; sourceTree = "<group>"; };
 		4838D596176DE183009415E4 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = External/Expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
-		4838D5B2176DE807009415E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4838D5C6176FADFD009415E4 /* PVConstraintContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVConstraintContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4838D5C7176FADFE009415E4 /* PVConstraintContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVConstraintContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		48B46FEB17C4FC8000A48463 /* PVGroupContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVGroupContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -150,15 +225,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		226BAC64196600B000C329F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226BAC8B1966075A00C329F5 /* AppKit.framework in Frameworks */,
+				226BAC891966075200C329F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2285CFF8187E080C007C2EEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D62AC0187E0D7F00189B9E /* libParus.a in Frameworks */,
+				2253EB09196615190059262F /* XCTest.framework in Frameworks */,
+				22D62AC0187E0D7F00189B9E /* libParus-iOS.a in Frameworks */,
 				22D62ABE187E0D7500189B9E /* libExpecta-iOS.a in Frameworks */,
 				22D62ABF187E0D7500189B9E /* libSpecta-iOS.a in Frameworks */,
-				2285CFFD187E080C007C2EEF /* XCTest.framework in Frameworks */,
-				2285CFFF187E080C007C2EEF /* UIKit.framework in Frameworks */,
 				2285CFFE187E080C007C2EEF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4838D5B3176DE807009415E4 /* UIKit.framework in Frameworks */,
+				2261065D196613030004EDA5 /* UIKit.framework in Frameworks */,
 				4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +295,7 @@
 				2285D000187E080C007C2EEF /* ParusXCTests */,
 				4838D553176DDC5B009415E4 /* Frameworks */,
 				4838D5B8176E2E93009415E4 /* Products */,
+				226BAC67196600B000C329F5 /* libParus-OSX.a */,
 				2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */,
 			);
 			sourceTree = "<group>";
@@ -219,12 +303,13 @@
 		4838D553176DDC5B009415E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4838D5B2176DE807009415E4 /* UIKit.framework */,
+				2253EB08196615190059262F /* XCTest.framework */,
+				2261065C196613030004EDA5 /* UIKit.framework */,
+				226BAC8A1966075A00C329F5 /* AppKit.framework */,
 				4838D596176DE183009415E4 /* Expecta.xcodeproj */,
 				4838D587176DE171009415E4 /* Specta.xcodeproj */,
 				4838D55E176DDD19009415E4 /* Foundation.framework */,
 				4838D56D176DDD19009415E4 /* SenTestingKit.framework */,
-				2285CFFC187E080C007C2EEF /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,6 +319,7 @@
 			children = (
 				48CA82FA17C4D6C800DE4A0E /* Parus.h */,
 				22266E36192A231C0054B1E9 /* PVRoot.h */,
+				226BAC3B1965FC5B00C329F5 /* PVUtilities.h */,
 				48CA82F917C4D62700DE4A0E /* Layout */,
 				48CA82F817C4D62300DE4A0E /* Group */,
 				48CA82EF17C4D61B00DE4A0E /* VFL */,
@@ -278,7 +364,7 @@
 		4838D5B8176E2E93009415E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4838D584176DE09C009415E4 /* libParus.a */,
+				4838D584176DE09C009415E4 /* libParus-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,7 +407,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		226BAC65196600B000C329F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		226BAC66196600B000C329F5 /* Parus-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226BAC78196600B100C329F5 /* Build configuration list for PBXNativeTarget "Parus-OSX" */;
+			buildPhases = (
+				226BAC63196600B000C329F5 /* Sources */,
+				226BAC64196600B000C329F5 /* Frameworks */,
+				226BAC65196600B000C329F5 /* Headers */,
+				226BAC9E196607DA00C329F5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Parus-OSX";
+			productName = Parus;
+			productReference = 226BAC67196600B000C329F5 /* libParus-OSX.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		2285CFFA187E080C007C2EEF /* ParusXCTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2285D015187E080C007C2EEF /* Build configuration list for PBXNativeTarget "ParusXCTests" */;
@@ -333,16 +447,22 @@
 			buildRules = (
 			);
 			dependencies = (
+				2253EB141966FCED0059262F /* PBXTargetDependency */,
+				2253EB121966FCE80059262F /* PBXTargetDependency */,
 				2285D00A187E080C007C2EEF /* PBXTargetDependency */,
+				226BAC7F1966011A00C329F5 /* PBXTargetDependency */,
+				226BAC811966011A00C329F5 /* PBXTargetDependency */,
+				226BAC881966012600C329F5 /* PBXTargetDependency */,
+				226BACA0196611EC00C329F5 /* PBXTargetDependency */,
 			);
 			name = ParusXCTests;
 			productName = ParusXCTests;
 			productReference = 2285CFFB187E080C007C2EEF /* ParusXCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4838D55B176DDD19009415E4 /* Parus */ = {
+		4838D55B176DDD19009415E4 /* Parus-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4838D57E176DDD19009415E4 /* Build configuration list for PBXNativeTarget "Parus" */;
+			buildConfigurationList = 4838D57E176DDD19009415E4 /* Build configuration list for PBXNativeTarget "Parus-iOS" */;
 			buildPhases = (
 				4838D558176DDD19009415E4 /* Sources */,
 				4838D559176DDD19009415E4 /* Frameworks */,
@@ -351,10 +471,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				22D105A519661415004260F7 /* PBXTargetDependency */,
+				22D1059A1966140B004260F7 /* PBXTargetDependency */,
 			);
-			name = Parus;
+			name = "Parus-iOS";
 			productName = Parus;
-			productReference = 4838D584176DE09C009415E4 /* libParus.a */;
+			productReference = 4838D584176DE09C009415E4 /* libParus-iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -365,6 +487,9 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
+					226BAC66196600B000C329F5 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 					2285CFFA187E080C007C2EEF = {
 						TestTargetID = 4838D55B176DDD19009415E4;
 					};
@@ -392,8 +517,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				4838D55B176DDD19009415E4 /* Parus */,
+				4838D55B176DDD19009415E4 /* Parus-iOS */,
 				2285CFFA187E080C007C2EEF /* ParusXCTests */,
+				226BAC66196600B000C329F5 /* Parus-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -476,6 +602,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		226BAC63196600B000C329F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226BAC911966078A00C329F5 /* PVLayoutImp.m in Sources */,
+				226BAC931966078A00C329F5 /* PVConstraintContext.m in Sources */,
+				226BAC961966078A00C329F5 /* PVGroupImpl.m in Sources */,
+				226BAC981966078A00C329F5 /* PVGroupContext.m in Sources */,
+				226BAC9B1966078A00C329F5 /* PVVFLImp.m in Sources */,
+				226BAC9D1966078A00C329F5 /* PVVFLContext.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2285CFF7187E080C007C2EEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,10 +642,50 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2253EB121966FCE80059262F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Expecta-iOS";
+			targetProxy = 2253EB111966FCE80059262F /* PBXContainerItemProxy */;
+		};
+		2253EB141966FCED0059262F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Specta-iOS";
+			targetProxy = 2253EB131966FCED0059262F /* PBXContainerItemProxy */;
+		};
+		226BAC7F1966011A00C329F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4838D55B176DDD19009415E4 /* Parus-iOS */;
+			targetProxy = 226BAC7E1966011A00C329F5 /* PBXContainerItemProxy */;
+		};
+		226BAC811966011A00C329F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4838D55B176DDD19009415E4 /* Parus-iOS */;
+			targetProxy = 226BAC801966011A00C329F5 /* PBXContainerItemProxy */;
+		};
+		226BAC881966012600C329F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4838D55B176DDD19009415E4 /* Parus-iOS */;
+			targetProxy = 226BAC871966012600C329F5 /* PBXContainerItemProxy */;
+		};
+		226BACA0196611EC00C329F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4838D55B176DDD19009415E4 /* Parus-iOS */;
+			targetProxy = 226BAC9F196611EC00C329F5 /* PBXContainerItemProxy */;
+		};
 		2285D00A187E080C007C2EEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4838D55B176DDD19009415E4 /* Parus */;
+			target = 4838D55B176DDD19009415E4 /* Parus-iOS */;
 			targetProxy = 2285D009187E080C007C2EEF /* PBXContainerItemProxy */;
+		};
+		22D1059A1966140B004260F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Specta-iOS";
+			targetProxy = 22D105991966140B004260F7 /* PBXContainerItemProxy */;
+		};
+		22D105A519661415004260F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Expecta-iOS";
+			targetProxy = 22D105A419661415004260F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -522,6 +701,81 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		226BAC79196600B100C329F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		226BAC7A196600B100C329F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		2285D00B187E080C007C2EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -627,28 +881,27 @@
 		4838D54F176DDBFD009415E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		4838D550176DDBFD009415E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		4838D57F176DDD19009415E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -660,19 +913,16 @@
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/Parus.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -684,7 +934,6 @@
 		4838D580176DDD19009415E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -697,11 +946,10 @@
 				DSTROOT = /tmp/Parus.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Parus/Parus-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -713,6 +961,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		226BAC78196600B100C329F5 /* Build configuration list for PBXNativeTarget "Parus-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226BAC79196600B100C329F5 /* Debug */,
+				226BAC7A196600B100C329F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2285D015187E080C007C2EEF /* Build configuration list for PBXNativeTarget "ParusXCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -731,7 +988,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4838D57E176DDD19009415E4 /* Build configuration list for PBXNativeTarget "Parus" */ = {
+		4838D57E176DDD19009415E4 /* Build configuration list for PBXNativeTarget "Parus-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4838D57F176DDD19009415E4 /* Debug */,

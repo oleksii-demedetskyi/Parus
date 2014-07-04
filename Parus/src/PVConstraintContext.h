@@ -6,8 +6,6 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
 static NSString* const kLeftViewNotSet;
 static NSString* const kLeftViewAttributeNotSet;
 static NSString* const kRightViewIsNilButAttributeIsAttribute;
@@ -17,14 +15,14 @@ static NSString* const kRightViewAttributeMultiplierIsZero;
 
 @interface PVConstraintContext : NSObject
 
-@property (strong) UIView* leftView;
+@property (strong) PVView* leftView;
 @property (assign) NSLayoutAttribute leftAttribute;
 @property (assign) NSLayoutRelation relation;
-@property (strong) UIView* rightView;
+@property (strong) PVView* rightView;
 @property (assign) NSLayoutAttribute rightAttribute;
 @property (assign) CGFloat rightAtttributeMultiplier;
 @property (assign) CGFloat rightConstant;
-@property (assign) UILayoutPriority priority;
+@property (assign) PVLayoutPriority priority;
 
 - (NSLayoutConstraint*)buildConstraint;
 
