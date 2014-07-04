@@ -6,8 +6,6 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
 @class PVGroupContext;
 
 @interface PVGroupImpl : NSObject
