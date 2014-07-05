@@ -8,3 +8,5 @@
 #import <Parus/PVLayout.h>
 #import <Parus/PVVFL.h>
 #import <Parus/PVGroup.h>
+#import <Parus/PVView+PVConvenientShorthands.h>
+#import <Parus/NSString+PVConvenientShorthands.h>

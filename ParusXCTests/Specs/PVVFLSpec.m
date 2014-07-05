@@ -1,4 +1,5 @@
 #import "PVVFL.h"
+#import "NSString+PVConvenientShorthands.h"
 
 SpecBegin(PVVFL)
 
@@ -24,6 +25,8 @@ describe(@"PVVFL", ^{
         expect(PVVFL(@"V:|[view1]-20-[view2]|").alignAllLeft.fromLeadingToTrailing.withViews(NSDictionaryOfVariableBindings(view1, view2)).asArray).toNot.beNil();
         
         expect(PVVFL(@"[view1(>=width)]").withViews(NSDictionaryOfVariableBindings(view1)).metrics(@{@"width" : @200}).asArray).toNot.beNil();
+        
+        expect(@"[view1(>=width)]".pv_VFL.withViews(NSDictionaryOfVariableBindings(view1)).metrics(@{@"width" : @200}).asArray).toNot.beNil();
     });
     
     it(@"should produce simple constraint", ^{
@@ -42,8 +45,6 @@ describe(@"PVVFL", ^{
         expect(actual.relation).to.equal(expected.relation);
         expect(actual.secondItem).to.equal(expected.secondItem);
         expect(actual.secondAttribute).to.equal(expected.secondAttribute);
-
-        
     });
     
     it(@"should produce constraints with formatting option mask", ^{

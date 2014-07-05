@@ -1,6 +1,7 @@
 #import "PVLayout.h"
 
 #import "PVConstraintContext.h"
+#import "PVView+PVConvenientShorthands.h"
 
 SpecBegin(PVSpec)
 
@@ -74,6 +75,31 @@ describe(@"PVLayout", ^{
             expect(^{
                 PVWidthOf(view1).equalTo.widthOf(nil);
             }).to.raiseAny();
+        });
+    });
+    
+    describe(@"view category", ^{
+        __block PVView* view1 = nil;
+        __block PVView* view2 = nil;
+        
+        beforeEach(^{
+            view1 = [PVView new];
+            view2 = [PVView new];
+        });
+        
+        it(@"should return valid constraint", ^{
+            NSLayoutConstraint* constraint = view1.pv_left.equalTo.leftOf(view2).multipliedTo(2.f).minus(20.f).withPriority(PVLayoutPriorityFittingSizeLevel).asConstraint;
+            
+            expect(constraint).toNot.beNil();
+            expect(constraint).to.beInstanceOf([NSLayoutConstraint class]);
+            
+            expect(constraint.firstItem).to.equal(view1);
+            expect(constraint.firstAttribute).to.equal(NSLayoutAttributeLeft);
+            expect(constraint.relation).to.equal(NSLayoutRelationEqual);
+            expect(constraint.secondItem).to.equal(view2);
+            expect(constraint.secondAttribute).to.equal(NSLayoutAttributeLeft);
+            expect(constraint.multiplier).to.equal(2.f);
+            expect(constraint.constant).to.equal(-20.f);
         });
     });
     

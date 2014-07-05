@@ -97,6 +97,15 @@ _PVGroup* PVGroup(NSArray* array)
                               toVFLContxt:l.context];
             [result addObjectsFromArray:[l.context buildConstraints]];
         }
+        else if ([object isKindOfClass:[NSString class]])
+        {
+            NSString* format = [object copy];
+            PVVFLLayout* l = [PVVFLLayout new];
+            l.context.format = format;
+            [self.class applyGroupContext:self.context
+                              toVFLContxt:l.context];
+            [result addObjectsFromArray:[l.context buildConstraints]];
+        }
     }
     
     return [result copy];
