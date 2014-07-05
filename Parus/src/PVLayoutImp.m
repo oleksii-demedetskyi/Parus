@@ -288,3 +288,76 @@ id<_PVLocationRelationSelect> PVBaselineOf(PVView* view)
 {
     return PVLayoutWithViewAndAttribute(view, NSLayoutAttributeBaseline);
 }
+
+
+
+#pragma mark -
+
+#if TARGET_OS_IPHONE
+    #define PVViewClass UIView
+#elif TARGET_OS_MAC
+    #define PVViewClass NSView
+#else
+    #error Can't identify platform to pick correct View class
+#endif
+
+@implementation PVViewClass (PVConvenientShorthands)
+
+- (_PVLocationRelationSelect*)pv_left
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeLeft);
+}
+
+- (_PVLocationRelationSelect*)pv_right
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeRight);
+}
+
+- (_PVLocationRelationSelect*)pv_top
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeTop);
+}
+
+- (_PVLocationRelationSelect*)pv_bottom
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeBottom);
+}
+
+- (_PVLocationRelationSelect*)pv_leading
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeLeading);
+}
+
+- (_PVLocationRelationSelect*)pv_trailing
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeTrailing);
+}
+
+- (_PVRelationSelect*)pv_width
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeWidth);
+}
+
+- (_PVRelationSelect*)pv_height
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeHeight);
+}
+
+- (_PVLocationRelationSelect*)pv_centerX
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeCenterX);
+}
+
+- (_PVLocationRelationSelect*)pv_centerY
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeCenterY);
+}
+
+- (_PVLocationRelationSelect*)pv_baseline
+{
+    return PVLayoutWithViewAndAttribute(self, NSLayoutAttributeBaseline);
+}
+
+@end
+
+#undef PVViewClass
