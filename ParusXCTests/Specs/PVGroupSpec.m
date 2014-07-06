@@ -1,6 +1,7 @@
 #import "PVGroup.h"
 #import "PVLayout.h"
 #import "PVVFL.h"
+#import "NSArray+PVConvenientShorthands.h"
 
 SpecBegin(PVGroup)
 
