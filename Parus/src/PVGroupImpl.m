@@ -102,6 +102,11 @@ _PVGroup* PVGroup(NSArray* array)
     return [result copy];
 }
 
+- (void)addToView:(PVView*)view
+{
+    [view addConstraints:self.asArray];
+}
+
 #pragma mark - Metrics
 
 - (_PVGroupWithMetricsBlock)withMetrics

@@ -124,4 +124,7 @@ typedef _PVArrayConstrainable*(^_PVMetricsBlock)(NSDictionary* metrics);
 /// Creates array of constraints on each property call.
 @property (readonly) NSArray* asArray;
 
+/// Build constraints and add them to view
+- (void)addToView:(PVView*)view;
+
 @end

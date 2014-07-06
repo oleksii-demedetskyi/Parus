@@ -222,4 +222,7 @@ typedef _PVMultiplierPart*(^_PVMultiplierBlock)(CGFloat);
 ///
 @property (readonly) NSLayoutConstraint* asConstraint;
 
+/// Build constraint and add it to view
+- (void)addToView:(PVView*)view;
+
 @end

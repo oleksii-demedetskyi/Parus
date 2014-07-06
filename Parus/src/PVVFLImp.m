@@ -186,6 +186,11 @@
     return [self.context buildConstraints];
 }
 
+-(void)addToView:(PVView*)view
+{
+    [view addConstraints:self.asArray];
+}
+
 @end
 
 _PVAlignmentOptionSelect* PVVFL(NSString* format)
