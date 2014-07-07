@@ -6,8 +6,6 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
 @interface PVVFLContext : NSObject
 
 @property (strong) NSString* format;

@@ -3,14 +3,14 @@
 SpecBegin(PVVFL)
 
 describe(@"PVVFL", ^{
-    __block UIView* view1 = nil;
-    __block UIView* view2 = nil;
-    __block UIView* container = nil;
+    __block PVView* view1 = nil;
+    __block PVView* view2 = nil;
+    __block PVView* container = nil;
     
     beforeEach(^{
-        view1 = [UIView new];
-        view2 = [UIView new];
-        container = [UIView new];
+        view1 = [PVView new];
+        view2 = [PVView new];
+        container = [PVView new];
         [container addSubview:view1];
         [container addSubview:view2];
     });

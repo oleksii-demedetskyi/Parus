@@ -5,7 +5,7 @@
 SpecBegin(PVSpec)
 
 describe(@"PVLayout", ^{
-    it(@"should raise when argument is nil not of UIView class", ^{
+    it(@"should raise when argument is nil not of PVView class", ^{
         expect(^{
             PVLeftOf(nil);
         }).to.raiseAny();
@@ -16,12 +16,12 @@ describe(@"PVLayout", ^{
     });
     
     describe(@"constraints without right item", ^{
-        __block UIView* view1 = nil;
-        __block UIView* view2 = nil;
+        __block PVView* view1 = nil;
+        __block PVView* view2 = nil;
         
         beforeEach(^{
-            view1 = [UIView new];
-            view2 = [UIView new];
+            view1 = [PVView new];
+            view2 = [PVView new];
         });
         
         it(@"should return valid constraint", ^{
@@ -41,16 +41,16 @@ describe(@"PVLayout", ^{
     });
     
     describe(@"constraint of attreibutes equality of two items ", ^{
-        __block UIView* view1 = nil;
-        __block UIView* view2 = nil;
+        __block PVView* view1 = nil;
+        __block PVView* view2 = nil;
         
         beforeEach(^{
-            view1 = [UIView new];
-            view2 = [UIView new];
+            view1 = [PVView new];
+            view2 = [PVView new];
         });
         
         it(@"should return valid constraint", ^{
-            NSLayoutConstraint* constraint = PVLeftOf(view1).equalTo.leftOf(view2).multipliedTo(2.f).minus(20.f).withPriority(UILayoutPriorityFittingSizeLevel).asConstraint;
+            NSLayoutConstraint* constraint = PVLeftOf(view1).equalTo.leftOf(view2).multipliedTo(2.f).minus(20.f).withPriority(PVLayoutPriorityFittingSizeLevel).asConstraint;
             
             expect(constraint).toNot.beNil();
             expect(constraint).to.beInstanceOf([NSLayoutConstraint class]);
@@ -64,7 +64,7 @@ describe(@"PVLayout", ^{
             expect(constraint.constant).to.equal(-20.f);
         });
         
-        it(@"should raise when view2 is not a UIView", ^{
+        it(@"should raise when view2 is not a PVView", ^{
             expect(^{
                 PVLeftOf(view1).equalTo.leftOf((id)[NSObject new]);
             }).to.raiseAny();

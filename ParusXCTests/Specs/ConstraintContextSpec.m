@@ -4,13 +4,13 @@ SpecBegin(ConstraintContextSpec)
 
 describe(@"Constraint Context", ^{
     __block PVConstraintContext* context = nil;
-    __block UIView* view1 = nil;
-    __block UIView* view2 = nil;
+    __block PVView* view1 = nil;
+    __block PVView* view2 = nil;
     
     beforeEach(^{
         context = [PVConstraintContext new];
-        view1 = [UIView new];
-        view2 = [UIView new];
+        view1 = [PVView new];
+        view2 = [PVView new];
     });
     
     it(@"should have constraint built", ^{        
@@ -21,7 +21,7 @@ describe(@"Constraint Context", ^{
         context.rightAttribute = NSLayoutAttributeRight;
         context.rightAtttributeMultiplier = 1.0f;
         context.rightConstant = 10.0f;
-        context.priority = UILayoutPriorityDefaultLow;
+        context.priority = PVLayoutPriorityDefaultLow;
         
         NSLayoutConstraint* constraint = [context buildConstraint];
         expect(constraint.firstItem).to.equal(view1);
@@ -31,7 +31,7 @@ describe(@"Constraint Context", ^{
         expect(constraint.secondAttribute).to.equal(NSLayoutAttributeRight);
         expect(constraint.multiplier).to.equal(1.0f);
         expect(constraint.constant).to.equal(10.0f);
-        expect(constraint.priority).to.equal(UILayoutPriorityDefaultLow);
+        expect(constraint.priority).to.equal(PVLayoutPriorityDefaultLow);
     });
     
     it(@"should not be build withouth left view", ^{
