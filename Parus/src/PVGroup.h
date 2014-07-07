@@ -37,6 +37,9 @@ _PVGroup* PVGroup(NSArray* array);
 
 @property (readonly) NSArray* asArray;
 
+/// Build constraints and add them to view
+- (void)addToView:(PVView*)view;
+
 @end
 
 typedef _PVRoot<_PVGroupArrayConversionProtocol> _PVGroupArrayConversion;
