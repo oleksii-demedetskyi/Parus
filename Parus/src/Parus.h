@@ -8,3 +8,4 @@
 #import <Parus/PVLayout.h>
 #import <Parus/PVVFL.h>
 #import <Parus/PVGroup.h>
+#import <Parus/NSArray+PVConvenientShorthands.h>
