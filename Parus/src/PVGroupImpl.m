@@ -97,14 +97,25 @@ _PVGroup* PVGroup(NSArray* array)
                               toVFLContxt:l.context];
             [result addObjectsFromArray:[l.context buildConstraints]];
         }
+        else if ([object isKindOfClass:[NSString class]])
+        {
+            NSString* format = [object copy];
+            PVVFLLayout* l = [PVVFLLayout new];
+            l.context.format = format;
+            [self.class applyGroupContext:self.context
+                              toVFLContxt:l.context];
+            [result addObjectsFromArray:[l.context buildConstraints]];
+        }
     }
     
     return [result copy];
 }
 
-- (void)addToView:(PVView*)view
+- (_PVAddToViewBlock)addToView
 {
-    [view addConstraints:self.asArray];
+    return ^(PVView* view) {
+        [view addConstraints:self.asArray];
+    };
 }
 
 #pragma mark - Metrics

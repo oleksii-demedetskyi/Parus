@@ -11,6 +11,10 @@
 		2253EB79196895FE0059262F /* PVView+PVConvenientShorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253EB78196895FE0059262F /* PVView+PVConvenientShorthands.m */; };
 		2253EB991969400B0059262F /* NSArray+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB971969400B0059262F /* NSArray+PVConvenientShorthands.h */; };
 		2253EB9A1969400B0059262F /* NSArray+PVConvenientShorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253EB981969400B0059262F /* NSArray+PVConvenientShorthands.m */; };
+		2253EB8719689AAB0059262F /* NSString+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB8519689AAB0059262F /* NSString+PVConvenientShorthands.h */; };
+		2253EB8819689AAB0059262F /* NSString+PVConvenientShorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253EB8619689AAB0059262F /* NSString+PVConvenientShorthands.m */; };
+		2253EB9319689ABA0059262F /* PVView+PVConvenientShorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253EB78196895FE0059262F /* PVView+PVConvenientShorthands.m */; };
+		2253EB9419689AC90059262F /* PVView+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB77196895FE0059262F /* PVView+PVConvenientShorthands.h */; };
 		2261065D196613030004EDA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2261065C196613030004EDA5 /* UIKit.framework */; };
 		226BAC891966075200C329F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		226BAC8B1966075A00C329F5 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226BAC8A1966075A00C329F5 /* AppKit.framework */; };
@@ -196,6 +200,8 @@
 		2253EB78196895FE0059262F /* PVView+PVConvenientShorthands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PVView+PVConvenientShorthands.m"; sourceTree = "<group>"; };
 		2253EB971969400B0059262F /* NSArray+PVConvenientShorthands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PVConvenientShorthands.h"; sourceTree = "<group>"; };
 		2253EB981969400B0059262F /* NSArray+PVConvenientShorthands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PVConvenientShorthands.m"; sourceTree = "<group>"; };
+		2253EB8519689AAB0059262F /* NSString+PVConvenientShorthands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PVConvenientShorthands.h"; sourceTree = "<group>"; };
+		2253EB8619689AAB0059262F /* NSString+PVConvenientShorthands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PVConvenientShorthands.m"; sourceTree = "<group>"; };
 		2261065C196613030004EDA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		226BAC3B1965FC5B00C329F5 /* PVUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PVUtilities.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		226BAC67196600B000C329F5 /* libParus-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libParus-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +390,8 @@
 				8654BB40177439A700B0AB6D /* PVVFLImp.m */,
 				86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */,
 				86CAAAFC17ABA2DE0026DA46 /* PVVFLContext.m */,
+				2253EB8519689AAB0059262F /* NSString+PVConvenientShorthands.h */,
+				2253EB8619689AAB0059262F /* NSString+PVConvenientShorthands.m */,
 			);
 			name = VFL;
 			sourceTree = "<group>";
@@ -424,6 +432,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2253EB991969400B0059262F /* NSArray+PVConvenientShorthands.h in Headers */,
+				2253EB9419689AC90059262F /* PVView+PVConvenientShorthands.h in Headers */,
+				2253EB8719689AAB0059262F /* NSString+PVConvenientShorthands.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +631,9 @@
 				226BAC911966078A00C329F5 /* PVLayoutImp.m in Sources */,
 				226BAC931966078A00C329F5 /* PVConstraintContext.m in Sources */,
 				226BAC961966078A00C329F5 /* PVGroupImpl.m in Sources */,
+				2253EB9219689AB90059262F /* PVView+PVConvenientShorthands.m in Sources */,
 				226BAC981966078A00C329F5 /* PVGroupContext.m in Sources */,
+				2253EB8A19689AAB0059262F /* NSString+PVConvenientShorthands.m in Sources */,
 				226BAC9B1966078A00C329F5 /* PVVFLImp.m in Sources */,
 				2253EB9C1969400B0059262F /* NSArray+PVConvenientShorthands.m in Sources */,
 				226BAC9D1966078A00C329F5 /* PVVFLContext.m in Sources */,
@@ -633,10 +645,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E9C00D187E16E300EC368A /* PVVFLSpec.m in Sources */,
+				2253EB9319689ABA0059262F /* PVView+PVConvenientShorthands.m in Sources */,
 				22E9C00C187E16E300EC368A /* PVLayoutSpec.m in Sources */,
 				2253EB9B1969400B0059262F /* NSArray+PVConvenientShorthands.m in Sources */,
 				22E9C00B187E16E300EC368A /* PVGroupSpec.m in Sources */,
 				22E9C00A187E16E300EC368A /* ConstraintContextSpec.m in Sources */,
+				2253EB8919689AAB0059262F /* NSString+PVConvenientShorthands.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +662,7 @@
 				8654BB41177439A700B0AB6D /* PVVFLImp.m in Sources */,
 				226D711817A065B700CC9AF1 /* PVLayoutImp.m in Sources */,
 				86CAAAFD17ABA2DE0026DA46 /* PVVFLContext.m in Sources */,
+				2253EB8819689AAB0059262F /* NSString+PVConvenientShorthands.m in Sources */,
 				2253EB79196895FE0059262F /* PVView+PVConvenientShorthands.m in Sources */,
 				48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */,
 				2253EB9A1969400B0059262F /* NSArray+PVConvenientShorthands.m in Sources */,

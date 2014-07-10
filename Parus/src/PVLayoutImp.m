@@ -215,9 +215,11 @@
     return [self.context buildConstraint];
 }
 
-- (void)addToView:(PVView*)view
+- (_PVAddToViewBlock)addToView
 {
-    [view addConstraint:self.asConstraint];
+    return ^(PVView* view) {
+        [view addConstraint:self.asConstraint];
+    };
 }
 
 @end

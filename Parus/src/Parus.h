@@ -9,3 +9,5 @@
 #import <Parus/PVVFL.h>
 #import <Parus/PVGroup.h>
 #import <Parus/NSArray+PVConvenientShorthands.h>
+#import <Parus/PVView+PVConvenientShorthands.h>
+#import <Parus/NSString+PVConvenientShorthands.h>

@@ -118,13 +118,16 @@ typedef _PVArrayConstrainable*(^_PVMetricsBlock)(NSDictionary* metrics);
 
 @end
 
+
+typedef void(^_PVAddToViewBlock)(PVView*);
+
 /// Protocol that allows to finish constraint building and receive an array of NSLayoutConstraint objects.
 @protocol _PVArrayConstrainable
 
 /// Creates array of constraints on each property call.
 @property (readonly) NSArray* asArray;
 
-/// Build constraints and add them to view
-- (void)addToView:(PVView*)view;
+/// Build constraint and add it to view
+@property (readonly) _PVAddToViewBlock addToView;
 
 @end
