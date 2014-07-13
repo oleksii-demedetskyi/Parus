@@ -38,9 +38,9 @@
 		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
 		48B46FED17C4FC8000A48463 /* PVGroupContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B46FEC17C4FC8000A48463 /* PVGroupContext.m */; };
 		48B8B0D117B6669D0078CD95 /* PVGroupImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B8B0D017B6669D0078CD95 /* PVGroupImpl.m */; };
-		862E08D11972D9EF0027FDD1 /* PVLayoutImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 226D711617A065B700CC9AF1 /* PVLayoutImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		862E08D21972D9EF0027FDD1 /* PVGroupImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		862E08D31972D9EF0027FDD1 /* PVVFLImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 863E61F517BCB92500E62E8F /* PVVFLImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		862E08D11972D9EF0027FDD1 /* PVLayoutImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 226D711617A065B700CC9AF1 /* PVLayoutImp.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		862E08D21972D9EF0027FDD1 /* PVGroupImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B8B0CF17B6669D0078CD95 /* PVGroupImpl.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		862E08D31972D9EF0027FDD1 /* PVVFLImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 863E61F517BCB92500E62E8F /* PVVFLImp.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		862E08DC1972DD040027FDD1 /* PVLayoutImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D711717A065B700CC9AF1 /* PVLayoutImp.m */; };
 		862E08DD1972DD040027FDD1 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
 		862E08DE1972DD040027FDD1 /* PVView+PVConvenientShorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253EB78196895FE0059262F /* PVView+PVConvenientShorthands.m */; };
@@ -57,13 +57,13 @@
 		86EB402B1972C56E00DA9C53 /* PVRoot.h in Headers */ = {isa = PBXBuildFile; fileRef = 22266E36192A231C0054B1E9 /* PVRoot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB402C1972C56E00DA9C53 /* PVUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 226BAC3B1965FC5B00C329F5 /* PVUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB402D1972C56E00DA9C53 /* PVLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 22081F7417BCA0EB00D984A6 /* PVLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86EB402E1972C56E00DA9C53 /* PVConstraintContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 4838D5C6176FADFD009415E4 /* PVConstraintContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86EB402E1972C56E00DA9C53 /* PVConstraintContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 4838D5C6176FADFD009415E4 /* PVConstraintContext.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		86EB402F1972C56E00DA9C53 /* PVView+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB77196895FE0059262F /* PVView+PVConvenientShorthands.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB40301972C56E00DA9C53 /* PVGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B8B0C017B6281B0078CD95 /* PVGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86EB40311972C56E00DA9C53 /* PVGroupContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B46FEB17C4FC8000A48463 /* PVGroupContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86EB40311972C56E00DA9C53 /* PVGroupContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B46FEB17C4FC8000A48463 /* PVGroupContext.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		86EB40321972C56E00DA9C53 /* NSArray+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB971969400B0059262F /* NSArray+PVConvenientShorthands.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB40331972C56E00DA9C53 /* PVVFL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8654BB3F177439A700B0AB6D /* PVVFL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86EB40341972C56E00DA9C53 /* PVVFLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86EB40341972C56E00DA9C53 /* PVVFLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CAAAFB17ABA2DE0026DA46 /* PVVFLContext.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		86EB40351972C56E00DA9C53 /* NSString+PVConvenientShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 2253EB8519689AAB0059262F /* NSString+PVConvenientShorthands.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -513,17 +513,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				862E08E51972DDA70027FDD1 /* Parus.h in Headers */,
+				86EB402D1972C56E00DA9C53 /* PVLayout.h in Headers */,
+				86EB40301972C56E00DA9C53 /* PVGroup.h in Headers */,
+				86EB40331972C56E00DA9C53 /* PVVFL.h in Headers */,
+				86EB402F1972C56E00DA9C53 /* PVView+PVConvenientShorthands.h in Headers */,
+				86EB40321972C56E00DA9C53 /* NSArray+PVConvenientShorthands.h in Headers */,
+				86EB40351972C56E00DA9C53 /* NSString+PVConvenientShorthands.h in Headers */,
 				86EB402B1972C56E00DA9C53 /* PVRoot.h in Headers */,
 				86EB402C1972C56E00DA9C53 /* PVUtilities.h in Headers */,
-				86EB402D1972C56E00DA9C53 /* PVLayout.h in Headers */,
 				86EB402E1972C56E00DA9C53 /* PVConstraintContext.h in Headers */,
-				86EB402F1972C56E00DA9C53 /* PVView+PVConvenientShorthands.h in Headers */,
-				86EB40301972C56E00DA9C53 /* PVGroup.h in Headers */,
 				86EB40311972C56E00DA9C53 /* PVGroupContext.h in Headers */,
-				86EB40321972C56E00DA9C53 /* NSArray+PVConvenientShorthands.h in Headers */,
-				86EB40331972C56E00DA9C53 /* PVVFL.h in Headers */,
 				86EB40341972C56E00DA9C53 /* PVVFLContext.h in Headers */,
-				86EB40351972C56E00DA9C53 /* NSString+PVConvenientShorthands.h in Headers */,
 				862E08D11972D9EF0027FDD1 /* PVLayoutImp.h in Headers */,
 				862E08D21972D9EF0027FDD1 /* PVGroupImpl.h in Headers */,
 				862E08D31972D9EF0027FDD1 /* PVVFLImp.h in Headers */,
