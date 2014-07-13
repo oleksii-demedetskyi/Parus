@@ -6,7 +6,7 @@
 //
 //
 
-#import "PVLayout.h"
+#import <Parus/PVLayout.h>
 
 #if TARGET_OS_IPHONE
     #define PVViewClass UIView

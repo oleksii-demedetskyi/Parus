@@ -6,7 +6,8 @@
 //
 //
 
-#import "PVRoot.h"
+
+#import <Parus/PVRoot.h>
 
 @protocol _PVGroupProtocol;
 

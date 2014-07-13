@@ -6,7 +6,7 @@
 //
 //
 
-#import "PVGroup.h"
+#import <Parus/PVGroup.h>
 
 @interface NSArray (PVConvenientShorthands)
 

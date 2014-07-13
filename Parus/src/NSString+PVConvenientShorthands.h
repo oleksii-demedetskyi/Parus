@@ -6,7 +6,7 @@
 //
 //
 
-#import "PVVFL.h"
+#import <Parus/PVVFL.h>
 
 @interface NSString (PVConvenientShorthands)
 
