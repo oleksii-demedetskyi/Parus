@@ -68,3 +68,5 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
 }
 
 @end
+
+#undef PVException

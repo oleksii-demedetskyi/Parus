@@ -12,7 +12,6 @@
     typedef UIView PVView;
     typedef UIEdgeInsets PVEdgeInsets;
 
-
     enum {
         PVLayoutPriorityRequired = UILayoutPriorityRequired,
         PVLayoutPriorityDefaultHigh = UILayoutPriorityDefaultHigh,
