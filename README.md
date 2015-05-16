@@ -1,5 +1,7 @@
+![Language](https://img.shields.io/badge/Language-ObjC-blue.svg)
 ![Version](https://img.shields.io/cocoapods/v/Parus.svg)
-
+![Licence](https://img.shields.io/github/license/DAloG/Parus.svg)
+![Platform](https://img.shields.io/cocoapods/p/Parus.svg)
 # Parus
 
 Parus is a small objective-c DSL for AutoLayout in code.
