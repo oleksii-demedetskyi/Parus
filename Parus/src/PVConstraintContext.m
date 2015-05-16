@@ -7,6 +7,8 @@
 //
 
 #import "PVConstraintContext.h"
+#import "PVSingleConstraintDebugContext.h"
+#import "PVDebugCategoriesImpl.h"
 
 static NSString* const kLeftViewNotSet = @"LeftViewNotSet";
 static NSString* const kLeftViewAttributeNotSet = @"LeftViewAttributeNotSet";
@@ -32,6 +34,10 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
         self.rightAtttributeMultiplier = 0.f;
         self.rightConstant = 0.f;
         self.priority = PVLayoutPriorityRequired;
+        
+#ifdef PV_DEBUG
+        _debugContext = [PVSingleConstraintDebugContext new];
+#endif
     }
     
     return self;
@@ -63,6 +69,8 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
                                 multiplier:self.rightAtttributeMultiplier
                                   constant:self.rightConstant];
     constraint.priority = self.priority;
+    
+    [constraint attachDebugContext:self.debugContext];
     
     return constraint;
 }

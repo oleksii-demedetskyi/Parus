@@ -6,12 +6,16 @@
 //
 //
 
+
+
 static NSString* const kLeftViewNotSet;
 static NSString* const kLeftViewAttributeNotSet;
 static NSString* const kRightViewIsNilButAttributeIsAttribute;
 static NSString* const kRightViewIsNilButAttributeMultiplierNotZero;
 static NSString* const kRightViewAttributeIsNotAnAttribute;
 static NSString* const kRightViewAttributeMultiplierIsZero;
+
+@class PVSingleConstraintDebugContext;
 
 @interface PVConstraintContext : NSObject
 
@@ -23,6 +27,8 @@ static NSString* const kRightViewAttributeMultiplierIsZero;
 @property (assign) CGFloat rightAtttributeMultiplier;
 @property (assign) CGFloat rightConstant;
 @property (assign) PVLayoutPriority priority;
+
+@property (readonly) PVSingleConstraintDebugContext* debugContext;
 
 - (NSLayoutConstraint*)buildConstraint;
 
