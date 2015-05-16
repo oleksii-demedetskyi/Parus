@@ -1,4 +1,4 @@
-[Version](https://img.shields.io/cocoapods/v/Parus.svg)
+![Version](https://img.shields.io/cocoapods/v/Parus.svg)
 
 # Parus
 
