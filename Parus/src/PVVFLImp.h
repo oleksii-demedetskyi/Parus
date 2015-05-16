@@ -6,6 +6,8 @@
 //
 //
 
+@import Foundation;
+
 @class PVVFLContext;
 @interface PVVFLLayout : NSObject
 

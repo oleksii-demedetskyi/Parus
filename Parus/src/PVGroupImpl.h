@@ -6,6 +6,8 @@
 //
 //
 
+@import Foundation;
+
 @class PVGroupContext;
 
 @interface PVGroupImpl : NSObject

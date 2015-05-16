@@ -1,8 +1,3 @@
 //
 // Prefix header for all source files of the 'Parus' target in the 'Parus' project
 //
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-    #import <Parus/PVUtilities.h>
-#endif

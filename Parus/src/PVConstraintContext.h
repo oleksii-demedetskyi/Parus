@@ -6,6 +6,9 @@
 //
 //
 
+@import Foundation;
+#import <Parus/PVUtilities.h>
+
 static NSString* const kLeftViewNotSet;
 static NSString* const kLeftViewAttributeNotSet;
 static NSString* const kRightViewIsNilButAttributeIsAttribute;

@@ -6,6 +6,9 @@
 //
 //
 
+@import Foundation;
+#import <Parus/PVUtilities.h>
+
 @interface PVGroupContext : NSObject
 
 @property (strong) NSDictionary* views;
