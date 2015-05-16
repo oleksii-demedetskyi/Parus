@@ -1,3 +1,5 @@
+[Version](https://img.shields.io/cocoapods/v/Parus.svg)
+
 # Parus
 
 Parus is a small objective-c DSL for AutoLayout in code.
