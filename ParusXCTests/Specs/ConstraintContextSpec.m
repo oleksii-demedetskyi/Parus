@@ -1,6 +1,6 @@
 @import Specta;
 @import Expecta;
-#import "PVConstraintContext.h"
+@import Parus;
 
 SpecBegin(ConstraintContextSpec)
 

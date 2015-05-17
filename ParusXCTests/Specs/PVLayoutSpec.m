@@ -1,8 +1,6 @@
 @import Specta;
 @import Expecta;
-#import "PVLayout.h"
-#import "PVConstraintContext.h"
-#import "PVView+PVConvenientShorthands.h"
+@import Parus;
 
 SpecBegin(PVSpec)
 

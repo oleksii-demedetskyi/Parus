@@ -1,7 +1,6 @@
 @import Expecta;
 @import Specta;
-#import "PVVFL.h"
-#import "NSString+PVConvenientShorthands.h"
+@import Parus;
 
 SpecBegin(PVVFL)
 
