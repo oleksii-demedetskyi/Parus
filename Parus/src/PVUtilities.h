@@ -6,38 +6,36 @@
 //
 //
 
+@import Foundation;
+
 #if TARGET_OS_IPHONE
 
-    #import <UIKit/UIKit.h>
+    @import UIKit;
+
     typedef UIView PVView;
     typedef UIEdgeInsets PVEdgeInsets;
 
-
-    enum {
-        PVLayoutPriorityRequired = UILayoutPriorityRequired,
-        PVLayoutPriorityDefaultHigh = UILayoutPriorityDefaultHigh,
-        PVLayoutPriorityDefaultLow = UILayoutPriorityDefaultLow,
-        PVLayoutPriorityFittingSizeLevel = UILayoutPriorityFittingSizeLevel,
-    };
     typedef float PVLayoutPriority;
+    static const PVLayoutPriority PVLayoutPriorityRequired = UILayoutPriorityRequired;
+    static const PVLayoutPriority PVLayoutPriorityDefaultHigh = UILayoutPriorityDefaultHigh;
+    static const PVLayoutPriority PVLayoutPriorityDefaultLow = UILayoutPriorityDefaultLow;
+    static const PVLayoutPriority PVLayoutPriorityFittingSizeLevel = UILayoutPriorityFittingSizeLevel;
 
 #elif TARGET_OS_MAC
 
-    #import <AppKit/AppKit.h>
+    @import AppKit;
 
     typedef NSView PVView;
     typedef NSEdgeInsets PVEdgeInsets;
 
-    enum {
-        PVLayoutPriorityRequired = NSLayoutPriorityRequired,
-        PVLayoutPriorityDefaultHigh = NSLayoutPriorityDefaultHigh,
-        PVLayoutPriorityDragThatCanResizeWindow = NSLayoutPriorityDragThatCanResizeWindow,
-        PVLayoutPriorityWindowSizeStayPut = NSLayoutPriorityWindowSizeStayPut,
-        PVLayoutPriorityDragThatCannotResizeWindow = NSLayoutPriorityDragThatCannotResizeWindow,
-        PVLayoutPriorityDefaultLow = NSLayoutPriorityDefaultLow,
-        PVLayoutPriorityFittingSizeCompression = NSLayoutPriorityFittingSizeCompression
-    };
     typedef float PVLayoutPriority;
+    static const PVLayoutPriority PVLayoutPriorityRequired = NSLayoutPriorityRequired;
+    static const PVLayoutPriority PVLayoutPriorityDefaultHigh = NSLayoutPriorityDefaultHigh;
+    static const PVLayoutPriority PVLayoutPriorityDragThatCanResizeWindow = NSLayoutPriorityDragThatCanResizeWindow;
+    static const PVLayoutPriority PVLayoutPriorityWindowSizeStayPut = NSLayoutPriorityWindowSizeStayPut;
+    static const PVLayoutPriority PVLayoutPriorityDragThatCannotResizeWindow = NSLayoutPriorityDragThatCannotResizeWindow;
+    static const PVLayoutPriority PVLayoutPriorityDefaultLow = NSLayoutPriorityDefaultLow;
+    static const PVLayoutPriority PVLayoutPriorityFittingSizeCompression = NSLayoutPriorityFittingSizeCompression;
 
 #else
 

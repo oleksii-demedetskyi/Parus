@@ -1,7 +1,6 @@
-#import "PVGroup.h"
-#import "PVLayout.h"
-#import "PVVFL.h"
-#import "NSArray+PVConvenientShorthands.h"
+@import Specta;
+@import Expecta;
+@import Parus;
 
 SpecBegin(PVGroup)
 

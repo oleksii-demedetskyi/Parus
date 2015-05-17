@@ -6,8 +6,6 @@
 //
 //
 
-@import Foundation;
-
 @interface PVGroupContext : NSObject
 
 @property (strong) NSDictionary* views;
