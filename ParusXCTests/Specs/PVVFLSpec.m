@@ -1,7 +1,5 @@
-
-#import "Specta.h"
-#import "SpectaDSL.h"
-#import "Expecta.h"
+@import Expecta;
+@import Specta;
 #import "PVVFL.h"
 #import "NSString+PVConvenientShorthands.h"
 
