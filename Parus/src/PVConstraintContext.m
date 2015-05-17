@@ -19,7 +19,7 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
 
 @implementation PVConstraintContext
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self != nil)

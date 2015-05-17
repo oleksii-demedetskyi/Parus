@@ -6,9 +6,7 @@
 //
 //
 
-#import "PVConstraintContext.h"
-
-
+@class PVConstraintContext;
 @interface PVLayout : NSObject
 
 @property (strong) PVConstraintContext* context;

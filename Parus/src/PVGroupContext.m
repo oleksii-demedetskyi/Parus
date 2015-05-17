@@ -6,11 +6,12 @@
 //
 //
 
+#import "PVUtilities.h"
 #import "PVGroupContext.h"
 
 @implementation PVGroupContext
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self != nil)

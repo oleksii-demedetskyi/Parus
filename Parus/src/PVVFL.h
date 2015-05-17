@@ -6,7 +6,6 @@
 //
 //
 
-@import Foundation;
 #import <Parus/PVRoot.h>
 #import <Parus/PVUtilities.h>
 
