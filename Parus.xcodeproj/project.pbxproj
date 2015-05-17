@@ -76,6 +76,10 @@
 		2285D005187E080C007C2EEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2285D003187E080C007C2EEF /* InfoPlist.strings */; };
 		228D6E121B08F7BB00B3280F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228D6E111B08F7BB00B3280F /* UIKit.framework */; };
 		228D6E131B08FB9300B3280F /* Parus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222062891B087650009B452E /* Parus.framework */; };
+		228D6E151B09005F00B3280F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228D6E141B09005F00B3280F /* Foundation.framework */; };
+		228D6E161B09006700B3280F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228D6E111B08F7BB00B3280F /* UIKit.framework */; };
+		228D6E171B09007300B3280F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
+		228D6E181B09007C00B3280F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226BAC8A1966075A00C329F5 /* AppKit.framework */; };
 		4838D55F176DDD19009415E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4838D55E176DDD19009415E4 /* Foundation.framework */; };
 		4838D5C8176FADFE009415E4 /* PVConstraintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4838D5C7176FADFE009415E4 /* PVConstraintContext.m */; };
 		48B46FED17C4FC8000A48463 /* PVGroupContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B46FEC17C4FC8000A48463 /* PVGroupContext.m */; };
@@ -343,6 +347,7 @@
 		2285D004187E080C007C2EEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2285D008187E080C007C2EEF /* ParusXCTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ParusXCTests-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		228D6E111B08F7BB00B3280F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		228D6E141B09005F00B3280F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		22E9C006187E16E300EC368A /* ConstraintContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConstraintContextSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22E9C007187E16E300EC368A /* PVGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVGroupSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22E9C008187E16E300EC368A /* PVLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PVLayoutSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -375,6 +380,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228D6E161B09006700B3280F /* UIKit.framework in Frameworks */,
+				228D6E151B09005F00B3280F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +389,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228D6E181B09007C00B3280F /* AppKit.framework in Frameworks */,
+				228D6E171B09007300B3280F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +566,7 @@
 		4838D553176DDC5B009415E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				228D6E141B09005F00B3280F /* Foundation.framework */,
 				228D6E111B08F7BB00B3280F /* UIKit.framework */,
 				226BAC8A1966075A00C329F5 /* AppKit.framework */,
 				2214DC721B07E5280092156D /* Specta.xcodeproj */,
