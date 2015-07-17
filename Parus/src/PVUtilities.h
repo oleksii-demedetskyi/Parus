@@ -13,13 +13,12 @@
     typedef UIEdgeInsets PVEdgeInsets;
 
 
-    enum {
-        PVLayoutPriorityRequired = UILayoutPriorityRequired,
-        PVLayoutPriorityDefaultHigh = UILayoutPriorityDefaultHigh,
-        PVLayoutPriorityDefaultLow = UILayoutPriorityDefaultLow,
-        PVLayoutPriorityFittingSizeLevel = UILayoutPriorityFittingSizeLevel,
-    };
     typedef float PVLayoutPriority;
+    static const PVLayoutPriority PVLayoutPriorityRequired = UILayoutPriorityRequired;
+    static const PVLayoutPriority PVLayoutPriorityDefaultHigh = UILayoutPriorityDefaultHigh;
+    static const PVLayoutPriority PVLayoutPriorityDefaultLow = UILayoutPriorityDefaultLow;
+    static const PVLayoutPriority PVLayoutPriorityFittingSizeLevel = UILayoutPriorityFittingSizeLevel;
+
 
 #elif TARGET_OS_MAC
 

@@ -11,5 +11,6 @@
 @property (strong) NSDictionary* views;
 @property (strong) NSDictionary* metrics;
 @property (assign) NSLayoutFormatOptions direction;
+@property (assign) PVLayoutPriority priority;
 
 @end

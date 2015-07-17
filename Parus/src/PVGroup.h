@@ -43,13 +43,39 @@ typedef void(^_PVAddToViewBlock)(PVView*);
 
 @end
 
-typedef _PVRoot<_PVGroupArrayConversionProtocol> _PVGroupArrayConversion;
-typedef _PVGroupArrayConversion* _PVGroupWithMetricsResult;
-typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
+
+
+typedef _PVRoot
+        <
+            _PVGroupArrayConversionProtocol
+        >
+        _PVGroupWithPriorityResult;
+typedef _PVGroupWithPriorityResult*(^_PVGroupWithPriorityBlock)(PVLayoutPriority);
+
+@protocol _PVGroupWithPriorityProtocol
+
+/// Set recieved priority into all non VFL-based items of group.
+///
+/// Merge policy
+/// Priority will be applied to all constraints that dont contain priority definition in their contexts
+/// withPriority(0) will be treated as absence of call.
+@property (readonly) _PVGroupWithPriorityBlock withPriority;
+
+@end
+
+
+
+typedef _PVRoot
+        <
+            _PVGroupArrayConversionProtocol,
+            _PVGroupWithPriorityProtocol
+        >
+        _PVGroupWithMetricsResult;
+typedef _PVGroupWithMetricsResult*(^_PVGroupWithMetricsBlock)(NSDictionary*);
 
 @protocol _PVGroupWithMetricsProtocol
 
-/// Set reecieved metrics into all VFL-based items.
+/// Set recieved metrics into all VFL-based items.
 ///
 /// Merge policy:
 /// All metrics already existed in VFL context will not be replaced.
@@ -62,6 +88,7 @@ typedef _PVGroupWithMetricsResult(^_PVGroupWithMetricsBlock)(NSDictionary*);
 typedef _PVRoot
         <
             _PVGroupArrayConversionProtocol,
+            _PVGroupWithPriorityProtocol,
             _PVGroupWithMetricsProtocol
         >
         _PVGroupWithViewsResult;
@@ -83,6 +110,7 @@ typedef _PVGroupWithViewsResult*(^_PVGroupWithViewsBlock)(NSDictionary*);
 typedef _PVRoot
         <
             _PVGroupArrayConversionProtocol,
+            _PVGroupWithPriorityProtocol,
             _PVGroupWithViewsProtocol,
             _PVGroupWithMetricsProtocol
         >
@@ -104,12 +132,12 @@ typedef _PVRoot
 
 @end
 
-
 /// Resulting protocol for PVGroup() call.
 @protocol _PVGroupProtocol
 <
     _PVGroupDirectionChooseProtocol,
     _PVGroupArrayConversionProtocol,
+    _PVGroupWithPriorityProtocol,
     _PVGroupWithViewsProtocol,
     _PVGroupWithMetricsProtocol
 >

@@ -31,7 +31,7 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
         self.rightAttribute = NSLayoutAttributeNotAnAttribute;
         self.rightAtttributeMultiplier = 0.f;
         self.rightConstant = 0.f;
-        self.priority = PVLayoutPriorityRequired;
+        self.priority = 0;
     }
     
     return self;
@@ -62,7 +62,9 @@ static NSString* const kRightViewAttributeMultiplierIsZero = @"RightViewAttribut
                                  attribute:self.rightAttribute
                                 multiplier:self.rightAtttributeMultiplier
                                   constant:self.rightConstant];
-    constraint.priority = self.priority;
+    if (self.priority != 0) {
+        constraint.priority = self.priority;
+    }
     
     return constraint;
 }
