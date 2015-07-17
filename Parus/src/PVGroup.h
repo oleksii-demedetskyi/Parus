@@ -52,12 +52,13 @@ typedef _PVRoot
         _PVGroupWithPriorityResult;
 typedef _PVGroupWithPriorityResult*(^_PVGroupWithPriorityBlock)(PVLayoutPriority);
 
+@protocol _PVGroupWithPriorityProtocol
+
 /// Set recieved priority into all non VFL-based items of group.
 ///
 /// Merge policy
-/// Priority will be applied to all constraints that dont contain priority definition in their contexts.
-@protocol _PVGroupWithPriorityProtocol
-
+/// Priority will be applied to all constraints that dont contain priority definition in their contexts
+/// withPriority(0) will be treated as absence of call.
 @property (readonly) _PVGroupWithPriorityBlock withPriority;
 
 @end
