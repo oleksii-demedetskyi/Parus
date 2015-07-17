@@ -28,6 +28,11 @@ describe(@"PVGroup syntax", ^{
         expect(r).beKindOf([NSArray class]);
     });
     
+    it(@"should be able to setup priority", ^{
+        id r = PVGroup(@[]).withPriority(999);
+        expect(r).toNot.beNil();
+    });
+    
     it(@"should allow setting group direction", ^{
         expect(PVGroup(@[]).fromLeftToRight).toNot.beNil();
         expect(PVGroup(@[]).fromRightToLeft).toNot.beNil();
@@ -197,6 +202,45 @@ describe(@"PVGroup data conversion", ^{
             NSArray* array = @[newConstraint(), newConstraint()];
             NSArray* result = PVGroup(@[singleConstraint(), array]).asArray;
             expect(result).haveCountOf(3);
+        });
+        
+        it(@"should transfor priority to single constraint", ^{
+            NSArray* result = PVGroup(@[singleConstraint()]).withPriority(500).asArray;
+            NSLayoutConstraint* constraint = result.lastObject;
+            
+            expect(constraint.priority).to.equal(500);
+        });
+        
+        it(@"should not overwrite priority", ^{
+            NSArray* result =
+            PVGroup(@[ PVLeftOf(view1).equalTo.rightOf(view2).withPriority(1000),
+                       PVLeftOf(view1).equalTo.rightOf(view2).withPriority(1),
+                       PVLeftOf(view1).equalTo.rightOf(view2)
+                       ]).withPriority(500).asArray;
+            
+            NSLayoutConstraint* c1 = result[0];
+            NSLayoutConstraint* c2 = result[1];
+            NSLayoutConstraint* c3 = result[2];
+            
+            expect(c1.priority).to.equal(1000);
+            expect(c2.priority).to.equal(1);
+            expect(c3.priority).to.equal(500);
+        });
+        
+        it(@"should not touch priority when not set", ^{
+            NSArray* result =
+            PVGroup(@[ PVLeftOf(view1).equalTo.rightOf(view2).withPriority(500),
+                       PVLeftOf(view1).equalTo.rightOf(view2).withPriority(1),
+                       PVLeftOf(view1).equalTo.rightOf(view2)
+                       ]).asArray;
+            
+            NSLayoutConstraint* c1 = result[0];
+            NSLayoutConstraint* c2 = result[1];
+            NSLayoutConstraint* c3 = result[2];
+            
+            expect(c1.priority).to.equal(500);
+            expect(c2.priority).to.equal(1);
+            expect(c3.priority).to.equal(1000);
         });
     });
     

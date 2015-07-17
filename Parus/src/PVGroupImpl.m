@@ -11,6 +11,7 @@
 #import "PVGroupContext.h"
 
 #import "PVLayoutImp.h"
+#import "PVConstraintContext.h"
 #import "PVVFLImp.h"
 #import "PVVFLContext.h"
 
@@ -69,6 +70,15 @@ _PVGroup* PVGroup(NSArray* array)
     }
 }
 
++ (void)applyGroupContext:(PVGroupContext*)groupContext
+      toConstraintContext:(PVConstraintContext*)constraintContext
+{
+    /* apply priority */ {
+        if (constraintContext.priority == 0) {
+            constraintContext.priority = groupContext.priority;
+        }
+    }
+}
 
 #pragma mark - Array conversion
 
@@ -88,6 +98,8 @@ _PVGroup* PVGroup(NSArray* array)
         else if ([object isKindOfClass:[PVLayout class]])
         {
             PVLayout* l = object;
+            [self.class applyGroupContext:self.context
+                      toConstraintContext:l.context];
             [result addObject:[l.context buildConstraint]];
         }
         else if ([object isKindOfClass:[PVVFLLayout class]])
@@ -118,13 +130,23 @@ _PVGroup* PVGroup(NSArray* array)
     };
 }
 
+#pragma mark - Priority
+
+- (_PVGroupWithPriorityBlock)withPriority
+{
+    return ^(PVLayoutPriority priority) {
+        self.context.priority = priority;
+        return (_PVGroupWithPriorityResult*)self;
+    };
+}
+
 #pragma mark - Metrics
 
 - (_PVGroupWithMetricsBlock)withMetrics
 {
     return ^(NSDictionary* metrics){
         self.context.metrics = metrics;
-        return (_PVGroupWithMetricsResult)self;
+        return (_PVGroupWithMetricsResult*)self;
     };
 }
 
